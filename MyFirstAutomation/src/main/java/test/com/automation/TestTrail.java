@@ -117,6 +117,7 @@ public class TestTrail {
 		String str = unselectbutton.getAttribute("value");
 		System.out.println(unselectbutton.getAttribute("value"));
 		// System.out.println("selected box msg:"+unselectbutton.getText());
+		
 		Assert.assertEquals(unselectbutton.getAttribute("value"), "Unselect All", "All the checkbox got selected");
 	}
 
