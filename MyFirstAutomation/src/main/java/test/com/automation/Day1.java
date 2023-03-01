@@ -10,7 +10,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class Day1 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 	WebDriver driver= new ChromeDriver();  //child class of web driver
 		//WebDriver driver= new FirefoxDriver();
 	

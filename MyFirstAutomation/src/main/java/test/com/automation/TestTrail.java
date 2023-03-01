@@ -10,6 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TestTrail {
+	
 	@Test
 	public void firstPage() {
 
