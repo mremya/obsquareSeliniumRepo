@@ -4,10 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 public class Webelement {
-
-	public static void main(String[] args) {
+@Test
+	public void sum() {
 		
 
 		WebDriver driver=new ChromeDriver();
@@ -22,6 +24,13 @@ public class Webelement {
 		WebElement input2=driver.findElement(By.id("value-b"));
 		input2.sendKeys("10");
 		
+		WebElement button=driver.findElement(By.id("button-two"));
+		button.click();
+		
+		WebElement sum=driver.findElement(By.id("message-two"));
+		System.out.println(sum.getText());
+		
+		Assert.assertEquals(sum.getText(), "Total A + B : 33","test passed");
 	}
 
 }

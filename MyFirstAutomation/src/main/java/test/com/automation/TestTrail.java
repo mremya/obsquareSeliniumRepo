@@ -10,10 +10,10 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TestTrail {
-	
-	@Test
-	public void firstPage() {
 
+	@Test(priority =1)
+	public void firstPage() {
+		
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://selenium.obsqurazone.com/simple-form-demo.php");
 		WebElement textbook = driver.findElement(By.id("single-input-field"));
@@ -31,7 +31,7 @@ public class TestTrail {
 
 	}
 
-	@Test
+	@Test(priority =2)
 	public void getTotalSuccess() {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://selenium.obsqurazone.com/simple-form-demo.php");
@@ -52,7 +52,7 @@ public class TestTrail {
 		Assert.assertEquals(msgTotal.getText(), "Total A + B : 33", "Addition is 33:: pass");
 	}
 
-	@Test
+	@Test(priority =3)
 	public void getTotalFail() {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://selenium.obsqurazone.com/simple-form-demo.php");
@@ -75,7 +75,7 @@ public class TestTrail {
 
 	}
 
-	@Test
+	@Test(priority =4 , enabled= true)
 	public void singleCheckBox() {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://selenium.obsqurazone.com/check-box-demo.php");
@@ -89,7 +89,7 @@ public class TestTrail {
 
 	}
 
-	@Test
+	@Test(priority =5 , enabled= true)
 	public void singleCheckBoxFail() {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://selenium.obsqurazone.com/check-box-demo.php");
@@ -103,7 +103,7 @@ public class TestTrail {
 
 	}
 
-	@Test
+	@Test(priority =5)
 	public void multiCheckBox() {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://selenium.obsqurazone.com/check-box-demo.php");

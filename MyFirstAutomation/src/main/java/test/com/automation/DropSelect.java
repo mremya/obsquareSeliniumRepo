@@ -1,7 +1,5 @@
 package test.com.automation;
 
-import java.sql.Driver;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,7 +13,6 @@ public class DropSelect {
 	public void selectCountry() {
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://www.uitestpractice.com/Students/Form");
-		
 	//	WebElement droplist= driver.findElement(By.id("sel1"));
 		WebElement droplist=driver.findElement(By.xpath("//select[@id='sel1']"));
 		

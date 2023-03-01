@@ -1,7 +1,5 @@
 package test.com.automation;
 
-import javax.xml.xpath.XPath;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,9 +8,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Day2 {
 
 	public static void main(String[] args) {
-		
-
-		WebDriver driver=new ChromeDriver();
+	
+         WebDriver driver=new ChromeDriver();
 		driver.get("D:/basic%20syntax.html");
 		//WebElement textbook=driver.findElement(By.name("textnm"));
 		//WebElement textbook=driver.findElement(By.className("C1"));

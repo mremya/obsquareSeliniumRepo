@@ -24,14 +24,12 @@ class CSSXpath {
 		//WebElement radio1=driver.findElement(By.cssSelector("input[id='002']"));
 		//radio1.click();
 		List<WebElement> list= driver.findElements(By.xpath("//input[@id='002']"));
-		
 		for(WebElement input: list) {
 			
 		input.click();
 		}
 		
-		
-		//Xpath=//tagname[@attribute='value']
+	//Xpath=//tagname[@attribute='value']
 		
 		//WebElement radio2=driver.findElement(By.xpath("//input[@id='003']"));
 		WebElement radio2=driver.findElement(By.cssSelector("input[id='003']"));

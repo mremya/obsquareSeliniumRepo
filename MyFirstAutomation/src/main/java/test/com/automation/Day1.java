@@ -1,11 +1,7 @@
 package test.com.automation;
 
-import java.sql.DriverManager;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Day1 {
 
