@@ -5,7 +5,11 @@ import org.openqa.selenium.WebDriver;
 public class WebBrowserUtils {
 
 	WebDriver driver;
-
+/**
+ * 
+ * @param driver
+ * @param url
+ */
 	public void launchUrl(WebDriver driver, String url) {
 
 		try {
@@ -15,38 +19,60 @@ public class WebBrowserUtils {
 			System.out.println(e.getCause());
 		}
 	}
+	/**
+	 * 
+	 * @param driver
+	 * @return
+	 */
 
-	public void getTitleOfBrowser() {
-
+	public String getTitleOfBrowser(WebDriver driver) {
+		String title = null;
 		try {
-			driver.getTitle();
+			title = driver.getTitle();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			System.out.println(e.getCause());
 		}
+		return title;
 	}
 
-	public void getCurrentUrlOfBrowser() {
-
+	/**
+	 * 
+	 * @param driver
+	 * @return
+	 */
+	public String getCurrentUrlOfBrowser(WebDriver driver) {
+		String currentUrl = null;
 		try {
-			driver.getCurrentUrl();
+			currentUrl = driver.getCurrentUrl();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			System.out.println(e.getCause());
 		}
+		return currentUrl;
 	}
 
-	public void getPageSourceCodeOfBrowser() {
-
+	/**
+	 * 
+	 * @param driver
+	 * @return
+	 */
+	public String getPageSourceCodeOfBrowser(WebDriver driver) {
+		String pageSource = null;
 		try {
-			driver.getPageSource();
+			pageSource = driver.getPageSource();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			System.out.println(e.getCause());
 		}
+		return pageSource;
 	}
-
-	public void navigateToNextUrl(String url) {
+/**
+ * 
+ * @param driver
+ * @param url
+ */
+	public void navigateToNextUrl(WebDriver driver, String url) {
 
 		try {
 			driver.navigate().to(url);
@@ -55,8 +81,11 @@ public class WebBrowserUtils {
 			System.out.println(e.getCause());
 		}
 	}
-
-	public void navigateToNextPage() {
+/**
+ * 
+ * @param driver
+ */
+	public void navigateToNextPage(WebDriver driver) {
 
 		try {
 			driver.navigate().forward();
@@ -65,8 +94,11 @@ public class WebBrowserUtils {
 			System.out.println(e.getCause());
 		}
 	}
-
-	public void navigateToPreviousPage() {
+/**
+ * 
+ * @param driver
+ */
+	public void navigateToPreviousPage(WebDriver driver) {
 
 		try {
 			driver.navigate().back();
@@ -75,8 +107,11 @@ public class WebBrowserUtils {
 			System.out.println(e.getCause());
 		}
 	}
-
-	public void refreshWebPage() {
+/**
+ * 
+ * @param driver
+ */
+	public void refreshWebPage(WebDriver driver) {
 
 		try {
 			driver.navigate().refresh();
@@ -85,8 +120,11 @@ public class WebBrowserUtils {
 			System.out.println(e.getCause());
 		}
 	}
-
-	public void maximizeWebPageSize() {
+/**
+ * 
+ * @param driver
+ */
+	public void maximizeWebPageSize(WebDriver driver) {
 
 		try {
 			driver.manage().window().maximize();
@@ -95,8 +133,11 @@ public class WebBrowserUtils {
 			System.out.println(e.getCause());
 		}
 	}
-
-	public void minimizeWebPageSize() {
+/**
+ * 
+ * @param driver
+ */
+	public void minimizeWebPageSize(WebDriver driver) {
 
 		try {
 			driver.manage().window().minimize();
@@ -105,8 +146,11 @@ public class WebBrowserUtils {
 			System.out.println(e.getCause());
 		}
 	}
-
-	public void fullScreenWebPage() {
+/**
+ * 
+ * @param driver
+ */
+	public void fullScreenWebPage(WebDriver driver) {
 
 		try {
 			driver.manage().window().fullscreen();
@@ -115,8 +159,11 @@ public class WebBrowserUtils {
 			System.out.println(e.getCause());
 		}
 	}
-
-	public void closeCurrentWebPage() {
+/**
+ * 
+ * @param driver
+ */
+	public void closeCurrentWebPage(WebDriver driver) {
 
 		try {
 			driver.close();
@@ -125,8 +172,11 @@ public class WebBrowserUtils {
 			System.out.println(e.getCause());
 		}
 	}
-
-	public void quitWebBrowser() {
+/**
+ * 
+ * @param driver
+ */
+	public void quitWebBrowser(WebDriver driver) {
 
 		try {
 			driver.quit();
