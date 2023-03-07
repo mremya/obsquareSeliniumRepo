@@ -5,13 +5,13 @@ import org.openqa.selenium.WebDriver;
 public class WebBrowserUtils {
 
 	WebDriver driver;
-/**
- * 
- * @param driver
- * @param url
- */
-	public void launchUrl(WebDriver driver, String url) {
 
+	/**
+	 * 
+	 * @param driver
+	 * @param url
+	 */
+	public void launchUrl(WebDriver driver, String url) {
 		try {
 			driver.get(url);
 		} catch (Exception e) {
@@ -19,6 +19,7 @@ public class WebBrowserUtils {
 			System.out.println(e.getCause());
 		}
 	}
+
 	/**
 	 * 
 	 * @param driver
@@ -67,11 +68,12 @@ public class WebBrowserUtils {
 		}
 		return pageSource;
 	}
-/**
- * 
- * @param driver
- * @param url
- */
+
+	/**
+	 * 
+	 * @param driver
+	 * @param url
+	 */
 	public void navigateToNextUrl(WebDriver driver, String url) {
 
 		try {
@@ -81,10 +83,11 @@ public class WebBrowserUtils {
 			System.out.println(e.getCause());
 		}
 	}
-/**
- * 
- * @param driver
- */
+
+	/**
+	 * 
+	 * @param driver
+	 */
 	public void navigateToNextPage(WebDriver driver) {
 
 		try {
@@ -94,10 +97,11 @@ public class WebBrowserUtils {
 			System.out.println(e.getCause());
 		}
 	}
-/**
- * 
- * @param driver
- */
+
+	/**
+	 * 
+	 * @param driver
+	 */
 	public void navigateToPreviousPage(WebDriver driver) {
 
 		try {
@@ -107,10 +111,11 @@ public class WebBrowserUtils {
 			System.out.println(e.getCause());
 		}
 	}
-/**
- * 
- * @param driver
- */
+
+	/**
+	 * 
+	 * @param driver
+	 */
 	public void refreshWebPage(WebDriver driver) {
 
 		try {
@@ -120,10 +125,11 @@ public class WebBrowserUtils {
 			System.out.println(e.getCause());
 		}
 	}
-/**
- * 
- * @param driver
- */
+
+	/**
+	 * 
+	 * @param driver
+	 */
 	public void maximizeWebPageSize(WebDriver driver) {
 
 		try {
@@ -133,10 +139,11 @@ public class WebBrowserUtils {
 			System.out.println(e.getCause());
 		}
 	}
-/**
- * 
- * @param driver
- */
+
+	/**
+	 * 
+	 * @param driver
+	 */
 	public void minimizeWebPageSize(WebDriver driver) {
 
 		try {
@@ -146,10 +153,11 @@ public class WebBrowserUtils {
 			System.out.println(e.getCause());
 		}
 	}
-/**
- * 
- * @param driver
- */
+
+	/**
+	 * 
+	 * @param driver
+	 */
 	public void fullScreenWebPage(WebDriver driver) {
 
 		try {
@@ -159,10 +167,11 @@ public class WebBrowserUtils {
 			System.out.println(e.getCause());
 		}
 	}
-/**
- * 
- * @param driver
- */
+
+	/**
+	 * 
+	 * @param driver
+	 */
 	public void closeCurrentWebPage(WebDriver driver) {
 
 		try {
@@ -172,10 +181,11 @@ public class WebBrowserUtils {
 			System.out.println(e.getCause());
 		}
 	}
-/**
- * 
- * @param driver
- */
+
+	/**
+	 * 
+	 * @param driver
+	 */
 	public void quitWebBrowser(WebDriver driver) {
 
 		try {
