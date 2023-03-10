@@ -4,11 +4,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 public class AutomationBee {
 
 	static WebDriver driver;
-	
-	public WebDriver launchBrowser(String browserName) throws Exception {
+	@BeforeTest
+	@Parameters("browserName")
+	public void launchBrowser(String browserName) throws Exception {
 		switch(browserName) {
 		case "chrome":launchChromeBrowser();
 		      break;
@@ -16,13 +19,13 @@ public class AutomationBee {
 		case "Edge" : launchEdgeBrowser();
 		      break;
 		
-		case "FireFox" : launchFirefoxBrowser();
+		case "Firefox" : launchFirefoxBrowser();
 	      break;
 	
 		 default:System.out.println("check browser name");
 			 break;
 		}
-		return driver;
+		
 		
 	}
 	
@@ -58,4 +61,8 @@ public class AutomationBee {
 			
 		}
 	}
+	public WebDriver getDriver() {//to return the driver
+		return driver;
+	}
+	
 }
