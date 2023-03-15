@@ -3,10 +3,13 @@ package com.utils;
 import java.sql.Driver;
 import java.util.List;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public class GenericUtils {
+	
+	
 	/**
 	 * 
 	 * @param driver
@@ -179,6 +182,28 @@ public class GenericUtils {
 			e.getCause();
 		}
 	}
+	
+	public void dismissAnAlert(WebDriver driver) {
+		driver.switchTo().alert().dismiss();
+		
+	}
+	
+	public void acceptAnAlert(WebDriver driver) {
+	//	driver.switchTo().alert().accept();  
+		
+	}
+	
+	public void enterValueToAnAlert(WebDriver driver, String input) {
+		//driver.switchTo().alert().sendKeys(input);   
+			
+		}
+	
+	public void getTitleOfAlert(WebDriver driver) {
+	
+		 driver.switchTo().alert().getText(); 
+	}
+	
+	
 }
 
 
