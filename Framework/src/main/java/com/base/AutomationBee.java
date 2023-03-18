@@ -2,6 +2,7 @@ package com.base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeTest;
@@ -14,6 +15,11 @@ public class AutomationBee {
 	public void launchBrowser(String browserName) throws Exception {
 		switch(browserName) {
 		case "chrome":launchChromeBrowser();
+		               
+		            	 //  ChromeOptions  ops=new ChromeOptions();
+		            	  // ops.addArguments(arguments)
+		               
+		
 		      break;
 		      
 		case "Edge" : launchEdgeBrowser();
