@@ -113,7 +113,7 @@ public class WebActionUtils {
 	 * @param driver
 	 * @return
 	 */
-	public boolean isDisabledFunction(WebDriver driver, WebElement element) {
+	public boolean isDisplayedFunction(WebDriver driver, WebElement element) {
 		boolean temp = false;
 
 		try {
