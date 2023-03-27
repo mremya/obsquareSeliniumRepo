@@ -42,10 +42,10 @@ public class WebActionUtils {
 	 * @param radiobutton
 	 * @param driver
 	 */
-	public void clearFunction(WebElement radiobutton) {
+	public void clearFunction(WebElement element) {
 
 		try {
-			radiobutton.clear();
+			element.clear();
 		} catch (Exception e) {
 			e.getMessage();
 			e.getCause();
