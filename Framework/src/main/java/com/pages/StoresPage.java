@@ -41,7 +41,8 @@ public class StoresPage {
 
 	@FindBy(xpath = "//button[@class='btn btn-add btn-lg']")
 	WebElement storeAddBtn;
-
+	
+	
 	@FindBy(xpath = "//input[@class='form-control input-sm']")
 	WebElement storeSearchbtn;
 
@@ -228,11 +229,11 @@ public class StoresPage {
 
 	}
 
-	public PeoplePage navigateToPeoplePage() {
+	public PeopleWaiterPage navigateToPeoplePage() {
 
 		element.clickOnTheElement(driver, peopleLink);
 
-		return new PeoplePage(driver);
+		return new PeopleWaiterPage(driver);
 
 	}
 }
