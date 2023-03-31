@@ -2,6 +2,7 @@ package com.test;
 
 import static org.testng.Assert.assertEquals;
 
+import java.io.IOException;
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
@@ -13,9 +14,12 @@ import com.base.AutomationBee;
 import com.pages.HomePage;
 import com.pages.LoginPage;
 import com.pages.ProductPage;
+import com.utils.ExcelUtils;
 import com.utils.WebBrowserUtils;
 
 public class ProductPageTest extends AutomationBee {
+	
+	ExcelUtils excelutil;
 
 	WebDriver driver;
 	WebBrowserUtils webbrowser;
@@ -25,6 +29,7 @@ public class ProductPageTest extends AutomationBee {
 
 	@BeforeMethod
 	public void prerun() throws Exception {
+		excelutil=new ExcelUtils( "RestuarantData.xlsx");
 		driver = getDriver();
 		login = new LoginPage(driver);
 		webbrowser = new WebBrowserUtils();
@@ -60,43 +65,62 @@ public class ProductPageTest extends AutomationBee {
 	}
 
 	@Test(priority = 2, enabled = true)
-	public void validateValueEntredInAddProductPopUpIsSaved() {
+	public void validateValueEntredInAddProductPopUpIsSaved() throws IOException {
 		ppage.clickOnAddProduct();
-		ppage.selectValueForProductType("Standard");
-		ppage.enterValueForProductCode("1212");
-		ppage.enterValueForProductName("Maza");
-		ppage.selectValueForProductCategory("fruits");
-		ppage.selectValueForProductSupplier("anu");
-		ppage.enterValueForProductPurchasePrice("10.00");
-		ppage.enterValueForProductTax("10");
-		ppage.selectValueForProductTaxMethod("inclusive");
-		ppage.enterValueForProductPrice("10");
-		ppage.enterValueForProductUnit("Laza");
-		ppage.selectValueForProductAlertQuantity("10");
-		ppage.enterValueForProductDescription("Hello");
+		String ptype=ExcelUtils .readStringData("Product", 1, 2);
+		String pcode=ExcelUtils.readStringData("Product", 2, 2);
+		String pname=ExcelUtils.readStringData("Product", 3, 2);
+		String pcategory=ExcelUtils.readStringData("Product", 4, 2);
+		String psupplier=ExcelUtils.readStringData("Product", 5, 2);
+		String ppurchasedPrice=ExcelUtils.readStringData("Product", 6, 2);
+		String ptax=ExcelUtils.readStringData("Product", 7, 2);
+		String ptaxMethod=ExcelUtils.readStringData("Product",8, 2);
+		String pprice=ExcelUtils.readStringData("Product", 9, 2);
+		String punit=ExcelUtils.readStringData("Product", 10, 2);
+		String palertQuantity=ExcelUtils.readStringData("Product", 11, 2);                                            
+		String pdescription=ExcelUtils.readStringData("Product", 12, 2);
+		
+		ppage.selectValueForProductType(ptype);
+		ppage.enterValueForProductCode(pcode);         //doubt cannot convert to int
+		ppage.enterValueForProductName(pname);
+		ppage.selectValueForProductCategory(pcategory);
+		ppage.selectValueForProductSupplier(psupplier);
+		ppage.enterValueForProductPurchasePrice(ppurchasedPrice);
+		ppage.enterValueForProductTax(ptax);
+		ppage.selectValueForProductTaxMethod(ptaxMethod);
+		ppage.enterValueForProductPrice(pprice);
+		ppage.enterValueForProductUnit(punit);
+		ppage.selectValueForProductAlertQuantity(palertQuantity);
+		ppage.enterValueForProductDescription(pdescription);
 		ppage.clickOnAddProductSubmit();
-		ppage.searchByProductCode("1212");
+		ppage.searchByProductCode(pcode);
 		SoftAssert soft = new SoftAssert();
-		soft.assertEquals(ppage.getProductCodeFromSearchResult(), "1212", "failure message: product code not found");
-		soft.assertEquals(ppage.getProductNameFromSearchResult(), "Maza", "failure message: product Name not found");
-		soft.assertEquals(ppage.getProductCategoryFromSearchResult(), "fruits",
+		soft.assertEquals(ppage.getProductCodeFromSearchResult(), pcode, "failure message: product code not found");
+		soft.assertEquals(ppage.getProductNameFromSearchResult(), pname, "failure message: product Name not found");
+		soft.assertEquals(ppage.getProductCategoryFromSearchResult(), pcategory,
 				"failure message: product fruits not found");
-		soft.assertEquals(ppage.getProductProductDescriptionFromSearchResult(), "hello",
+		soft.assertEquals(ppage.getProductProductDescriptionFromSearchResult(),pdescription ,
 				"failure message: product description not found");
-		soft.assertEquals(ppage.getProductTaxFromSearchResult(), "10", "failure message: product tax not found");
-		soft.assertEquals(ppage.getProductPriceFromSearchResult(), "10", "failure message: product price not found");
+		soft.assertEquals(ppage.getProductTaxFromSearchResult(), ptax, "failure message: product tax not found");
+		soft.assertEquals(ppage.getProductPriceFromSearchResult(), pprice, "failure message: product price not found");
 		soft.assertAll();
 	}
 
 	@Test(priority = 3, enabled = true)
-	public void validateEditFunctionOfExistingRecord() {
-		ppage.searchByProductCode("1234");
+	public void validateEditFunctionOfExistingRecord() throws IOException {
+	
+		String pcode=ExcelUtils.readStringData("Product", 18, 2);
+		String pname=ExcelUtils.readStringData("Product", 15, 2);
+		String psupplier=ExcelUtils.readStringData("Product", 16, 2);
+		String pdescription=ExcelUtils.readStringData("Product", 17, 2);
+		
+		ppage.searchByProductCode(pcode);
 		ppage.clickOnEditProduct();
-		ppage.enterValueForProductName("Cake World");
-		ppage.selectValueForProductCategory("burger");
-		ppage.enterValueForProductDescription("Hello");
+		ppage.enterValueForProductName(pname);
+		ppage.selectValueForProductCategory(psupplier);
+		ppage.enterValueForProductDescription(pdescription);
 		ppage.clickOnEditProductSubmit();
-		ppage.searchByProductCode("1234");
+		ppage.searchByProductCode(pcode);
 		SoftAssert soft = new SoftAssert();
 		soft.assertEquals(ppage.getProductCodeFromSearchResult(), "1234", "failure message: product code not modified");
 		soft.assertEquals(ppage.getProductNameFromSearchResult(), "Cake World",
@@ -112,12 +136,12 @@ public class ProductPageTest extends AutomationBee {
 	}
 
 	@Test(priority = 4, enabled = true)
-	public void validateDeleteFunctiongOfExistingRecord() {
-
-		ppage.searchByProductCode("1234");
+	public void validateDeleteFunctiongOfExistingRecord() throws IOException {
+		String pcode=ExcelUtils.readStringData("Product", 20, 2);
+		ppage.searchByProductCode(pcode);
 		ppage.clickOnProductDeleteIcon();
 		ppage.clickOnDeleteConformMsg();
-		ppage.searchByProductCode("1234");
+		ppage.searchByProductCode(pcode);
 		assertEquals(ppage.getProductSearchResultOfDeletedEntry(), "No matching records found",
 				"failure message:: failed to delete the store entry");
 	}

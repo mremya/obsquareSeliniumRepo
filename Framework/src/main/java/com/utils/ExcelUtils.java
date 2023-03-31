@@ -11,13 +11,14 @@ public class ExcelUtils {
 
 	public static final String currentDir = System.getProperty("user.dir");
 	public static String filePath = currentDir + "/src/test/resources/ ";
-	String file = "TEST.xlsx";
+	static String  excelPath ; 
 
 	static XSSFWorkbook workbook;
 	static XSSFSheet sheet;
+	
 
-	public ExcelUtils(String fileName, String sheetName) throws IOException {
-		String excelPath = filePath + fileName;
+	public ExcelUtils(String fileName) throws IOException {
+		 excelPath = filePath + fileName;
 		workbook = new XSSFWorkbook(excelPath);
 		sheet = workbook.getSheetAt(0);
 	}
@@ -66,8 +67,8 @@ public class ExcelUtils {
  * @return
  * @throws IOException
  */
-	public static String readStringData(String fileName, String sheetName, int rowNum, int colNum) throws IOException {
-		String excelPath = filePath + fileName;
+	public static String readStringData(String sheetName, int rowNum, int colNum) throws IOException {
+		
 
 		workbook = new XSSFWorkbook(excelPath);
 		sheet = workbook.getSheet(sheetName);
@@ -86,8 +87,8 @@ public class ExcelUtils {
  * @return
  * @throws IOException
  */
-	public static int readIntegerData(String fileName, String sheetName, int rowNum, int colNum) throws IOException {
-		String excelPath = filePath + fileName;
+	public static int readIntegerData( String sheetName, int rowNum, int colNum) throws IOException {
+		
 
 		workbook = new XSSFWorkbook(excelPath);
 		sheet = workbook.getSheet(sheetName);

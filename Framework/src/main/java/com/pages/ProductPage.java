@@ -11,6 +11,7 @@ import com.utils.WebActionUtils;
 public class ProductPage {
 	WebDriver driver;  
 	
+
 	WebActionUtils element = new WebActionUtils();
      GenericUtils  dropdownsel=new GenericUtils();
 	
@@ -205,9 +206,9 @@ public void selectValueForProductSupplier(String value) {
 public void selectValueForProductType(String value) {
 	dropdownsel.selectByValue(driver,productType , value);
 }
-public void enterValueForProductCode(String value) {
+public void enterValueForProductCode(String code) {
 	
-	element.entreTheValue(driver, productCode, value);
+	element.entreTheValue(driver, productCode, code);
 }
 
 public void enterValueForProductName(String value) {
