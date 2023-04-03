@@ -299,7 +299,7 @@ public String getProductPriceFromSearchResult() {
 	
 
 	public void searchByProductCode(String productcode) {
-		
+		element.clearFunction(searchbtn);
 		element.clickOnTheElement(driver, searchbtn);
 		
 		element.entreTheValue(driver, searchbtn, productcode);

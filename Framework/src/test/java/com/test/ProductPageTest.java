@@ -63,8 +63,29 @@ public class ProductPageTest extends AutomationBee {
 		soft.assertAll();
 
 	}
-
+	
 	@Test(priority = 2, enabled = true)
+	public void validatenAddStoresPopUpfields() {
+		ppage.clickOnAddProduct();
+		ppage.selectValueForProductType("Standard");
+		ppage.enterValueForProductCode("111");         //doubt cannot convert to int
+		ppage.enterValueForProductName("maggi");
+		ppage.enterValueForProductTax("abc");
+		ppage.selectValueForProductAlertQuantity("abc");
+		
+		ppage.clickOnAddProductSubmit();
+		ppage.searchByProductCode("111");
+		SoftAssert soft = new SoftAssert();
+		soft.assertEquals(ppage.getProductCodeFromSearchResult(), "111", "failure message: product code not found");
+		soft.assertEquals(ppage.getProductNameFromSearchResult(), "maggi", "failure message: product Name not found");
+		
+		soft.assertEquals(ppage.getProductTaxFromSearchResult(), "abc", "failure message: product tax not in format  found");
+		soft.assertEquals(ppage.getProductPriceFromSearchResult(), "abc", "failure message: product price not is in format found");
+		soft.assertAll();
+	soft.assertAll();
+	}
+
+	@Test(priority = 3, enabled = true)
 	public void validateValueEntredInAddProductPopUpIsSaved() throws IOException {
 		ppage.clickOnAddProduct();
 		String ptype=ExcelUtils .readStringData("Product", 1, 2);
@@ -106,7 +127,7 @@ public class ProductPageTest extends AutomationBee {
 		soft.assertAll();
 	}
 
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 4, enabled = true)
 	public void validateEditFunctionOfExistingRecord() throws IOException {
 	
 		String pcode=ExcelUtils.readStringData("Product", 18, 2);
@@ -135,7 +156,7 @@ public class ProductPageTest extends AutomationBee {
 
 	}
 
-	@Test(priority = 4, enabled = true)
+	@Test(priority = 5, enabled = true)
 	public void validateDeleteFunctiongOfExistingRecord() throws IOException {
 		String pcode=ExcelUtils.readStringData("Product", 20, 2);
 		ppage.searchByProductCode(pcode);
@@ -145,5 +166,6 @@ public class ProductPageTest extends AutomationBee {
 		assertEquals(ppage.getProductSearchResultOfDeletedEntry(), "No matching records found",
 				"failure message:: failed to delete the store entry");
 	}
+	
 
 }

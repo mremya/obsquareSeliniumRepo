@@ -1,0 +1,177 @@
+package com.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.utils.GenericUtils;
+import com.utils.WebActionUtils;
+
+public class PeopleWaiterPage {
+	
+	WebDriver driver;  
+	WebActionUtils element = new WebActionUtils();
+    GenericUtils  dropdownsel=new GenericUtils();
+    
+	@FindBy(xpath="(//span[@class='menu-text'])[5]")
+	WebElement waiterLink;
+	
+	@FindBy(xpath="//button[@class='btn btn-add btn-lg']")
+	WebElement  addWaiterBtn;
+	
+	@FindBy(xpath="//input[@id='WaiterName']")
+	WebElement  waiterName;
+	
+	@FindBy(xpath="//input[@id='WaiterPhone']")
+	WebElement  waiterPhone;
+	
+	@FindBy(xpath="//input[@id='WaiterEmail']")
+	WebElement  waiterEmail;
+     
+	@FindBy(xpath="//select[@id='WaiterStore']")
+	WebElement  waiterStore;
+	
+	@FindBy(xpath="//button[@class='btn btn-add']")
+	WebElement  addWaiterSubmitBtn;
+	
+	@FindBy(xpath="//input[@type='search']")
+	WebElement  waiterSearchBtn;
+	
+	@FindBy(xpath="(//table[@id='Table']//tr//td)[1]")
+	WebElement  waiterName_SearchResult;
+	
+	@FindBy(xpath="(//table[@id='Table']//tr//td)[3]")
+	WebElement  waiterEmail_SearchResult;
+	
+	@FindBy(xpath="(//table[@id='Table']//tr//td)[2]")
+	WebElement  waiterPhone_SearchResult;
+	
+	@FindBy(xpath="(//table[@id='Table']//tr//td)[4]")
+	WebElement  waiterStore_SearchResult;
+	
+	@FindBy(xpath="(//a[@class='btn btn-default'])[2]")
+	WebElement  editicon;
+	
+	@FindBy(xpath="//button[@class='btn btn-add']")
+	WebElement  editiconSubmit;
+	
+	@FindBy(xpath="(//a[@class='btn btn-default'])[1]")
+	WebElement  deleteIcon;
+	
+	@FindBy(xpath="(//a[@class='btn btn-danger']")
+	WebElement  conformDeleteMsg;
+	
+	@FindBy(xpath="(//table[@id='Table']//tr//td)[1]")
+	WebElement  delete_searchresult;
+	
+	public PeopleWaiterPage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	public String getWaiterSearchResultOfDeletedEntry() {
+		return element.getTextFunction(driver, delete_searchresult);
+		
+	}	
+	
+	public void clickOnDeleteConformMsg() {
+		 element.clickOnTheElement(driver, conformDeleteMsg);
+	}
+	public void clickOnEditIconInWaiter() {
+		 element.clickOnTheElement(driver, editicon);
+	}
+	
+	public void clickOnDeleteIconInWaiter() {
+		 element.clickOnTheElement(driver, deleteIcon);
+	}
+	
+	public void clickOnEditWaiterSubmit() {
+		 element.clickOnTheElement(driver, editiconSubmit);
+	}
+	
+	
+
+	public void clickOnWaiterLink() {
+		element.clickOnTheElement(driver, waiterLink);
+		
+	}
+	
+	public void clickOnAddWaiterBtn() {
+		 element.clickOnTheElement(driver, addWaiterBtn);
+	}
+	
+	public void clickOnsubmitBtnInWaitersAddPopUp() {
+		 element.clickOnTheElement(driver, addWaiterSubmitBtn);
+	}
+	
+	
+	
+public Boolean isWaiterNameDisplayed() {
+		
+		return element.isDisplayedFunction(driver, waiterName);
+
+}
+public Boolean isWaiterPhoneDisplayed() {
+	
+	return element.isDisplayedFunction(driver, waiterPhone);
+
+}
+public Boolean isWaiterEmailDisplayed() {
+	
+	return element.isDisplayedFunction(driver, waiterEmail);
+
+}
+public Boolean isWaiterStoreDisplayed() {
+	
+	return element.isDisplayedFunction(driver, waiterStore);
+
+}
+
+public void enterValueForWaiterName(String value) {
+	element.clearFunction(waiterName);
+	element.entreTheValue(driver, waiterName, value);
+}
+
+public void enterValueForWaiterPhone(String value) {
+	element.clearFunction(waiterPhone);
+	element.entreTheValue(driver, waiterPhone, value);
+}
+
+public void enterValueForWaiterEmail(String value) {
+	element.clearFunction(waiterEmail);
+	element.entreTheValue(driver, waiterEmail, value);
+}
+
+public void selectValueForWaiterStore(String value) {
+	dropdownsel.selectByValue(driver, waiterStore, value);
+}
+
+public void searchByWaitersName(String waiterName) {
+	
+	element.clearFunction(waiterSearchBtn);
+	element.clickOnTheElement(driver, waiterSearchBtn);
+	
+	element.entreTheValue(driver, waiterSearchBtn, waiterName);
+}
+
+public String getWaiterNameFromSearchResult() {
+	return element.getTextFunction(driver, waiterName_SearchResult);
+	
+}	
+
+public String getWaiterPhoneFromSearchResult() {
+	return element.getTextFunction(driver, waiterPhone_SearchResult);
+	
+}	
+
+public String getWaiterEmailFromSearchResult() {
+	return element.getTextFunction(driver, waiterEmail_SearchResult);
+	
+}	
+public String getWaiterStoreFromSearchResult() {
+	return element.getTextFunction(driver, waiterStore_SearchResult);
+	
+}	
+	
+}

@@ -67,7 +67,7 @@ public class StoresPage {
 	@FindBy(xpath = "(//table[@id='Table']//tr//td)[1]")
 	WebElement storedelete_searchResult;
 
-	@FindBy(xpath = "//a[@class='btn btn-default']")
+	@FindBy(xpath = "(//a[@class='btn btn-default'])[1]")
 	WebElement storeDeleteBtn;
 
 	@FindBy(xpath = "//button[@class='btn btn-green col-md-6 flat-box-btn waves-effect waves-button']")
@@ -82,7 +82,7 @@ public class StoresPage {
 	}
 
 	public void searchByStoreName(String storeName) {
-
+		element.clearFunction(storeSearchbtn);
 		element.clickOnTheElement(driver, storeSearchbtn);
 
 		element.entreTheValue(driver, storeSearchbtn, storeName);
