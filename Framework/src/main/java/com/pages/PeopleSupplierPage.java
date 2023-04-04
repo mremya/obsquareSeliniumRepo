@@ -8,7 +8,6 @@ import com.utils.WebActionUtils;
 
 public class PeopleSupplierPage {
 
-
 	WebDriver driver;  
 	WebActionUtils element = new WebActionUtils();
 	

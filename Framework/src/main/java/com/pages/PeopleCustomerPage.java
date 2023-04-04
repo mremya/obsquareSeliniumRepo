@@ -9,6 +9,7 @@ import com.utils.GenericUtils;
 import com.utils.WebActionUtils;
 
 public class PeopleCustomerPage {
+	
 	WebDriver driver;  
 	WebActionUtils element = new WebActionUtils();
     GenericUtils  dropdownsel=new GenericUtils();

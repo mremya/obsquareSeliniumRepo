@@ -13,7 +13,7 @@ public class PeopleWaiterPage {
 	WebDriver driver;  
 	WebActionUtils element = new WebActionUtils();
     GenericUtils  dropdownsel=new GenericUtils();
-    
+	
 	@FindBy(xpath="(//span[@class='menu-text'])[5]")
 	WebElement waiterLink;
 	
