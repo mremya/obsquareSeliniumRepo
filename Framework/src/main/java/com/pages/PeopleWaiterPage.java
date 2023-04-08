@@ -65,6 +65,9 @@ public class PeopleWaiterPage {
 	@FindBy(xpath="(//table[@id='Table']//tr//td)[1]")
 	WebElement  delete_searchresult;
 	
+	@FindBy(xpath="(//span[@class='menu-text'])[9]")
+	WebElement expenseLink;
+	
 	public PeopleWaiterPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -173,5 +176,12 @@ public String getWaiterStoreFromSearchResult() {
 	return element.getTextFunction(driver, waiterStore_SearchResult);
 	
 }	
+public ExpensePage navigateToExpensePage() {
+
+	element.clickOnTheElement(driver, expenseLink);
+
+	return new ExpensePage(driver);
+
+}
 	
 }

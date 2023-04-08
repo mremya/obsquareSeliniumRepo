@@ -207,7 +207,7 @@ public void selectValueForProductType(String value) {
 	dropdownsel.selectByValue(driver,productType , value);
 }
 public void enterValueForProductCode(String code) {
-	
+	element.clearFunction(productCode);
 	element.entreTheValue(driver, productCode, code);
 }
 

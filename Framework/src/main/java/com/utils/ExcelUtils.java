@@ -10,7 +10,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class ExcelUtils {
 
 	public static final String currentDir = System.getProperty("user.dir");
-	public static String filePath = currentDir + "/src/test/resources/ ";
+	public static String filePath = currentDir + "\\src\\test\\resources\\ ";
 	static String  excelPath ; 
 
 	static XSSFWorkbook workbook;

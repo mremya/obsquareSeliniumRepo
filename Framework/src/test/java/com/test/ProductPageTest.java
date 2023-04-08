@@ -27,7 +27,7 @@ public class ProductPageTest extends AutomationBee {
 	HomePage homepg;
 	ProductPage ppage;
 
-	@BeforeMethod
+	//@BeforeMethod
 	public void prerun() throws Exception {
 		excelutil=new ExcelUtils( "RestuarantData.xlsx");
 		driver = getDriver();
@@ -64,7 +64,7 @@ public class ProductPageTest extends AutomationBee {
 
 	}
 	
-	@Test(priority = 2, enabled = true)
+@Test(priority = 2, enabled = true)
 	public void validatenAddStoresPopUpfields() {
 		ppage.clickOnAddProduct();
 		ppage.selectValueForProductType("Standard");
