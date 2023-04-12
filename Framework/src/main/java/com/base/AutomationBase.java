@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
-public class AutomationBee {
+public class AutomationBase {
 
 	static WebDriver driver;
 
@@ -73,7 +73,7 @@ public class AutomationBee {
 		}
 	}
 
-	public WebDriver getDriver() {// to return the driver
+	public  WebDriver getDriver() {// to return the driver
 		return driver;
 	}
 

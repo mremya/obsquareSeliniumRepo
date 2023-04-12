@@ -6,13 +6,19 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.apache.poi.poifs.property.Property;
+import org.apache.xmlbeans.impl.xb.xsdschema.Public;
+
+import net.bytebuddy.utility.privilege.GetSystemPropertyAction;
 
 public class PropertyUtils {
-	
+	public static void main(String[] args) throws IOException {
+  getProperty("config.properties");
+		
+	}
 	public static final String currentDir = System.getProperty("user.dir");
 	public static String filePath = currentDir + "/src/test/resources/ ";
 	
-	public Properties getProperty(String fileName) throws IOException {
+	public static Properties getProperty(String fileName) throws IOException {
 		FileInputStream fis=null;;
 		Properties prop=null;
 		

@@ -10,14 +10,14 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import com.base.AutomationBee;
+import com.base.AutomationBase;
 import com.pages.HomePage;
 import com.pages.LoginPage;
 import com.pages.ProductPage;
 import com.utils.ExcelUtils;
 import com.utils.WebBrowserUtils;
 
-public class ProductPageTest extends AutomationBee {
+public class ProductPageTest extends AutomationBase {
 	
 	ExcelUtils excelutil;
 

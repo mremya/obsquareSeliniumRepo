@@ -7,12 +7,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import com.base.AutomationBee;
+import com.base.AutomationBase;
 import com.pages.HomePage;
 import com.pages.LoginPage;
 import com.utils.WebBrowserUtils;
 
-public class HomePageTest extends AutomationBee {
+public class HomePageTest extends AutomationBase {
 	
 	WebDriver driver;
 	WebBrowserUtils webbrowser;

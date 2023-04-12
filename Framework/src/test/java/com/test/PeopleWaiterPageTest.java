@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import com.base.AutomationBee;
+import com.base.AutomationBase;
 import com.pages.HomePage;
 import com.pages.LoginPage;
 import com.pages.PeopleWaiterPage;
@@ -17,7 +17,7 @@ import com.pages.ProductPage;
 import com.pages.StoresPage;
 import com.utils.WebBrowserUtils;
 
-public class PeopleWaiterPageTest extends AutomationBee {
+public class PeopleWaiterPageTest extends AutomationBase {
 
 	WebDriver driver;
 	WebBrowserUtils webbrowser;
