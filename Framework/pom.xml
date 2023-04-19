@@ -3,6 +3,11 @@
   <groupId>com.test.automation</groupId>
   <artifactId>Framework</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <properties>
+ <maven.compiler.source>19</maven.compiler.source>
+ <maven.compiler.target>19</maven.compiler.target>
+</properties>
+  
   <dependencies>
   
   <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
@@ -10,6 +15,7 @@
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
     <version>4.8.0</version>
+    
 </dependency>
 	<dependency>
 			<groupId>org.apache.poi</groupId>

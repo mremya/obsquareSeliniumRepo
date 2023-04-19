@@ -1,5 +1,8 @@
 package com.base;
 
+import java.io.IOException;
+import java.util.Properties;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -8,11 +11,31 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
+import com.constants.AutomationConstants;
+import com.pages.LoginPage;
+import com.utils.PropertyUtils;
+import com.utils.WebBrowserUtils;
+
 public class AutomationBase {
 
 	static WebDriver driver;
+	
+	WebBrowserUtils webbrowser;
+	LoginPage login;
+	Properties prop;
+
+
 
 	@BeforeTest
+	public void prelaunch() throws IOException {
+		
+		login =new LoginPage(driver);
+		webbrowser= new WebBrowserUtils();
+		prop=PropertyUtils.getProperty("config.properties");
+		webbrowser.launchUrl(driver,prop.getProperty("url"));
+	}
+
+	
 	@Parameters("browserName")
 	public void launchBrowser(String browserName) throws Exception {
 		switch (browserName) {
@@ -31,7 +54,8 @@ public class AutomationBase {
 			break;
 
 		default:
-			System.out.println("check browser name");
+			System.out.println( AutomationConstants.browserNameCheck);
+			
 			break;
 		}
 
@@ -40,9 +64,8 @@ public class AutomationBase {
 	private void launchChromeBrowser() throws Exception {
 		try {
 
-			ChromeOptions ops = new ChromeOptions();
-			ops.addArguments("--remote-allow-origins=*");
-			 driver=new ChromeDriver(ops);
+			
+			 driver=new ChromeDriver();
 			
 			driver.manage().window().maximize();
 		} catch (Exception e) {

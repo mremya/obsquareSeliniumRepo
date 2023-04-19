@@ -16,25 +16,22 @@ import com.utils.WebBrowserUtils;
 public class LoginPageTest extends AutomationBase{
 	
 WebDriver driver;
-WebBrowserUtils webbrowser;
+
 LoginPage login;
 Properties prop;
 
-@BeforeMethod
-public void prerun() throws IOException {
-	driver=getDriver();
-	login =new LoginPage(driver);
-	webbrowser= new WebBrowserUtils();
-	prop=PropertyUtils.getProperty("config.properties");
-	webbrowser.launchUrl(driver,prop.getProperty("url"));
-}
+
 
 @Test
-public void validateLogin() {
-	login.enterValueToUserName(prop.getProperty("username"));
-	login.enterValueToPassword(prop.getProperty("password"));
-	login.clickOnTheElement();
-	assertTrue(login.isSuccessHomeLoginMsg(),"Failure msg Login failed");
+public void validateLogin() throws Exception {
+	driver=getDriver();
+ login=new LoginPage(driver);
+
+	prop=PropertyUtils.getProperty("config.properties");
+	login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
+	
+	assertTrue(login.isSuccessHomeLoginMsg(),"Failure msg Login is failed");
 }
+
 
 }

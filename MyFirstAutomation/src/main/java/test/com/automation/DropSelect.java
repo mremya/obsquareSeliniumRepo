@@ -1,10 +1,14 @@
 package test.com.automation;
 
+import java.sql.Driver;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -45,6 +49,7 @@ public class DropSelect {
 			WebElement telNum=driver.findElement(By.xpath("//input[@id='phonenumber']"));
 			telNum.sendKeys("1234567897");
 			
+			
 			WebElement userName=driver.findElement(By.xpath("//input[@id='username']"));
 			userName.sendKeys("arush");
 			
@@ -60,25 +65,25 @@ public class DropSelect {
 			WebElement submitButton=driver.findElement(By.xpath("//button[@class='btn btn-default']"));
 			
 			submitButton.click();
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 }
 
 
+
+
+
 }
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+

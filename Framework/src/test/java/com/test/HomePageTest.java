@@ -1,6 +1,7 @@
 package com.test;
 
 import java.io.IOException;
+import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeMethod;
@@ -10,6 +11,7 @@ import org.testng.asserts.SoftAssert;
 import com.base.AutomationBase;
 import com.pages.HomePage;
 import com.pages.LoginPage;
+import com.utils.PropertyUtils;
 import com.utils.WebBrowserUtils;
 
 public class HomePageTest extends AutomationBase {
@@ -18,18 +20,19 @@ public class HomePageTest extends AutomationBase {
 	WebBrowserUtils webbrowser;
 	LoginPage login;
 	HomePage homepg;
+	Properties prop;
 	
 	@BeforeMethod
 	public void prerun() throws Exception {
 		driver=getDriver();
 		login =new LoginPage(driver);
-		webbrowser= new WebBrowserUtils();
-		webbrowser.launchUrl(driver, "https://qalegend.com/restaurant/login");
-		homepg=login.login("admin","password");
+		prop=PropertyUtils.getProperty("config.properties");
+		homepg=login.login(prop.getProperty("username"), prop.getProperty("password"));
 	}
 
 	@Test
-	public void validateMenuLinksDisplayedInHomePage() {
+	public void validateMenuLinksDisplayedInHomePage() throws Exception {
+		
 		SoftAssert soft=new SoftAssert();
 		soft.assertTrue(homepg.isProductLinkDisplayed(), "Failure message::productlink is not displayed");
 		soft.assertTrue(homepg.isStoresLinkDisplayed(), "Failure message::storelink is not displayed");
