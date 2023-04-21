@@ -26,6 +26,7 @@ Properties prop;
 public void validateLogin() throws Exception {
 	driver=getDriver();
  login=new LoginPage(driver);
+ prop=new Properties();
 
 	prop=PropertyUtils.getProperty("config.properties");
 	login.performlogin(prop.getProperty("username"), prop.getProperty("password"));

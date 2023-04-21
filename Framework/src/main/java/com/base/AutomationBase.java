@@ -41,8 +41,6 @@ public class AutomationBase {
 		switch (browserName) {
 		case "Chrome":
 			launchChromeBrowser();
-
-			
 			break;
 
 		case "Edge":

@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.base.AutomationBase;
+import com.pages.ExpenseDataSupplier;
 import com.pages.ExpensePage;
 import com.pages.HomePage;
 import com.pages.LoginPage;
@@ -48,19 +49,9 @@ public class ExpensePageTest extends AutomationBase {
 		waiter = storepage.navigateToPeoplePage();
 		expensep=waiter.navigateToExpensePage();
 	}
-	 @DataProvider (name = "expenseDataProvider")
-     public Object[][] addExpenseDataProvider(){
-        Object[][] expensedata=new Object[5][1];
-        expensedata[0][0]="04/04/2023";
-        expensedata[1][0]="abc";
-        expensedata[2][0]="Pasta";
-        expensedata[3][0]="MNC";
-        expensedata[4][0]="1200";
-		return expensedata;
-        	                         
-     } 
 	
-	@Test(priority = 1, enabled = true)
+	
+	@Test(priority = 1, enabled = true )
 	public void validateTheElementInAddExpensePopup() {
 
 		expensep.clickOnAddExpense();
@@ -76,7 +67,7 @@ public class ExpensePageTest extends AutomationBase {
 
 	}
 	
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 2, enabled = true )
 	public void validatenAddExpensePopUpfields() {
 		expensep.clickOnAddExpense();
 		expensep.selectValueForExpenseStore("Shibina");
@@ -90,8 +81,8 @@ public class ExpensePageTest extends AutomationBase {
 		soft.assertAll();
 	
 	}
-	@Test(priority = 3, enabled = true, dataProvider="expenseDataProvider")
-	public void validateEnteredValueInAddExpensePopUpIsSaved(String date,String ref, String amt,String cat , String store) {
+	@Test(priority = 3, enabled = true,dataProviderClass = ExpenseDataSupplier.class)
+	public void validateEnteredValueInAddExpensePopUpIsSaved(String date,String ref,String cat , String store , String amt) {
 		expensep.clickOnAddExpense();
 		expensep.enterValueForExpenseDate(date);
 		expensep.enterValueForExpenseReference(ref);
