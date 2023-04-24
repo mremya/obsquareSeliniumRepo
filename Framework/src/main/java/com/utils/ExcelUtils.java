@@ -1,5 +1,6 @@
 package com.utils;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 
 import org.apache.poi.ss.usermodel.Cell;
@@ -9,37 +10,32 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtils {
 
-	public static final String currentDir = System.getProperty("user.dir");
-	public static String filePath = currentDir + "\\src\\test\\resources\\ ";
-	static String  excelPath ; 
+	public class ExcelUtilities {
 
-	static XSSFWorkbook workbook;
-	static XSSFSheet sheet;
-	
+		 final String currentDir = System.getProperty("user.dir");
+		 String filePath = currentDir + ".//src/test//resources//RestuarantData.xlsx";
+		 static String excelPath;
+		 static XSSFWorkbook workbook;
+		 static XSSFSheet sheet;
+		 FileInputStream fs;
 
-	public ExcelUtils(String fileName) throws IOException {
-		 excelPath = filePath + fileName;
-		workbook = new XSSFWorkbook(excelPath);
-		sheet = workbook.getSheetAt(0);
-	}
+		 public ExcelUtilities() throws IOException {
 
-	/**
-	 * 
-	 * method to get row count
-	 */
-	public static int getRowCount() {
+		  try {
+		   workbook = new XSSFWorkbook(filePath);
+		  } catch (IOException e) {
+		   e.printStackTrace();
+		  }
+		  sheet = workbook.getSheetAt(0);
+		 }
 
-		int rowCount = 0;
+		 public String readStringData(String sheetname, int rowNum, int colNum) throws IOException {
 
-		try {
-			rowCount = sheet.getPhysicalNumberOfRows();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		  String cellValue = sheet.getRow(rowNum - 1).getCell(colNum - 1).getStringCellValue();
+		  return cellValue;
+		 }
+
 		}
-
-		return rowCount;
-	}
 
 	/**
 	 * 
@@ -70,7 +66,8 @@ public class ExcelUtils {
 	public static String readStringData(String sheetName, int rowNum, int colNum) throws IOException {
 		
 
-		workbook = new XSSFWorkbook(excelPath);
+		workbook = new XSSFWorkbook(fs);
+		//sheet = workbook.getSheet(sheetName);
 		sheet = workbook.getSheet(sheetName);
 		Row row = sheet.getRow(rowNum);
 		Cell c = row.getCell(colNum);

@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.base.AutomationBase;
+import com.pages.HomePage;
 import com.pages.LoginPage;
 import com.utils.PropertyUtils;
 import com.utils.WebBrowserUtils;
@@ -19,13 +20,14 @@ WebDriver driver;
 
 LoginPage login;
 Properties prop;
-
+HomePage hpage;
 
 
 @Test
 public void validateLogin() throws Exception {
 	driver=getDriver();
  login=new LoginPage(driver);
+ hpage= new HomePage(driver);
  prop=new Properties();
 
 	prop=PropertyUtils.getProperty("config.properties");

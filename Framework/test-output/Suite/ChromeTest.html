@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/0/1</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Apr 23 10:12:20 IST 2023</td>
+<td>Started on:</td><td>Tue Apr 25 00:31:37 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>2 seconds (2926 ms)</td>
+<tr><td>Total time:</td><td>7 seconds (7523 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,14 +76,38 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.test.LoginPageTest.prelaunch()'><b>prelaunch</b><br>Test class: com.test.LoginPageTest</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.io.FileInputStream.close()&quot; because &quot;fis&quot; is null
-	at com.utils.PropertyUtils.getProperty(PropertyUtils.java:36)
-	at com.base.AutomationBase.prelaunch(AutomationBase.java:34)
-... Removed 22 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace193388045", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace193388045'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.io.FileInputStream.close()&quot; because &quot;fis&quot; is null
-	at com.utils.PropertyUtils.getProperty(PropertyUtils.java:36)
-	at com.base.AutomationBase.prelaunch(AutomationBase.java:34)
+<td title='com.test.LoginPageTest.preRun()'><b>preRun</b><br>Test class: com.test.LoginPageTest<br>Parameters: Edge</td>
+<td><div><pre>java.lang.Exception: org.openqa.selenium.remote.http.ConnectionFailedException: Unable to establish websocket connection to http://localhost:3360/devtools/browser/94230572-54f4-48ae-bf4a-20d8d1c644fb
+Build info: version: &apos;4.8.0&apos;, revision: &apos;267030adea&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20&apos;
+Driver info: driver.version: EdgeDriver
+	at com.base.AutomationBase.launchEdgeBrowser(AutomationBase.java:92)
+	at com.base.AutomationBase.launchBrowser(AutomationBase.java:47)
+	at com.base.AutomationBase.preRun(AutomationBase.java:31)
+Caused by: org.openqa.selenium.remote.http.ConnectionFailedException: Unable to establish websocket connection to http://localhost:3360/devtools/browser/94230572-54f4-48ae-bf4a-20d8d1c644fb
+Build info: version: &apos;4.8.0&apos;, revision: &apos;267030adea&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20&apos;
+Driver info: driver.version: EdgeDriver
+	at org.openqa.selenium.remote.http.netty.NettyWebSocket.&lt;init&gt;(NettyWebSocket.java:102)
+	at org.openqa.selenium.remote.http.netty.NettyWebSocket.lambda$create$3(NettyWebSocket.java:128)
+	at org.openqa.selenium.remote.http.netty.NettyClient.openSocket(NettyClient.java:107)
+	at org.openqa.selenium.devtools.Connection.&lt;init&gt;(Connection.java:78)
+	at org.openqa.selenium.chromium.ChromiumDriver.lambda$new$2(ChromiumDriver.java:116)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:114)
+	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:54)
+	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:46)
+	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:42)
+	at com.base.AutomationBase.launchEdgeBrowser(AutomationBase.java:89)
+	... 24 more
+... Removed 22 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace610454273", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace610454273'><pre>java.lang.Exception: org.openqa.selenium.remote.http.ConnectionFailedException: Unable to establish websocket connection to http://localhost:3360/devtools/browser/94230572-54f4-48ae-bf4a-20d8d1c644fb
+Build info: version: &apos;4.8.0&apos;, revision: &apos;267030adea&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20&apos;
+Driver info: driver.version: EdgeDriver
+	at com.base.AutomationBase.launchEdgeBrowser(AutomationBase.java:92)
+	at com.base.AutomationBase.launchBrowser(AutomationBase.java:47)
+	at com.base.AutomationBase.preRun(AutomationBase.java:31)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -106,8 +130,24 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.remote.http.ConnectionFailedException: Unable to establish websocket connection to http://localhost:3360/devtools/browser/94230572-54f4-48ae-bf4a-20d8d1c644fb
+Build info: version: &apos;4.8.0&apos;, revision: &apos;267030adea&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20&apos;
+Driver info: driver.version: EdgeDriver
+	at org.openqa.selenium.remote.http.netty.NettyWebSocket.&lt;init&gt;(NettyWebSocket.java:102)
+	at org.openqa.selenium.remote.http.netty.NettyWebSocket.lambda$create$3(NettyWebSocket.java:128)
+	at org.openqa.selenium.remote.http.netty.NettyClient.openSocket(NettyClient.java:107)
+	at org.openqa.selenium.devtools.Connection.&lt;init&gt;(Connection.java:78)
+	at org.openqa.selenium.chromium.ChromiumDriver.lambda$new$2(ChromiumDriver.java:116)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:114)
+	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:54)
+	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:46)
+	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:42)
+	at com.base.AutomationBase.launchEdgeBrowser(AutomationBase.java:89)
+	... 24 more
 </pre></div></td>
-<td>0</td>
+<td>6</td>
 <td>com.test.LoginPageTest@6f1de4c7</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
@@ -120,13 +160,37 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.test.LoginPageTest.validateLogin()'><b>validateLogin</b><br>Test class: com.test.LoginPageTest</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.io.FileInputStream.close()&quot; because &quot;fis&quot; is null
-	at com.utils.PropertyUtils.getProperty(PropertyUtils.java:36)
-	at com.base.AutomationBase.prelaunch(AutomationBase.java:34)
-... Removed 22 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace35984028", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace35984028'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.io.FileInputStream.close()&quot; because &quot;fis&quot; is null
-	at com.utils.PropertyUtils.getProperty(PropertyUtils.java:36)
-	at com.base.AutomationBase.prelaunch(AutomationBase.java:34)
+<td><div><pre>java.lang.Exception: org.openqa.selenium.remote.http.ConnectionFailedException: Unable to establish websocket connection to http://localhost:3360/devtools/browser/94230572-54f4-48ae-bf4a-20d8d1c644fb
+Build info: version: &apos;4.8.0&apos;, revision: &apos;267030adea&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20&apos;
+Driver info: driver.version: EdgeDriver
+	at com.base.AutomationBase.launchEdgeBrowser(AutomationBase.java:92)
+	at com.base.AutomationBase.launchBrowser(AutomationBase.java:47)
+	at com.base.AutomationBase.preRun(AutomationBase.java:31)
+Caused by: org.openqa.selenium.remote.http.ConnectionFailedException: Unable to establish websocket connection to http://localhost:3360/devtools/browser/94230572-54f4-48ae-bf4a-20d8d1c644fb
+Build info: version: &apos;4.8.0&apos;, revision: &apos;267030adea&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20&apos;
+Driver info: driver.version: EdgeDriver
+	at org.openqa.selenium.remote.http.netty.NettyWebSocket.&lt;init&gt;(NettyWebSocket.java:102)
+	at org.openqa.selenium.remote.http.netty.NettyWebSocket.lambda$create$3(NettyWebSocket.java:128)
+	at org.openqa.selenium.remote.http.netty.NettyClient.openSocket(NettyClient.java:107)
+	at org.openqa.selenium.devtools.Connection.&lt;init&gt;(Connection.java:78)
+	at org.openqa.selenium.chromium.ChromiumDriver.lambda$new$2(ChromiumDriver.java:116)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:114)
+	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:54)
+	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:46)
+	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:42)
+	at com.base.AutomationBase.launchEdgeBrowser(AutomationBase.java:89)
+	... 24 more
+... Removed 22 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1210600718", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1210600718'><pre>java.lang.Exception: org.openqa.selenium.remote.http.ConnectionFailedException: Unable to establish websocket connection to http://localhost:3360/devtools/browser/94230572-54f4-48ae-bf4a-20d8d1c644fb
+Build info: version: &apos;4.8.0&apos;, revision: &apos;267030adea&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20&apos;
+Driver info: driver.version: EdgeDriver
+	at com.base.AutomationBase.launchEdgeBrowser(AutomationBase.java:92)
+	at com.base.AutomationBase.launchBrowser(AutomationBase.java:47)
+	at com.base.AutomationBase.preRun(AutomationBase.java:31)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -149,6 +213,22 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.remote.http.ConnectionFailedException: Unable to establish websocket connection to http://localhost:3360/devtools/browser/94230572-54f4-48ae-bf4a-20d8d1c644fb
+Build info: version: &apos;4.8.0&apos;, revision: &apos;267030adea&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20&apos;
+Driver info: driver.version: EdgeDriver
+	at org.openqa.selenium.remote.http.netty.NettyWebSocket.&lt;init&gt;(NettyWebSocket.java:102)
+	at org.openqa.selenium.remote.http.netty.NettyWebSocket.lambda$create$3(NettyWebSocket.java:128)
+	at org.openqa.selenium.remote.http.netty.NettyClient.openSocket(NettyClient.java:107)
+	at org.openqa.selenium.devtools.Connection.&lt;init&gt;(Connection.java:78)
+	at org.openqa.selenium.chromium.ChromiumDriver.lambda$new$2(ChromiumDriver.java:116)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:114)
+	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:54)
+	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:46)
+	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:42)
+	at com.base.AutomationBase.launchEdgeBrowser(AutomationBase.java:89)
+	... 24 more
 </pre></div></td>
 <td>0</td>
 <td>com.test.LoginPageTest@6f1de4c7</td></tr>

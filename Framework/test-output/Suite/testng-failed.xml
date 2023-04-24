@@ -5,11 +5,11 @@
     <listener class-name="com.listeners.TestListeners"/>
   </listeners>
   <test thread-count="5" name="ChromeTest(failed)">
-    <parameter name="browserName" value="Chrome"/>
+    <parameter name="browserName" value="Edge"/>
     <classes>
       <class name="com.test.LoginPageTest">
         <methods>
-          <include name="prelaunch"/>
+          <include name="preRun"/>
           <include name="validateLogin"/>
         </methods>
       </class> <!-- com.test.LoginPageTest -->

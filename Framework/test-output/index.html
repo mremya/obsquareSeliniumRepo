@@ -129,9 +129,29 @@
                   <a name="validateLogin">
                   </a> <!-- validateLogin -->
                   <span class="method-name">validateLogin</span>
-                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;java.io.FileInputStream.close()&quot; because &quot;fis&quot; is null
-	at com.utils.PropertyUtils.getProperty(PropertyUtils.java:36)
-	at com.base.AutomationBase.prelaunch(AutomationBase.java:34)
+                  <div class="stack-trace">java.lang.Exception: org.openqa.selenium.remote.http.ConnectionFailedException: Unable to establish websocket connection to http://localhost:3360/devtools/browser/94230572-54f4-48ae-bf4a-20d8d1c644fb
+Build info: version: &apos;4.8.0&apos;, revision: &apos;267030adea&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20&apos;
+Driver info: driver.version: EdgeDriver
+	at com.base.AutomationBase.launchEdgeBrowser(AutomationBase.java:92)
+	at com.base.AutomationBase.launchBrowser(AutomationBase.java:47)
+	at com.base.AutomationBase.preRun(AutomationBase.java:31)
+Caused by: org.openqa.selenium.remote.http.ConnectionFailedException: Unable to establish websocket connection to http://localhost:3360/devtools/browser/94230572-54f4-48ae-bf4a-20d8d1c644fb
+Build info: version: &apos;4.8.0&apos;, revision: &apos;267030adea&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20&apos;
+Driver info: driver.version: EdgeDriver
+	at org.openqa.selenium.remote.http.netty.NettyWebSocket.&lt;init&gt;(NettyWebSocket.java:102)
+	at org.openqa.selenium.remote.http.netty.NettyWebSocket.lambda$create$3(NettyWebSocket.java:128)
+	at org.openqa.selenium.remote.http.netty.NettyClient.openSocket(NettyClient.java:107)
+	at org.openqa.selenium.devtools.Connection.&lt;init&gt;(Connection.java:78)
+	at org.openqa.selenium.chromium.ChromiumDriver.lambda$new$2(ChromiumDriver.java:116)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:114)
+	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:54)
+	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:46)
+	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:42)
+	at com.base.AutomationBase.launchEdgeBrowser(AutomationBase.java:89)
+	... 24 more
 ... Removed 22 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
@@ -152,7 +172,7 @@
     &lt;listener class-name=&quot;com.listeners.TestListeners&quot;/&gt;
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;ChromeTest&quot;&gt;
-    &lt;parameter name=&quot;browserName&quot; value=&quot;Chrome&quot;/&gt;
+    &lt;parameter name=&quot;browserName&quot; value=&quot;Edge&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.test.LoginPageTest&quot;/&gt;
     &lt;/classes&gt;
@@ -233,12 +253,12 @@ return data;
               <div class="configuration-test before">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">prelaunch</span>
+                <span class="method-name">preRun(Edge)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">validateLogin</span>
-                <span class="method-start">649 ms</span>
+                <span class="method-start">6882 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
