@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
@@ -62,10 +63,12 @@ public class AutomationBase {
 	private void launchChromeBrowser() throws Exception {
 		try {
 
+			ChromeOptions ops = new ChromeOptions();
+			  ops.addArguments("--remote-allow-origins=*");
+			  WebDriver driver = new ChromeDriver(ops);
+			// driver=new ChromeDriver();
 			
-			 driver=new ChromeDriver();
-			
-			driver.manage().window().maximize();
+			  webbrowser.maximizeWebPageSize(driver);
 		} catch (Exception e) {
 			throw new Exception(e);
 
@@ -76,7 +79,7 @@ public class AutomationBase {
 		try {
 
 			driver = new FirefoxDriver();
-			driver.manage().window().maximize();
+			webbrowser.maximizeWebPageSize(driver);
 		} catch (Exception e) {
 			throw new Exception(e);
 
@@ -87,7 +90,7 @@ public class AutomationBase {
 		try {
 
 			driver = new EdgeDriver();
-			driver.manage().window().maximize();
+			webbrowser.maximizeWebPageSize(driver);
 		} catch (Exception e) {
 			throw new Exception(e);
 
@@ -97,5 +100,8 @@ public class AutomationBase {
 	public  WebDriver getDriver() {// to return the driver
 		return driver;
 	}
-
+@AfterTest
+	public void quitBrowser() {
+	webbrowser.closeCurrentWebPage(driver);
+	}
 }

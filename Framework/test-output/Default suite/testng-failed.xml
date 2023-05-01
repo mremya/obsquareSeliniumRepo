@@ -3,11 +3,88 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.test.ExpensePageTest">
+      <class name="com.test.HomePageTest">
+        <methods>
+          <include name="quitBrowser"/>
+          <include name="preRun"/>
+          <include name="prerun"/>
+          <include name="validateMenuLinksDisplayedInHomePage"/>
+        </methods>
+      </class> <!-- com.test.HomePageTest -->
+      <class name="com.test.LoginPageTest">
+        <methods>
+          <include name="quitBrowser"/>
+          <include name="preRun"/>
+          <include name="validateLogin"/>
+        </methods>
+      </class> <!-- com.test.LoginPageTest -->
+      <class name="com.test.PeopleWaiterPageTest">
         <methods>
           <include name="prerun"/>
+          <include name="validateValueEntredInAddWaiterPopUpIsSaved"/>
+          <include name="quitBrowser"/>
+          <include name="validateDeleteFunctiongOfExistingRecord"/>
+          <include name="preRun"/>
+          <include name="validateTheElementInAddWaiterPopup"/>
+          <include name="validatenAddWaiterPopUpfields"/>
+          <include name="validateEditFunctionOfExistingRecord"/>
+        </methods>
+      </class> <!-- com.test.PeopleWaiterPageTest -->
+      <class name="com.test.PeopleCoustomerPageTest">
+        <methods>
+          <include name="validateValueEntredInAddWaiterPopUpIsSaved"/>
+          <include name="validateTheElementInAddCustomerPopup"/>
+          <include name="quitBrowser"/>
+          <include name="preRun"/>
+          <include name="prerun"/>
+          <include name="validateDeleteFunctiongOfExistingRecord"/>
+          <include name="validateAddCustomerPopUpfields"/>
+          <include name="modifyTheExistingRecordOfStores"/>
+        </methods>
+      </class> <!-- com.test.PeopleCoustomerPageTest -->
+      <class name="com.test.StoresPageTest">
+        <methods>
+          <include name="validateTheElementInAddStorePopup"/>
+          <include name="quitBrowser"/>
+          <include name="validateEnteredValueInAddStoresPopUpIsSaved"/>
+          <include name="modifyTheExistingRecordOfStores"/>
+          <include name="preRun"/>
+          <include name="prerun"/>
+          <include name="deleteExistingRecord"/>
+          <include name="validatenAddStoresPopUpfields"/>
+        </methods>
+      </class> <!-- com.test.StoresPageTest -->
+      <class name="com.test.PeopleSupplierPageTest">
+        <methods>
+          <include name="validateValueEntredInAddSupplierPopUpIsSaved"/>
+          <include name="validateTheElementInAddSupplierPopup"/>
+          <include name="validateDeleteFunctiongOfExistingRecord"/>
+          <include name="quitBrowser"/>
+          <include name="preRun"/>
+          <include name="prerun"/>
+          <include name="modifyTheExistingRecordOfSupplier"/>
+          <include name="validateAddSupplierPopUpfields"/>
+        </methods>
+      </class> <!-- com.test.PeopleSupplierPageTest -->
+      <class name="com.test.ProductPageTest">
+        <methods>
+          <include name="validateTheElementInAddProductPopup"/>
+          <include name="prerun"/>
+          <include name="quitBrowser"/>
+          <include name="preRun"/>
+          <include name="validatenAddStoresPopUpfields"/>
+        </methods>
+      </class> <!-- com.test.ProductPageTest -->
+      <class name="com.test.ExpensePageTest">
+        <methods>
+          <include name="validatenAddExpensePopUpfields"/>
+          <include name="prerun"/>
+          <include name="validateEnteredValueInAddExpensePopUpIsSaved"/>
+          <include name="quitBrowser"/>
+          <include name="modifyTheExistingRecordOfExpense"/>
+          <include name="preRun"/>
           <include name="validateTheElementInAddExpensePopup"/>
-          <include name="prelaunch"/>
+          <include name="validateDeleteFunctiongOfExistingRecord"/>
         </methods>
       </class> <!-- com.test.ExpensePageTest -->
     </classes>

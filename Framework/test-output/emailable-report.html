@@ -9,57 +9,53 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">ChromeTest</a></td><td class="num">0</td><td class="num attn">1</td><td class="num">0</td><td class="num">0</td><td class="num">7,523</td><td></td><td></td></tr>
+<tr><td><a href="#t0">ChromeTest</a></td><td class="num">0</td><td class="num attn">4</td><td class="num">0</td><td class="num">0</td><td class="num">41,677</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">ChromeTest &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">com.test.LoginPageTest</td><td><a href="#m0">preRun</a></td><td rowspan="1">1682362897827</td><td rowspan="1">6774</td></tr><tr><th colspan="4">ChromeTest &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">com.test.LoginPageTest</td><td><a href="#m1">validateLogin</a></td><td rowspan="1">1682362904709</td><td rowspan="1">0</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">ChromeTest &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">com.test.LoginPageTest</td><td><a href="#m0">preRun</a></td><td rowspan="1">1682932857753</td><td rowspan="1">40611</td></tr><tr><th colspan="4">ChromeTest &#8212; skipped (configuration methods)</th></tr><tr class="skippedeven"><td rowspan="1">com.test.HomePageTest</td><td><a href="#m1">prerun</a></td><td rowspan="1">1682932899385</td><td rowspan="1">0</td></tr><tr class="skippedodd"><td rowspan="1">com.test.LoginPageTest</td><td><a href="#m2">quitBrowser</a></td><td rowspan="1">1682932899413</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td rowspan="2">com.test.ProductPageTest</td><td><a href="#m3">prerun</a></td><td rowspan="2">1682932899403</td><td rowspan="2">0</td></tr><tr class="skippedeven"><td><a href="#m4">prerun</a></td></tr><tr><th colspan="4">ChromeTest &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">com.test.HomePageTest</td><td><a href="#m5">validateMenuLinksDisplayedInHomePage</a></td><td rowspan="1">1682932899388</td><td rowspan="1">0</td></tr><tr class="skippedodd"><td rowspan="1">com.test.LoginPageTest</td><td><a href="#m6">validateLogin</a></td><td rowspan="1">1682932898801</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td rowspan="2">com.test.ProductPageTest</td><td><a href="#m7">validateTheElementInAddProductPopup</a></td><td rowspan="1">1682932899396</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m8">validatenAddStoresPopUpfields</a></td><td rowspan="1">1682932899405</td><td rowspan="1">0</td></tr></tbody>
 </table>
-<h2>ChromeTest</h2><h3 id="m0">com.test.LoginPageTest#preRun</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>Edge</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Exception: org.openqa.selenium.remote.http.ConnectionFailedException: Unable to establish websocket connection to http://localhost:3360/devtools/browser/94230572-54f4-48ae-bf4a-20d8d1c644fb
-Build info: version: &apos;4.8.0&apos;, revision: &apos;267030adea&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20&apos;
-Driver info: driver.version: EdgeDriver
-	at com.base.AutomationBase.launchEdgeBrowser(AutomationBase.java:92)
-	at com.base.AutomationBase.launchBrowser(AutomationBase.java:47)
-	at com.base.AutomationBase.preRun(AutomationBase.java:31)
-Caused by: org.openqa.selenium.remote.http.ConnectionFailedException: Unable to establish websocket connection to http://localhost:3360/devtools/browser/94230572-54f4-48ae-bf4a-20d8d1c644fb
-Build info: version: &apos;4.8.0&apos;, revision: &apos;267030adea&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20&apos;
-Driver info: driver.version: EdgeDriver
-	at org.openqa.selenium.remote.http.netty.NettyWebSocket.&lt;init&gt;(NettyWebSocket.java:102)
-	at org.openqa.selenium.remote.http.netty.NettyWebSocket.lambda$create$3(NettyWebSocket.java:128)
-	at org.openqa.selenium.remote.http.netty.NettyClient.openSocket(NettyClient.java:107)
-	at org.openqa.selenium.devtools.Connection.&lt;init&gt;(Connection.java:78)
-	at org.openqa.selenium.chromium.ChromiumDriver.lambda$new$2(ChromiumDriver.java:116)
-	at java.base/java.util.Optional.map(Optional.java:260)
-	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:114)
-	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:54)
-	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:46)
-	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:42)
-	at com.base.AutomationBase.launchEdgeBrowser(AutomationBase.java:89)
-	... 24 more
-... Removed 22 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.test.LoginPageTest#validateLogin</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Exception: org.openqa.selenium.remote.http.ConnectionFailedException: Unable to establish websocket connection to http://localhost:3360/devtools/browser/94230572-54f4-48ae-bf4a-20d8d1c644fb
-Build info: version: &apos;4.8.0&apos;, revision: &apos;267030adea&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20&apos;
-Driver info: driver.version: EdgeDriver
-	at com.base.AutomationBase.launchEdgeBrowser(AutomationBase.java:92)
-	at com.base.AutomationBase.launchBrowser(AutomationBase.java:47)
-	at com.base.AutomationBase.preRun(AutomationBase.java:31)
-Caused by: org.openqa.selenium.remote.http.ConnectionFailedException: Unable to establish websocket connection to http://localhost:3360/devtools/browser/94230572-54f4-48ae-bf4a-20d8d1c644fb
-Build info: version: &apos;4.8.0&apos;, revision: &apos;267030adea&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20&apos;
-Driver info: driver.version: EdgeDriver
-	at org.openqa.selenium.remote.http.netty.NettyWebSocket.&lt;init&gt;(NettyWebSocket.java:102)
-	at org.openqa.selenium.remote.http.netty.NettyWebSocket.lambda$create$3(NettyWebSocket.java:128)
-	at org.openqa.selenium.remote.http.netty.NettyClient.openSocket(NettyClient.java:107)
-	at org.openqa.selenium.devtools.Connection.&lt;init&gt;(Connection.java:78)
-	at org.openqa.selenium.chromium.ChromiumDriver.lambda$new$2(ChromiumDriver.java:116)
-	at java.base/java.util.Optional.map(Optional.java:260)
-	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:114)
-	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:54)
-	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:46)
-	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:42)
-	at com.base.AutomationBase.launchEdgeBrowser(AutomationBase.java:89)
-	... 24 more
-... Removed 22 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>ChromeTest</h2><h3 id="m0">com.test.LoginPageTest#preRun</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>Firefox</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Exception: java.lang.NullPointerException: Cannot invoke &quot;com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)&quot; because &quot;this.webbrowser&quot; is null
+	at com.base.AutomationBase.launchFirefoxBrowser(AutomationBase.java:84)
+	at com.base.AutomationBase.launchBrowser(AutomationBase.java:52)
+	at com.base.AutomationBase.preRun(AutomationBase.java:32)
+Caused by: java.lang.NullPointerException: Cannot invoke &quot;com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)&quot; because &quot;this.webbrowser&quot; is null
+	at com.base.AutomationBase.launchFirefoxBrowser(AutomationBase.java:82)
+	... 26 more
+... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.test.HomePageTest#prerun</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.test.LoginPageTest#quitBrowser</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.test.ProductPageTest#prerun</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">com.test.ProductPageTest#prerun</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">com.test.HomePageTest#validateMenuLinksDisplayedInHomePage</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Exception: java.lang.NullPointerException: Cannot invoke &quot;com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)&quot; because &quot;this.webbrowser&quot; is null
+	at com.base.AutomationBase.launchFirefoxBrowser(AutomationBase.java:84)
+	at com.base.AutomationBase.launchBrowser(AutomationBase.java:52)
+	at com.base.AutomationBase.preRun(AutomationBase.java:32)
+Caused by: java.lang.NullPointerException: Cannot invoke &quot;com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)&quot; because &quot;this.webbrowser&quot; is null
+	at com.base.AutomationBase.launchFirefoxBrowser(AutomationBase.java:82)
+	... 26 more
+... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">com.test.LoginPageTest#validateLogin</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Exception: java.lang.NullPointerException: Cannot invoke &quot;com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)&quot; because &quot;this.webbrowser&quot; is null
+	at com.base.AutomationBase.launchFirefoxBrowser(AutomationBase.java:84)
+	at com.base.AutomationBase.launchBrowser(AutomationBase.java:52)
+	at com.base.AutomationBase.preRun(AutomationBase.java:32)
+Caused by: java.lang.NullPointerException: Cannot invoke &quot;com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)&quot; because &quot;this.webbrowser&quot; is null
+	at com.base.AutomationBase.launchFirefoxBrowser(AutomationBase.java:82)
+	... 26 more
+... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">com.test.ProductPageTest#validateTheElementInAddProductPopup</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Exception: java.lang.NullPointerException: Cannot invoke &quot;com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)&quot; because &quot;this.webbrowser&quot; is null
+	at com.base.AutomationBase.launchFirefoxBrowser(AutomationBase.java:84)
+	at com.base.AutomationBase.launchBrowser(AutomationBase.java:52)
+	at com.base.AutomationBase.preRun(AutomationBase.java:32)
+Caused by: java.lang.NullPointerException: Cannot invoke &quot;com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)&quot; because &quot;this.webbrowser&quot; is null
+	at com.base.AutomationBase.launchFirefoxBrowser(AutomationBase.java:82)
+	... 26 more
+... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">com.test.ProductPageTest#validatenAddStoresPopUpfields</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Exception: java.lang.NullPointerException: Cannot invoke &quot;com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)&quot; because &quot;this.webbrowser&quot; is null
+	at com.base.AutomationBase.launchFirefoxBrowser(AutomationBase.java:84)
+	at com.base.AutomationBase.launchBrowser(AutomationBase.java:52)
+	at com.base.AutomationBase.preRun(AutomationBase.java:32)
+Caused by: java.lang.NullPointerException: Cannot invoke &quot;com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)&quot; because &quot;this.webbrowser&quot; is null
+	at com.base.AutomationBase.launchFirefoxBrowser(AutomationBase.java:82)
+	... 26 more
+... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

@@ -3,7 +3,7 @@ package com.test;
 import static org.testng.Assert.assertEquals;
 
 import java.io.IOException;
-import java.time.Duration;
+import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeMethod;
@@ -15,6 +15,7 @@ import com.pages.HomePage;
 import com.pages.LoginPage;
 import com.pages.ProductPage;
 import com.utils.ExcelUtils;
+import com.utils.PropertyUtils;
 import com.utils.WebBrowserUtils;
 
 public class ProductPageTest extends AutomationBase {
@@ -26,16 +27,19 @@ public class ProductPageTest extends AutomationBase {
 	LoginPage login;
 	HomePage homepg;
 	ProductPage ppage;
+	Properties prop;
 
-	//@BeforeMethod
+	@BeforeMethod
 	public void prerun() throws Exception {
-		excelutil=new ExcelUtils( "RestuarantData.xlsx");
+		excelutil=new ExcelUtils( );
 		driver = getDriver();
 		login = new LoginPage(driver);
 		webbrowser = new WebBrowserUtils();
-		webbrowser.launchUrl(driver, "https://qalegend.com/restaurant/login");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		homepg = login.login("admin", "password");
+		
+		prop=PropertyUtils.getProperty("config.properties");
+		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
+		
+		
 		ppage = homepg.navigateToProductPage();
 
 	}
@@ -86,86 +90,91 @@ public class ProductPageTest extends AutomationBase {
 	}
 
 	@Test(priority = 3, enabled = true)
+	
 	public void validateValueEntredInAddProductPopUpIsSaved() throws IOException {
 		ppage.clickOnAddProduct();
-		String ptype=ExcelUtils .readStringData("Product", 1, 2);
-		String pcode=ExcelUtils.readStringData("Product", 2, 2);
-		String pname=ExcelUtils.readStringData("Product", 3, 2);
-		String pcategory=ExcelUtils.readStringData("Product", 4, 2);
-		String psupplier=ExcelUtils.readStringData("Product", 5, 2);
-		String ppurchasedPrice=ExcelUtils.readStringData("Product", 6, 2);
-		String ptax=ExcelUtils.readStringData("Product", 7, 2);
-		String ptaxMethod=ExcelUtils.readStringData("Product",8, 2);
-		String pprice=ExcelUtils.readStringData("Product", 9, 2);
-		String punit=ExcelUtils.readStringData("Product", 10, 2);
-		String palertQuantity=ExcelUtils.readStringData("Product", 11, 2);                                            
-		String pdescription=ExcelUtils.readStringData("Product", 12, 2);
-		
-		ppage.selectValueForProductType(ptype);
-		ppage.enterValueForProductCode(pcode);         //doubt cannot convert to int
-		ppage.enterValueForProductName(pname);
-		ppage.selectValueForProductCategory(pcategory);
-		ppage.selectValueForProductSupplier(psupplier);
-		ppage.enterValueForProductPurchasePrice(ppurchasedPrice);
-		ppage.enterValueForProductTax(ptax);
-		ppage.selectValueForProductTaxMethod(ptaxMethod);
-		ppage.enterValueForProductPrice(pprice);
-		ppage.enterValueForProductUnit(punit);
-		ppage.selectValueForProductAlertQuantity(palertQuantity);
-		ppage.enterValueForProductDescription(pdescription);
-		ppage.clickOnAddProductSubmit();
-		ppage.searchByProductCode(pcode);
-		SoftAssert soft = new SoftAssert();
-		soft.assertEquals(ppage.getProductCodeFromSearchResult(), pcode, "failure message: product code not found");
-		soft.assertEquals(ppage.getProductNameFromSearchResult(), pname, "failure message: product Name not found");
-		soft.assertEquals(ppage.getProductCategoryFromSearchResult(), pcategory,
-				"failure message: product fruits not found");
-		soft.assertEquals(ppage.getProductProductDescriptionFromSearchResult(),pdescription ,
-				"failure message: product description not found");
-		soft.assertEquals(ppage.getProductTaxFromSearchResult(), ptax, "failure message: product tax not found");
-		soft.assertEquals(ppage.getProductPriceFromSearchResult(), pprice, "failure message: product price not found");
-		soft.assertAll();
-	}
+		String ptype = excelutil.readStringData(1, 2);
+		String pcode = excelutil.readStringData(2, 2);
+		String pname = excelutil.readStringData(3, 2);
+		String pcategory = excelutil.readStringData( 4, 2);
+		String psupplier = excelutil.readStringData( 5, 2);
+		String ppurchasedPrice = excelutil.readStringData (6, 2);
+		String ptax = excelutil.readStringData( 7, 2);
+		String ptaxMethod = excelutil.readStringData( 8, 2);
+		String pprice = excelutil.readStringData( 9, 2);
+		String punit = excelutil.readStringData( 10, 2);
+		String palertQuantity = excelutil.readStringData(11, 2);
+		String pdescription = excelutil.readStringData(12, 2);
+	  
+	  ppage.selectValueForProductType(ptype);
+	  ppage.enterValueForProductCode(pcode); //doubt cannot convert to int
+	  ppage.enterValueForProductName(pname);
+	  ppage.selectValueForProductCategory(pcategory);
+	  ppage.selectValueForProductSupplier(psupplier);
+	  ppage.enterValueForProductPurchasePrice(ppurchasedPrice);
+	  ppage.enterValueForProductTax(ptax);
+	  ppage.selectValueForProductTaxMethod(ptaxMethod);
+	  ppage.enterValueForProductPrice(pprice);
+	  ppage.enterValueForProductUnit(punit);
+	  ppage.selectValueForProductAlertQuantity(palertQuantity);
+	  ppage.enterValueForProductDescription(pdescription);
+	  ppage.clickOnAddProductSubmit(); ppage.searchByProductCode(pcode); SoftAssert
+	  soft = new SoftAssert();
+	  soft.assertEquals(ppage.getProductCodeFromSearchResult(), pcode,
+	  "failure message: product code not found");
+	  soft.assertEquals(ppage.getProductNameFromSearchResult(), pname,
+	  "failure message: product Name not found");
+	  soft.assertEquals(ppage.getProductCategoryFromSearchResult(), pcategory,
+	  "failure message: product fruits not found");
+	  soft.assertEquals(ppage.getProductProductDescriptionFromSearchResult(),
+	  pdescription , "failure message: product description not found");
+	  soft.assertEquals(ppage.getProductTaxFromSearchResult(), ptax,
+	  "failure message: product tax not found");
+	  soft.assertEquals(ppage.getProductPriceFromSearchResult(), pprice,
+	  "failure message: product price not found"); soft.assertAll(); }
+	 
 
-	@Test(priority = 4, enabled = true)
-	public void validateEditFunctionOfExistingRecord() throws IOException {
 	
-		String pcode=ExcelUtils.readStringData("Product", 18, 2);
-		String pname=ExcelUtils.readStringData("Product", 15, 2);
-		String psupplier=ExcelUtils.readStringData("Product", 16, 2);
-		String pdescription=ExcelUtils.readStringData("Product", 17, 2);
-		
-		ppage.searchByProductCode(pcode);
-		ppage.clickOnEditProduct();
-		ppage.enterValueForProductName(pname);
-		ppage.selectValueForProductCategory(psupplier);
-		ppage.enterValueForProductDescription(pdescription);
-		ppage.clickOnEditProductSubmit();
-		ppage.searchByProductCode(pcode);
-		SoftAssert soft = new SoftAssert();
-		soft.assertEquals(ppage.getProductCodeFromSearchResult(), "1234", "failure message: product code not modified");
-		soft.assertEquals(ppage.getProductNameFromSearchResult(), "Cake World",
-				"failure message: product Name is modified");
-		soft.assertEquals(ppage.getProductCategoryFromSearchResult(), "fruits",
-				"failure message: product category is mofied");
-		soft.assertEquals(ppage.getProductProductDescriptionFromSearchResult(), "hello",
-				"failure message: product description not found");
-		soft.assertEquals(ppage.getProductTaxFromSearchResult(), "20", "failure message: product tax not found");
-		soft.assertEquals(ppage.getProductPriceFromSearchResult(), "20", "failure message: product price not found");
-		soft.assertAll();
-
-	}
-
-	@Test(priority = 5, enabled = true)
-	public void validateDeleteFunctiongOfExistingRecord() throws IOException {
-		String pcode=ExcelUtils.readStringData("Product", 20, 2);
-		ppage.searchByProductCode(pcode);
-		ppage.clickOnProductDeleteIcon();
-		ppage.clickOnDeleteConformMsg();
-		ppage.searchByProductCode(pcode);
-		assertEquals(ppage.getProductSearchResultOfDeletedEntry(), "No matching records found",
-				"failure message:: failed to delete the store entry");
-	}
-	
+	  @Test(priority = 4, enabled = true) public void
+	  validateEditFunctionOfExistingRecord() throws IOException {
+	  
+			String pcode = excelutil.readStringData( 18, 2);
+			String pname = excelutil.readStringData(15, 2);
+			String psupplier = excelutil.readStringData(16, 2);
+			String pdescription = excelutil.readStringData(17, 2);
+	  
+			ppage.searchByProductCode(pcode);
+			ppage.clickOnEditProduct();
+			ppage.enterValueForProductName(pname);
+			ppage.selectValueForProductCategory(psupplier);
+			ppage.enterValueForProductDescription(pdescription);
+			ppage.clickOnEditProductSubmit();
+			ppage.searchByProductCode(pcode);
+	  SoftAssert soft = new SoftAssert();
+	  soft.assertEquals(ppage.getProductCodeFromSearchResult(), "1234",
+	  "failure message: product code not modified");
+	  soft.assertEquals(ppage.getProductNameFromSearchResult(), "Cake World",
+	  "failure message: product Name is modified");
+	  soft.assertEquals(ppage.getProductCategoryFromSearchResult(), "fruits",
+	  "failure message: product category is mofied");
+	  soft.assertEquals(ppage.getProductProductDescriptionFromSearchResult(),
+	  "hello", "failure message: product description not found");
+	  soft.assertEquals(ppage.getProductTaxFromSearchResult(), "20",
+	  "failure message: product tax not found");
+	  soft.assertEquals(ppage.getProductPriceFromSearchResult(), "20",
+	  "failure message: product price not found"); soft.assertAll();
+	  
+	  }
+	  
+	  @Test(priority = 5, enabled = true) public void
+	  validateDeleteFunctiongOfExistingRecord() throws IOException { String
+			pcode = excelutil.readStringData(20, 2);
+			ppage.searchByProductCode(pcode);
+			ppage.clickOnProductDeleteIcon();
+			ppage.clickOnDeleteConformMsg();
+			ppage.searchByProductCode(pcode);
+			assertEquals(ppage.getProductSearchResultOfDeletedEntry(), "No matching records found",
+					"failure message:: failed to delete the store entry");
+		}
 
 }
