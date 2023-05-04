@@ -1,6 +1,5 @@
 package com.test;
 
-import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
@@ -30,7 +29,7 @@ public class HomePageTest extends AutomationBase {
 		homepg=login.login(prop.getProperty("username"), prop.getProperty("password"));
 	}
 
-	@Test
+	@Test( enabled = true ,groups= {"smoke"})
 	public void validateMenuLinksDisplayedInHomePage() throws Exception {
 		
 		SoftAssert soft=new SoftAssert();

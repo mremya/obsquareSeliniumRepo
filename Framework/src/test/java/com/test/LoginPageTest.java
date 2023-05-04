@@ -23,7 +23,7 @@ Properties prop;
 HomePage hpage;
 
 
-@Test
+@Test( enabled = true ,groups= {"smoke"})
 public void validateLogin() throws Exception {
 	driver=getDriver();
  login=new LoginPage(driver);

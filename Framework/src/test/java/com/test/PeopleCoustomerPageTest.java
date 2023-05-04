@@ -3,6 +3,7 @@ package com.test;
 import static org.testng.Assert.assertEquals;
 
 import java.time.Duration;
+import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeMethod;
@@ -16,6 +17,7 @@ import com.pages.PeopleCustomerPage;
 import com.pages.PeopleWaiterPage;
 import com.pages.ProductPage;
 import com.pages.StoresPage;
+import com.utils.PropertyUtils;
 import com.utils.WebBrowserUtils;
 
 public class PeopleCoustomerPageTest extends AutomationBase {
@@ -28,22 +30,22 @@ public class PeopleCoustomerPageTest extends AutomationBase {
 	StoresPage storepage;
 	PeopleWaiterPage waiter;
 	PeopleCustomerPage customer;
+	Properties prop;
 
 	@BeforeMethod
 	public void prerun() throws Exception {
 		driver = getDriver();
 		login = new LoginPage(driver);
 		webbrowser = new WebBrowserUtils();
-		webbrowser.launchUrl(driver, "https://qalegend.com/restaurant/login");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		homepg = login.login("admin", "password");
+		prop=PropertyUtils.getProperty("config.properties");
+		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
 		ppage = homepg.navigateToProductPage();
 		storepage = ppage.navigateToStoresPage();
 		waiter = storepage.navigateToPeoplePage();
 		// customer= storepage.navigateToPeoplePage();
 	}
 
-	@Test(priority = 1, enabled = true)
+	@Test(priority = 1, enabled = true ,groups= {"sanity"})
 	public void validateTheElementInAddCustomerPopup() {
 		customer.clickOnCustomerLink();
 		customer.clickOnAddCustomerBtn();
@@ -57,7 +59,7 @@ public class PeopleCoustomerPageTest extends AutomationBase {
 
 	}
 
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 2, enabled = true ,groups= {"smoke","sanity"})
 	public void validateAddCustomerPopUpfields() {
 		customer.clickOnCustomerLink();
 		customer.clickOnAddCustomerBtn();
@@ -77,7 +79,7 @@ public class PeopleCoustomerPageTest extends AutomationBase {
 		soft.assertAll();
 	}
 
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 3, enabled = true, groups= {"smoke","regression"})
 	public void validateValueEntredInAddWaiterPopUpIsSaved() {
 		customer.clickOnCustomerLink();
 		customer.clickOnAddCustomerBtn();
@@ -99,7 +101,7 @@ public class PeopleCoustomerPageTest extends AutomationBase {
 		soft.assertAll();
 	}
 
-	@Test(priority = 4, enabled = true)
+	@Test(priority = 4, enabled = true ,groups= {"regression"})
 	public void modifyTheExistingRecordOfStores() {
 
 		customer.clickOnCustomerLink();
@@ -122,7 +124,7 @@ public class PeopleCoustomerPageTest extends AutomationBase {
 		soft.assertAll();
 	}
 
-	@Test(priority = 5, enabled = true)
+	@Test(priority = 5, enabled = true ,groups= {"smoke"})
 	public void validateDeleteFunctiongOfExistingRecord() {
 		customer.clickOnCustomerLink();
 		customer.searchByCustomerName("Anish");

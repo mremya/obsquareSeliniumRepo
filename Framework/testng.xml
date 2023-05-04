@@ -3,7 +3,7 @@
 <suite name="Suite">
 
   <test thread-count="5" name="ChromeTest">
-  <parameter name ="browserName" value="Firefox"></parameter>
+  <parameter name ="browserName" value="Chrome"></parameter>
   <classes>
  <class name="com.test.LoginPageTest"/>
  <class name="com.test.HomePageTest"/>
@@ -12,6 +12,7 @@
  <!-- <class name="com.test.PeopleWaiterPageTest"/> -->
  <!-- <class name="com.test.PeopleCustomerPageTest"/> -->
  <!-- <class name="com.test.PeopleSupplierPageTest"/> -->
+ <!--<class name ="com.test.ExpensePageTest"/>-->
  
   
   </classes>

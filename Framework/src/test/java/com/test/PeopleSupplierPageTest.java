@@ -3,6 +3,7 @@ package com.test;
 import static org.testng.Assert.assertEquals;
 
 import java.time.Duration;
+import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeMethod;
@@ -17,6 +18,7 @@ import com.pages.PeopleSupplierPage;
 import com.pages.PeopleWaiterPage;
 import com.pages.ProductPage;
 import com.pages.StoresPage;
+import com.utils.PropertyUtils;
 import com.utils.WebBrowserUtils;
 
 public class PeopleSupplierPageTest extends AutomationBase {
@@ -29,22 +31,22 @@ public class PeopleSupplierPageTest extends AutomationBase {
 	StoresPage storepage;
 	PeopleWaiterPage waiter;
 	PeopleSupplierPage supplier;
+	Properties prop;
 
 	@BeforeMethod
 	public void prerun() throws Exception {
 		driver = getDriver();
 		login = new LoginPage(driver);
 		webbrowser = new WebBrowserUtils();
-		webbrowser.launchUrl(driver, "https://qalegend.com/restaurant/login");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		homepg = login.login("admin", "password");
+		prop=PropertyUtils.getProperty("config.properties");
+		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
 		ppage = homepg.navigateToProductPage();
 		storepage = ppage.navigateToStoresPage();
 		waiter = storepage.navigateToPeoplePage();
 
 	}
 
-	@Test(priority = 1, enabled = true)
+	@Test(priority = 1, enabled = true ,groups= {"sanity"})
 	public void validateTheElementInAddSupplierPopup() {
 		supplier.clickOnSuplierLink();
 		supplier.clickOnAddSupplierBtn();
@@ -57,7 +59,7 @@ public class PeopleSupplierPageTest extends AutomationBase {
 
 	}
 
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 2, enabled = true ,groups= {"regression"})
 	public void validateAddSupplierPopUpfields() {
 		supplier.clickOnSuplierLink();
 		supplier.clickOnAddSupplierBtn();
@@ -77,7 +79,7 @@ public class PeopleSupplierPageTest extends AutomationBase {
 		soft.assertAll();
 	}
 
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 3, enabled = true ,groups= {"sanity"})
 	public void validateValueEntredInAddSupplierPopUpIsSaved() {
 		supplier.clickOnSuplierLink();
 		supplier.clickOnAddSupplierBtn();
@@ -98,7 +100,7 @@ public class PeopleSupplierPageTest extends AutomationBase {
 		soft.assertAll();
 	}
 
-	@Test(priority = 4, enabled = true)
+	@Test(priority = 4, enabled = true ,groups= {"smoke"})
 	public void modifyTheExistingRecordOfSupplier() {
 		supplier.clickOnSuplierLink();
 		supplier.searchBySupplierName("Rakesh");
@@ -121,7 +123,7 @@ public class PeopleSupplierPageTest extends AutomationBase {
 		soft.assertAll();
 	}
 	
-	@Test(priority = 5, enabled = true)
+	@Test(priority = 5, enabled = true ,groups= {"smoke"})
 	public void validateDeleteFunctiongOfExistingRecord() {
 		supplier.clickOnSuplierLink();
 		supplier.searchBySupplierName("Rakesh");

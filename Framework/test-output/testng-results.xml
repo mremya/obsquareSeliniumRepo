@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="4" total="8" passed="0" failed="0" skipped="4">
+<testng-results ignored="4" total="11" passed="0" failed="0" skipped="7">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-01T14:50:57 IST" name="Suite" finished-at="2023-05-01T14:51:39 IST" duration-ms="41677">
+  <suite started-at="2023-05-04T20:58:49 IST" name="Suite" finished-at="2023-05-04T20:59:56 IST" duration-ms="67570">
     <groups>
+      <group name="smoke">
+        <method signature="HomePageTest.validateMenuLinksDisplayedInHomePage()[pri:0, instance:com.test.HomePageTest@71d44a3]" name="validateMenuLinksDisplayedInHomePage" class="com.test.HomePageTest"/>
+        <method signature="LoginPageTest.validateLogin()[pri:0, instance:com.test.LoginPageTest@55182842]" name="validateLogin" class="com.test.LoginPageTest"/>
+      </group> <!-- smoke -->
     </groups>
-    <test started-at="2023-05-01T14:50:57 IST" name="ChromeTest" finished-at="2023-05-01T14:51:39 IST" duration-ms="41677">
+    <test started-at="2023-05-04T20:58:49 IST" name="ChromeTest" finished-at="2023-05-04T20:59:56 IST" duration-ms="67570">
       <class name="com.test.HomePageTest">
-        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.HomePageTest@4218d6a3]" started-at="2023-05-01T14:51:39 IST" name="prerun" finished-at="2023-05-01T14:51:39 IST" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.HomePageTest@71d44a3]" started-at="2023-05-04T20:59:56 IST" name="prerun" finished-at="2023-05-04T20:59:56 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- prerun -->
-        <test-method signature="validateMenuLinksDisplayedInHomePage()[pri:0, instance:com.test.HomePageTest@4218d6a3]" started-at="2023-05-01T14:51:39 IST" name="validateMenuLinksDisplayedInHomePage" finished-at="2023-05-01T14:51:39 IST" duration-ms="0" status="SKIP">
+        <test-method signature="validateMenuLinksDisplayedInHomePage()[pri:0, instance:com.test.HomePageTest@71d44a3]" started-at="2023-05-04T20:59:56 IST" name="validateMenuLinksDisplayedInHomePage" finished-at="2023-05-04T20:59:56 IST" duration-ms="0" status="SKIP">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[java.lang.NullPointerException: Cannot invoke "com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)" because "this.webbrowser" is null]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Exception: java.lang.NullPointerException: Cannot invoke "com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)" because "this.webbrowser" is null
-at com.base.AutomationBase.launchFirefoxBrowser(AutomationBase.java:84)
-at com.base.AutomationBase.launchBrowser(AutomationBase.java:52)
+at com.base.AutomationBase.launchChromeBrowser(AutomationBase.java:73)
+at com.base.AutomationBase.launchBrowser(AutomationBase.java:44)
 at com.base.AutomationBase.preRun(AutomationBase.java:32)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
@@ -46,7 +50,7 @@ at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 Caused by: java.lang.NullPointerException: Cannot invoke "com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)" because "this.webbrowser" is null
-at com.base.AutomationBase.launchFirefoxBrowser(AutomationBase.java:82)
+at com.base.AutomationBase.launchChromeBrowser(AutomationBase.java:71)
 ... 26 more
 ]]>
             </full-stacktrace>
@@ -56,19 +60,19 @@ at com.base.AutomationBase.launchFirefoxBrowser(AutomationBase.java:82)
         </test-method> <!-- validateMenuLinksDisplayedInHomePage -->
       </class> <!-- com.test.HomePageTest -->
       <class name="com.test.ProductPageTest">
-        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.ProductPageTest@76505305]" started-at="2023-05-01T14:51:39 IST" name="prerun" finished-at="2023-05-01T14:51:39 IST" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.ProductPageTest@7b98f307]" started-at="2023-05-04T20:59:56 IST" name="prerun" finished-at="2023-05-04T20:59:56 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- prerun -->
-        <test-method signature="validateTheElementInAddProductPopup()[pri:1, instance:com.test.ProductPageTest@76505305]" started-at="2023-05-01T14:51:39 IST" name="validateTheElementInAddProductPopup" finished-at="2023-05-01T14:51:39 IST" duration-ms="0" status="SKIP">
+        <test-method signature="validateTheElementInAddProductPopup()[pri:1, instance:com.test.ProductPageTest@7b98f307]" started-at="2023-05-04T20:59:56 IST" name="validateTheElementInAddProductPopup" finished-at="2023-05-04T20:59:56 IST" duration-ms="1" status="SKIP">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[java.lang.NullPointerException: Cannot invoke "com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)" because "this.webbrowser" is null]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Exception: java.lang.NullPointerException: Cannot invoke "com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)" because "this.webbrowser" is null
-at com.base.AutomationBase.launchFirefoxBrowser(AutomationBase.java:84)
-at com.base.AutomationBase.launchBrowser(AutomationBase.java:52)
+at com.base.AutomationBase.launchChromeBrowser(AutomationBase.java:73)
+at com.base.AutomationBase.launchBrowser(AutomationBase.java:44)
 at com.base.AutomationBase.preRun(AutomationBase.java:32)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
@@ -95,7 +99,7 @@ at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 Caused by: java.lang.NullPointerException: Cannot invoke "com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)" because "this.webbrowser" is null
-at com.base.AutomationBase.launchFirefoxBrowser(AutomationBase.java:82)
+at com.base.AutomationBase.launchChromeBrowser(AutomationBase.java:71)
 ... 26 more
 ]]>
             </full-stacktrace>
@@ -103,19 +107,19 @@ at com.base.AutomationBase.launchFirefoxBrowser(AutomationBase.java:82)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateTheElementInAddProductPopup -->
-        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.ProductPageTest@76505305]" started-at="2023-05-01T14:51:39 IST" name="prerun" finished-at="2023-05-01T14:51:39 IST" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.ProductPageTest@7b98f307]" started-at="2023-05-04T20:59:56 IST" name="prerun" finished-at="2023-05-04T20:59:56 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- prerun -->
-        <test-method signature="validatenAddStoresPopUpfields()[pri:2, instance:com.test.ProductPageTest@76505305]" started-at="2023-05-01T14:51:39 IST" name="validatenAddStoresPopUpfields" finished-at="2023-05-01T14:51:39 IST" duration-ms="0" status="SKIP">
+        <test-method signature="validatenAddStoresPopUpfields()[pri:2, instance:com.test.ProductPageTest@7b98f307]" started-at="2023-05-04T20:59:56 IST" name="validatenAddStoresPopUpfields" finished-at="2023-05-04T20:59:56 IST" duration-ms="1" status="SKIP">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[java.lang.NullPointerException: Cannot invoke "com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)" because "this.webbrowser" is null]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Exception: java.lang.NullPointerException: Cannot invoke "com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)" because "this.webbrowser" is null
-at com.base.AutomationBase.launchFirefoxBrowser(AutomationBase.java:84)
-at com.base.AutomationBase.launchBrowser(AutomationBase.java:52)
+at com.base.AutomationBase.launchChromeBrowser(AutomationBase.java:73)
+at com.base.AutomationBase.launchBrowser(AutomationBase.java:44)
 at com.base.AutomationBase.preRun(AutomationBase.java:32)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
@@ -142,7 +146,7 @@ at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 Caused by: java.lang.NullPointerException: Cannot invoke "com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)" because "this.webbrowser" is null
-at com.base.AutomationBase.launchFirefoxBrowser(AutomationBase.java:82)
+at com.base.AutomationBase.launchChromeBrowser(AutomationBase.java:71)
 ... 26 more
 ]]>
             </full-stacktrace>
@@ -150,13 +154,154 @@ at com.base.AutomationBase.launchFirefoxBrowser(AutomationBase.java:82)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validatenAddStoresPopUpfields -->
+        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.ProductPageTest@7b98f307]" started-at="2023-05-04T20:59:56 IST" name="prerun" finished-at="2023-05-04T20:59:56 IST" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- prerun -->
+        <test-method signature="validateValueEntredInAddProductPopUpIsSaved()[pri:3, instance:com.test.ProductPageTest@7b98f307]" started-at="2023-05-04T20:59:56 IST" name="validateValueEntredInAddProductPopUpIsSaved" finished-at="2023-05-04T20:59:56 IST" duration-ms="1" status="SKIP">
+          <exception class="java.lang.Exception">
+            <message>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)" because "this.webbrowser" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Exception: java.lang.NullPointerException: Cannot invoke "com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)" because "this.webbrowser" is null
+at com.base.AutomationBase.launchChromeBrowser(AutomationBase.java:73)
+at com.base.AutomationBase.launchBrowser(AutomationBase.java:44)
+at com.base.AutomationBase.preRun(AutomationBase.java:32)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
+at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:644)
+at org.testng.TestRunner.beforeRun(TestRunner.java:633)
+at org.testng.TestRunner.run(TestRunner.java:595)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.NullPointerException: Cannot invoke "com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)" because "this.webbrowser" is null
+at com.base.AutomationBase.launchChromeBrowser(AutomationBase.java:71)
+... 26 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Exception -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateValueEntredInAddProductPopUpIsSaved -->
+        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.ProductPageTest@7b98f307]" started-at="2023-05-04T20:59:56 IST" name="prerun" finished-at="2023-05-04T20:59:56 IST" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- prerun -->
+        <test-method signature="validateEditFunctionOfExistingRecord()[pri:4, instance:com.test.ProductPageTest@7b98f307]" started-at="2023-05-04T20:59:56 IST" name="validateEditFunctionOfExistingRecord" finished-at="2023-05-04T20:59:56 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Exception">
+            <message>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)" because "this.webbrowser" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Exception: java.lang.NullPointerException: Cannot invoke "com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)" because "this.webbrowser" is null
+at com.base.AutomationBase.launchChromeBrowser(AutomationBase.java:73)
+at com.base.AutomationBase.launchBrowser(AutomationBase.java:44)
+at com.base.AutomationBase.preRun(AutomationBase.java:32)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
+at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:644)
+at org.testng.TestRunner.beforeRun(TestRunner.java:633)
+at org.testng.TestRunner.run(TestRunner.java:595)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.NullPointerException: Cannot invoke "com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)" because "this.webbrowser" is null
+at com.base.AutomationBase.launchChromeBrowser(AutomationBase.java:71)
+... 26 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Exception -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateEditFunctionOfExistingRecord -->
+        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.ProductPageTest@7b98f307]" started-at="2023-05-04T20:59:56 IST" name="prerun" finished-at="2023-05-04T20:59:56 IST" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- prerun -->
+        <test-method signature="validateDeleteFunctiongOfExistingRecord()[pri:5, instance:com.test.ProductPageTest@7b98f307]" started-at="2023-05-04T20:59:56 IST" name="validateDeleteFunctiongOfExistingRecord" finished-at="2023-05-04T20:59:56 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Exception">
+            <message>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)" because "this.webbrowser" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Exception: java.lang.NullPointerException: Cannot invoke "com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)" because "this.webbrowser" is null
+at com.base.AutomationBase.launchChromeBrowser(AutomationBase.java:73)
+at com.base.AutomationBase.launchBrowser(AutomationBase.java:44)
+at com.base.AutomationBase.preRun(AutomationBase.java:32)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
+at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:644)
+at org.testng.TestRunner.beforeRun(TestRunner.java:633)
+at org.testng.TestRunner.run(TestRunner.java:595)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.NullPointerException: Cannot invoke "com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)" because "this.webbrowser" is null
+at com.base.AutomationBase.launchChromeBrowser(AutomationBase.java:71)
+... 26 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Exception -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateDeleteFunctiongOfExistingRecord -->
       </class> <!-- com.test.ProductPageTest -->
       <class name="com.test.LoginPageTest">
-        <test-method is-config="true" signature="preRun(java.lang.String)[pri:0, instance:com.test.LoginPageTest@7b2bbc3]" started-at="2023-05-01T14:50:57 IST" name="preRun" finished-at="2023-05-01T14:51:38 IST" duration-ms="40611" status="FAIL">
+        <test-method is-config="true" signature="preRun(java.lang.String)[pri:0, instance:com.test.LoginPageTest@55182842]" started-at="2023-05-04T20:58:49 IST" name="preRun" finished-at="2023-05-04T20:59:56 IST" duration-ms="67098" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Firefox]]>
+                <![CDATA[Chrome]]>
               </value>
             </param>
           </params>
@@ -166,8 +311,8 @@ at com.base.AutomationBase.launchFirefoxBrowser(AutomationBase.java:82)
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Exception: java.lang.NullPointerException: Cannot invoke "com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)" because "this.webbrowser" is null
-at com.base.AutomationBase.launchFirefoxBrowser(AutomationBase.java:84)
-at com.base.AutomationBase.launchBrowser(AutomationBase.java:52)
+at com.base.AutomationBase.launchChromeBrowser(AutomationBase.java:73)
+at com.base.AutomationBase.launchBrowser(AutomationBase.java:44)
 at com.base.AutomationBase.preRun(AutomationBase.java:32)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
@@ -194,7 +339,7 @@ at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 Caused by: java.lang.NullPointerException: Cannot invoke "com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)" because "this.webbrowser" is null
-at com.base.AutomationBase.launchFirefoxBrowser(AutomationBase.java:82)
+at com.base.AutomationBase.launchChromeBrowser(AutomationBase.java:71)
 ... 26 more
 ]]>
             </full-stacktrace>
@@ -202,15 +347,15 @@ at com.base.AutomationBase.launchFirefoxBrowser(AutomationBase.java:82)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preRun -->
-        <test-method signature="validateLogin()[pri:0, instance:com.test.LoginPageTest@7b2bbc3]" started-at="2023-05-01T14:51:38 IST" name="validateLogin" finished-at="2023-05-01T14:51:38 IST" duration-ms="0" status="SKIP">
+        <test-method signature="validateLogin()[pri:0, instance:com.test.LoginPageTest@55182842]" started-at="2023-05-04T20:59:56 IST" name="validateLogin" finished-at="2023-05-04T20:59:56 IST" duration-ms="0" status="SKIP">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[java.lang.NullPointerException: Cannot invoke "com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)" because "this.webbrowser" is null]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Exception: java.lang.NullPointerException: Cannot invoke "com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)" because "this.webbrowser" is null
-at com.base.AutomationBase.launchFirefoxBrowser(AutomationBase.java:84)
-at com.base.AutomationBase.launchBrowser(AutomationBase.java:52)
+at com.base.AutomationBase.launchChromeBrowser(AutomationBase.java:73)
+at com.base.AutomationBase.launchBrowser(AutomationBase.java:44)
 at com.base.AutomationBase.preRun(AutomationBase.java:32)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
@@ -237,7 +382,7 @@ at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 Caused by: java.lang.NullPointerException: Cannot invoke "com.utils.WebBrowserUtils.maximizeWebPageSize(org.openqa.selenium.WebDriver)" because "this.webbrowser" is null
-at com.base.AutomationBase.launchFirefoxBrowser(AutomationBase.java:82)
+at com.base.AutomationBase.launchChromeBrowser(AutomationBase.java:71)
 ... 26 more
 ]]>
             </full-stacktrace>
@@ -245,7 +390,7 @@ at com.base.AutomationBase.launchFirefoxBrowser(AutomationBase.java:82)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateLogin -->
-        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:com.test.LoginPageTest@7b2bbc3]" started-at="2023-05-01T14:51:39 IST" name="quitBrowser" finished-at="2023-05-01T14:51:39 IST" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:com.test.LoginPageTest@55182842]" started-at="2023-05-04T20:59:56 IST" name="quitBrowser" finished-at="2023-05-04T20:59:56 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitBrowser -->
