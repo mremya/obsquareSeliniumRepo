@@ -4,7 +4,6 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
@@ -19,25 +18,26 @@ import com.utils.WebBrowserUtils;
 public class AutomationBase {
 
 	static WebDriver driver;
-	
+
 	WebBrowserUtils webbrowser;
 	LoginPage login;
 	Properties prop;
 
-
-
 	@BeforeTest
 	@Parameters("browserName")
-	public void preRun(String browserName) throws Exception {
-		launchBrowser(browserName);
-		login =new LoginPage(driver);
-		webbrowser= new WebBrowserUtils();
-		prop=PropertyUtils.getProperty("config.properties");
-		webbrowser.launchUrl(driver,prop.getProperty("url"));
+	public void preLaunch(String browserName) {
+		try {
+			launchBrowser(browserName);
+			login = new LoginPage(driver);
+			webbrowser = new WebBrowserUtils();
+
+			prop = PropertyUtils.getProperty("config.properties");
+		} catch (Exception e) {
+			throw new RuntimeException("Error while reading config property file");
+		}
+		webbrowser.launchUrl(driver, prop.getProperty("url"));
 	}
 
-	
-	
 	public void launchBrowser(String browserName) throws Exception {
 		switch (browserName) {
 		case "Chrome":
@@ -53,55 +53,39 @@ public class AutomationBase {
 			break;
 
 		default:
-			System.out.println( AutomationConstants.browserNameCheck);
-			
-			break;
+			throw new RuntimeException(AutomationConstants.browserNameCheck);
+
 		}
 
 	}
 
-	private void launchChromeBrowser() throws Exception {
-		try {
+	private void launchChromeBrowser() {
 
-			ChromeOptions ops = new ChromeOptions();
-			  ops.addArguments("--remote-allow-origins=*");
-			  WebDriver driver = new ChromeDriver(ops);
-			// driver=new ChromeDriver();
-			
-			  webbrowser.maximizeWebPageSize(driver);
-		} catch (Exception e) {
-			throw new Exception(e);
+		driver = new ChromeDriver();
+		webbrowser.maximizeWebPageSize(driver);
 
-		}
 	}
 
-	private void launchFirefoxBrowser() throws Exception {
-		try {
+	private void launchFirefoxBrowser() {
 
-			driver = new FirefoxDriver();
-			webbrowser.maximizeWebPageSize(driver);
-		} catch (Exception e) {
-			throw new Exception(e);
+		driver = new FirefoxDriver();
+		webbrowser.maximizeWebPageSize(driver);
 
-		}
 	}
 
-	private void launchEdgeBrowser() throws Exception {
-		try {
+	private void launchEdgeBrowser() {
 
-			driver = new EdgeDriver();
-			webbrowser.maximizeWebPageSize(driver);
-		} catch (Exception e) {
-			throw new Exception(e);
+		driver = new EdgeDriver();
+		webbrowser.maximizeWebPageSize(driver);
 
-		}
 	}
 
-	public  WebDriver getDriver() {// to return the driver
+	public WebDriver getDriver() {// to return the driver
 		return driver;
 	}
-@AfterTest
+
+	@AfterTest
 	public void quitBrowser() {
-	webbrowser.closeCurrentWebPage(driver);
+		webbrowser.closeCurrentWebPage(driver);
 	}
 }

@@ -10,8 +10,8 @@
           <include name="prerun"/>
           <include name="validateDeleteFunctiongOfExistingRecord"/>
           <include name="quitBrowser"/>
+          <include name="preLaunch"/>
           <include name="validateValueEntredInAddProductPopUpIsSaved"/>
-          <include name="preRun"/>
           <include name="validateEditFunctionOfExistingRecord"/>
           <include name="validatenAddStoresPopUpfields"/>
         </methods>
@@ -19,14 +19,14 @@
       <class name="com.test.LoginPageTest">
         <methods>
           <include name="quitBrowser"/>
-          <include name="preRun"/>
+          <include name="preLaunch"/>
           <include name="validateLogin"/>
         </methods>
       </class> <!-- com.test.LoginPageTest -->
       <class name="com.test.HomePageTest">
         <methods>
           <include name="quitBrowser"/>
-          <include name="preRun"/>
+          <include name="preLaunch"/>
           <include name="prerun"/>
           <include name="validateMenuLinksDisplayedInHomePage"/>
         </methods>

@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.base.AutomationBase;
+import com.constants.AutomationConstants;
 import com.pages.HomePage;
 import com.pages.LoginPage;
 import com.utils.PropertyUtils;
@@ -33,16 +34,16 @@ public class HomePageTest extends AutomationBase {
 	public void validateMenuLinksDisplayedInHomePage() throws Exception {
 		
 		SoftAssert soft=new SoftAssert();
-		soft.assertTrue(homepg.isProductLinkDisplayed(), "Failure message::productlink is not displayed");
-		soft.assertTrue(homepg.isStoresLinkDisplayed(), "Failure message::storelink is not displayed");
-		soft.assertTrue(homepg.isPeopleLinkDisplayed(),"Failure message::peoplelink is not displayed");
-		soft.assertTrue(homepg.isSalesLinkDisplayed(),"Failure message::saleslink is not displayed");
-		soft.assertTrue(homepg.isExpenseLinkDisplayed(),"Failure message::Expenselink is not displayed");
-		soft.assertTrue(homepg.isCategoryLinkDisplayed(),"Failure message::categorylink is not displayed");
-		soft.assertTrue(homepg.isReportLinkDisplayed(),"Failure message::Reportlink is not displayed");
-		soft.assertTrue(homepg.isSettingsLinkDisplayed(),"Failure message::Settinglink is not displayed");
-		soft.assertTrue(homepg.isLogOutDisplayed(),"Failure message::logout link is not displayed");
-		soft.assertTrue(homepg.isLanguageLinkDisplayed(),"Failure message::language link is not displayed");
+		soft.assertTrue(homepg.isProductLinkDisplayed(),AutomationConstants.linkDisplayCkeck);
+		soft.assertTrue(homepg.isStoresLinkDisplayed(),AutomationConstants.linkDisplayCkeck);
+		soft.assertTrue(homepg.isPeopleLinkDisplayed(),AutomationConstants.linkDisplayCkeck);
+		soft.assertTrue(homepg.isSalesLinkDisplayed(),AutomationConstants.linkDisplayCkeck);
+		soft.assertTrue(homepg.isExpenseLinkDisplayed(),AutomationConstants.linkDisplayCkeck);
+		soft.assertTrue(homepg.isCategoryLinkDisplayed(),AutomationConstants.linkDisplayCkeck);
+		soft.assertTrue(homepg.isReportLinkDisplayed(),AutomationConstants.linkDisplayCkeck);
+		soft.assertTrue(homepg.isSettingsLinkDisplayed(),AutomationConstants.linkDisplayCkeck);
+		soft.assertTrue(homepg.isLogOutDisplayed(),AutomationConstants.linkDisplayCkeck);
+		soft.assertTrue(homepg.isLanguageLinkDisplayed(),AutomationConstants.linkDisplayCkeck);
 		soft.assertAll();
 	}
 	}
