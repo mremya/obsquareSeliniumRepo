@@ -14,6 +14,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.base.AutomationBase;
+import com.constants.AutomationConstants;
 import com.pages.ExpenseDataSupplier;
 import com.pages.ExpensePage;
 import com.pages.HomePage;
@@ -59,11 +60,11 @@ public class ExpensePageTest extends AutomationBase {
 		expensep.clickOnAddExpense();
 
 		SoftAssert soft = new SoftAssert();
-	soft.assertTrue(expensep.isExpenseDateDisplayed(), "Failure message::expense  Date is not displayed");
-		soft.assertTrue(expensep.isExpenseReferenceDisplayed(), "Failure message::expense Reference  is not displayed");
-		soft.assertTrue(expensep.isExpenseCategoryDisplayed(), "Failure message::expense category  is not displayed");
-		soft.assertTrue(expensep.isExpenseStoreDisplayed(), "Failure message::expense Store  is not displayed");
-		soft.assertTrue(expensep.isExpenseAmountDisplayed(), "Failure message::expense  Amount  is not displayed");
+	soft.assertTrue(expensep.isExpenseDateDisplayed(), AutomationConstants.addDisplayedErrorMsg);
+		soft.assertTrue(expensep.isExpenseReferenceDisplayed(), AutomationConstants.addDisplayedErrorMsg);
+		soft.assertTrue(expensep.isExpenseCategoryDisplayed(), AutomationConstants.addDisplayedErrorMsg);
+		soft.assertTrue(expensep.isExpenseStoreDisplayed(), AutomationConstants.addDisplayedErrorMsg);
+		soft.assertTrue(expensep.isExpenseAmountDisplayed(), AutomationConstants.addDisplayedErrorMsg);
 		
 		soft.assertAll();
 
@@ -78,8 +79,8 @@ public class ExpensePageTest extends AutomationBase {
 		expensep.clickOnAddExpenseSubmit();
 		expensep.searchByExpenseStore("MNC");
 		SoftAssert soft = new SoftAssert();
-		soft.assertEquals(expensep.getExpensStoreFromSearchResult(), "MNC", "failure message: expense store not found");
-		soft.assertEquals(expensep.getExpensAmountFromSearchResult(), "10", "failure message: expense amount is not in numeric format");
+		soft.assertEquals(expensep.getExpensStoreFromSearchResult(), "MNC",AutomationConstants.addFeildValidateErrorMessage);
+		soft.assertEquals(expensep.getExpensAmountFromSearchResult(), "10", AutomationConstants.addFeildValidateErrorMessage);
 		soft.assertAll();
 	
 	}
@@ -94,7 +95,7 @@ public class ExpensePageTest extends AutomationBase {
 		expensep.clickOnAddExpenseSubmit();
 		expensep.searchByExpenseStore("MNC");
 	SoftAssert soft = new SoftAssert();
-	soft.assertEquals(expensep.getExpensDateFromSearchResult(), "04\04\2023", "failure message: expense reference data mismatch");
+	soft.assertEquals(expensep.getExpensDateFromSearchResult(), "04\04\2023", AutomationConstants.);
 	soft.assertEquals(expensep.getExpensReferenceFromSearchResult(), "abc", "failure message: expense reference data mismatch");
 	soft.assertEquals(expensep.getExpensCategoryFromSearchResult(), "Pasta", "failure message: expense category data mismatch");
 	soft.assertEquals(expensep.getExpensAmountFromSearchResult(), "1200", "failure message: expense amount data mismatch");
@@ -130,7 +131,7 @@ public class ExpensePageTest extends AutomationBase {
 		expensep.clickOnDeleteConformMsg();
 		expensep.clickOnDeleteOk();
 		expensep.selectValueForExpenseStore("Shibina");
-		assertEquals(storepage.getTheSearchResultOfDeletedEntry(), "No matching records found","failure message:: failed to delete the Expense entry");;
+		assertEquals(storepage.getTheSearchResultOfDeletedEntry(), "No matching records found",AutomationConstants.deleteCheck);
 		
 	}
 	

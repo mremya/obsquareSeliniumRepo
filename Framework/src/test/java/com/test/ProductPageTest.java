@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.base.AutomationBase;
+import com.constants.AutomationConstants;
 import com.pages.HomePage;
 import com.pages.LoginPage;
 import com.pages.ProductPage;
@@ -25,7 +26,7 @@ public class ProductPageTest extends AutomationBase {
 	WebDriver driver;
 	WebBrowserUtils webbrowser;
 	LoginPage login;
-	HomePage homepg;
+	HomePage hpage;
 	ProductPage ppage;
 	Properties prop;
 
@@ -34,11 +35,13 @@ public class ProductPageTest extends AutomationBase {
 		excelutil = new ExcelUtils();
 		driver = getDriver();
 		login = new LoginPage(driver);
+		hpage = new HomePage(driver);
+		ppage = new ProductPage(driver);
+		prop = new Properties();
 		webbrowser = new WebBrowserUtils();
-
 		prop = PropertyUtils.getProperty("config.properties");
 		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
-		ppage = homepg.navigateToProductPage();
+		ppage = hpage.navigateToProductPage();
 
 	}
 
@@ -48,21 +51,20 @@ public class ProductPageTest extends AutomationBase {
 		ppage.clickOnAddProduct();
 
 		SoftAssert soft = new SoftAssert();
-		soft.assertTrue(ppage.isProductTypeDisplayed(), "Failure message::product type is not displayed");
-		soft.assertTrue(ppage.isproductCodeDisplayed(), "Failure message::product code  is not displayed");
-		soft.assertTrue(ppage.isProductCategoryDisplayed(), "Failure message::product category  is not displayed");
-		soft.assertTrue(ppage.isProductNameDisplayed(), "Failure message::product name  is not displayed");
-		soft.assertTrue(ppage.isProductSupplierDisplayed(), "Failure message::product supplier  is not displayed");
-		soft.assertTrue(ppage.isProductPurchasePriceDisplayed(),
-				"Failure message::product purchase price  is not displayed");
-		soft.assertTrue(ppage.isProductUnitDisplayed(), "Failure message::product unit  is not displayed");
-		soft.assertTrue(ppage.isProductPriceDisplayed(), "Failure message::product price  is not displayed");
-		soft.assertTrue(ppage.isProductTaxDisplayed(), "Failure message::product tax  is not displayed");
-		soft.assertTrue(ppage.isProductTaxMethodDisplayed(), "Failure message::product tax Method is not displayed");
-		soft.assertTrue(ppage.isProductAlertQuantityDisplayed(),
-				"Failure message::product alert quantity  is not displayed");
-		soft.assertTrue(ppage.isProductOptionsDisplayed(), "Failure message::product option is not displayed");
+		soft.assertTrue(ppage.isProductTypeDisplayed(), AutomationConstants.addDisplayedErrorMsg);
+		soft.assertTrue(ppage.isproductCodeDisplayed(), AutomationConstants.addDisplayedErrorMsg);
+		soft.assertTrue(ppage.isProductCategoryDisplayed(), AutomationConstants.addDisplayedErrorMsg);
+		soft.assertTrue(ppage.isProductNameDisplayed(), AutomationConstants.addDisplayedErrorMsg);
+		soft.assertTrue(ppage.isProductSupplierDisplayed(), AutomationConstants.addDisplayedErrorMsg);
+		soft.assertTrue(ppage.isProductPurchasePriceDisplayed(), AutomationConstants.addDisplayedErrorMsg);
+		soft.assertTrue(ppage.isProductUnitDisplayed(), AutomationConstants.addDisplayedErrorMsg);
+		soft.assertTrue(ppage.isProductPriceDisplayed(), AutomationConstants.addDisplayedErrorMsg);
+		soft.assertTrue(ppage.isProductTaxDisplayed(), AutomationConstants.addDisplayedErrorMsg);
+		soft.assertTrue(ppage.isProductTaxMethodDisplayed(), AutomationConstants.addDisplayedErrorMsg);
+		soft.assertTrue(ppage.isProductAlertQuantityDisplayed(), AutomationConstants.addDisplayedErrorMsg);
+		soft.assertTrue(ppage.isProductOptionsDisplayed(), AutomationConstants.addDisplayedErrorMsg);
 		soft.assertAll();
+		ppage.clickOnAddProductClose();
 
 	}
 
@@ -78,15 +80,12 @@ public class ProductPageTest extends AutomationBase {
 		ppage.clickOnAddProductSubmit();
 		ppage.searchByProductCode("111");
 		SoftAssert soft = new SoftAssert();
-		soft.assertEquals(ppage.getProductCodeFromSearchResult(), "111", "failure message: product code not found");
-		soft.assertEquals(ppage.getProductNameFromSearchResult(), "maggi", "failure message: product Name not found");
+		soft.assertEquals(ppage.getProductCodeFromSearchResult(), "111", AutomationConstants.addFeildValidateErrorMessage);
+		soft.assertEquals(ppage.getProductNameFromSearchResult(), "maggi", AutomationConstants.addFeildValidateErrorMessage);
+		soft.assertEquals(ppage.getProductTaxFromSearchResult(), "abc", AutomationConstants.addFeildValidateErrorMessage);
+		soft.assertEquals(ppage.getProductPriceFromSearchResult(), "abc", AutomationConstants.addFeildValidateErrorMessage);
+		soft.assertAll();
 
-		soft.assertEquals(ppage.getProductTaxFromSearchResult(), "abc",
-				"failure message: product tax not in format  found");
-		soft.assertEquals(ppage.getProductPriceFromSearchResult(), "abc",
-				"failure message: product price not is in format found");
-		soft.assertAll();
-		soft.assertAll();
 	}
 
 	@Test(priority = 3, enabled = true)
@@ -169,7 +168,7 @@ public class ProductPageTest extends AutomationBase {
 		ppage.clickOnDeleteConformMsg();
 		ppage.searchByProductCode(pcode);
 		assertEquals(ppage.getProductSearchResultOfDeletedEntry(), "No matching records found",
-				"failure message:: failed to delete the product entry");
+				AutomationConstants.deleteCheck);
 	}
 
 }

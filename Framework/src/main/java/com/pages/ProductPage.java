@@ -18,6 +18,10 @@ public class ProductPage {
 	@FindBy( xpath ="(//select[@class='form-control'])[2]")
 	WebElement productType;
 	
+	
+	@FindBy( xpath ="(//button[@class='btn btn-default'])[2]")
+	WebElement addProductCloseBtn;
+	
 	@FindBy(xpath="//input[@id='ProductCode']")
 	WebElement  productCode;
 	
@@ -262,6 +266,10 @@ public void clickOnAddProductSubmit() {
 	 element.clickOnTheElement(driver, addProduct_submit);
 }
 	
+public void clickOnAddProductClose() {
+	 element.clickOnTheElement(driver, addProductCloseBtn);
+}
+
 public String getProductCodeFromSearchResult() {
 	return element.getTextFunction(driver, productcode_searchresult);
 	

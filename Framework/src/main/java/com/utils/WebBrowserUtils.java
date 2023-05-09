@@ -130,13 +130,12 @@ public class WebBrowserUtils {
 	 * 
 	 * @param driver
 	 */
-	public void maximizeWebPageSize(WebDriver driver) {
+	public void maximizeWebPage(WebDriver driver) {
 
 		try {
 			driver.manage().window().maximize();
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
-			System.out.println(e.getCause());
+			throw new RuntimeException("Error while Maximize the window");
 		}
 	}
 

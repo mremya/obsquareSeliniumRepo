@@ -62,21 +62,22 @@ public class AutomationBase {
 	private void launchChromeBrowser() {
 
 		driver = new ChromeDriver();
-		webbrowser.maximizeWebPageSize(driver);
+		driver.manage().window().maximize();
+		//webbrowser.maximizeWebPageSize(driver);
 
 	}
 
 	private void launchFirefoxBrowser() {
 
 		driver = new FirefoxDriver();
-		webbrowser.maximizeWebPageSize(driver);
+		//webbrowser.maximizeWebPageSize(driver);
 
 	}
 
 	private void launchEdgeBrowser() {
 
 		driver = new EdgeDriver();
-		webbrowser.maximizeWebPageSize(driver);
+		//webbrowser.maximizeWebPageSize(driver);
 
 	}
 
@@ -84,7 +85,7 @@ public class AutomationBase {
 		return driver;
 	}
 
-	@AfterTest
+	//@AfterTest
 	public void quitBrowser() {
 		webbrowser.closeCurrentWebPage(driver);
 	}

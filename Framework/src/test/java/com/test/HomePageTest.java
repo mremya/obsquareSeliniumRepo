@@ -2,6 +2,7 @@ package com.test;
 
 import java.util.Properties;
 
+import org.apache.commons.math3.stat.descriptive.summary.Product;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -11,6 +12,7 @@ import com.base.AutomationBase;
 import com.constants.AutomationConstants;
 import com.pages.HomePage;
 import com.pages.LoginPage;
+import com.pages.ProductPage;
 import com.utils.PropertyUtils;
 import com.utils.WebBrowserUtils;
 
@@ -19,31 +21,37 @@ public class HomePageTest extends AutomationBase {
 	WebDriver driver;
 	WebBrowserUtils webbrowser;
 	LoginPage login;
-	HomePage homepg;
+	HomePage hpage;
+	ProductPage ppage;
 	Properties prop;
 	
 	@BeforeMethod
 	public void prerun() throws Exception {
 		driver=getDriver();
-		login =new LoginPage(driver);
+		login=new LoginPage(driver);
+		 hpage= new HomePage(driver);
+		 ppage=new ProductPage(driver);
+		 prop = new Properties();
 		prop=PropertyUtils.getProperty("config.properties");
-		homepg=login.login(prop.getProperty("username"), prop.getProperty("password"));
+		hpage=login.login(prop.getProperty("username"), prop.getProperty("password"));
+		ppage = hpage.navigateToProductPage();
+	
 	}
 
 	@Test( enabled = true ,groups= {"smoke"})
 	public void validateMenuLinksDisplayedInHomePage() throws Exception {
 		
 		SoftAssert soft=new SoftAssert();
-		soft.assertTrue(homepg.isProductLinkDisplayed(),AutomationConstants.linkDisplayCkeck);
-		soft.assertTrue(homepg.isStoresLinkDisplayed(),AutomationConstants.linkDisplayCkeck);
-		soft.assertTrue(homepg.isPeopleLinkDisplayed(),AutomationConstants.linkDisplayCkeck);
-		soft.assertTrue(homepg.isSalesLinkDisplayed(),AutomationConstants.linkDisplayCkeck);
-		soft.assertTrue(homepg.isExpenseLinkDisplayed(),AutomationConstants.linkDisplayCkeck);
-		soft.assertTrue(homepg.isCategoryLinkDisplayed(),AutomationConstants.linkDisplayCkeck);
-		soft.assertTrue(homepg.isReportLinkDisplayed(),AutomationConstants.linkDisplayCkeck);
-		soft.assertTrue(homepg.isSettingsLinkDisplayed(),AutomationConstants.linkDisplayCkeck);
-		soft.assertTrue(homepg.isLogOutDisplayed(),AutomationConstants.linkDisplayCkeck);
-		soft.assertTrue(homepg.isLanguageLinkDisplayed(),AutomationConstants.linkDisplayCkeck);
+		soft.assertTrue(hpage.isProductLinkDisplayed(),AutomationConstants.linkDisplayCkeck);
+		soft.assertTrue(hpage.isStoresLinkDisplayed(),AutomationConstants.linkDisplayCkeck);
+		soft.assertTrue(hpage.isPeopleLinkDisplayed(),AutomationConstants.linkDisplayCkeck);
+		soft.assertTrue(hpage.isSalesLinkDisplayed(),AutomationConstants.linkDisplayCkeck);
+		soft.assertTrue(hpage.isExpenseLinkDisplayed(),AutomationConstants.linkDisplayCkeck);
+		soft.assertTrue(hpage.isCategoryLinkDisplayed(),AutomationConstants.linkDisplayCkeck);
+		soft.assertTrue(hpage.isReportLinkDisplayed(),AutomationConstants.linkDisplayCkeck);
+		soft.assertTrue(hpage.isSettingsLinkDisplayed(),AutomationConstants.linkDisplayCkeck);
+		soft.assertTrue(hpage.isLogOutDisplayed(),AutomationConstants.linkDisplayCkeck);
+		soft.assertTrue(hpage.isLanguageLinkDisplayed(),AutomationConstants.linkDisplayCkeck);
 		soft.assertAll();
 	}
 	}

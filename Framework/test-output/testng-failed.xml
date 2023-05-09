@@ -9,28 +9,12 @@
           <include name="validateTheElementInAddProductPopup"/>
           <include name="prerun"/>
           <include name="validateDeleteFunctiongOfExistingRecord"/>
-          <include name="quitBrowser"/>
           <include name="preLaunch"/>
           <include name="validateValueEntredInAddProductPopUpIsSaved"/>
           <include name="validateEditFunctionOfExistingRecord"/>
           <include name="validatenAddStoresPopUpfields"/>
         </methods>
       </class> <!-- com.test.ProductPageTest -->
-      <class name="com.test.LoginPageTest">
-        <methods>
-          <include name="quitBrowser"/>
-          <include name="preLaunch"/>
-          <include name="validateLogin"/>
-        </methods>
-      </class> <!-- com.test.LoginPageTest -->
-      <class name="com.test.HomePageTest">
-        <methods>
-          <include name="quitBrowser"/>
-          <include name="preLaunch"/>
-          <include name="prerun"/>
-          <include name="validateMenuLinksDisplayedInHomePage"/>
-        </methods>
-      </class> <!-- com.test.HomePageTest -->
     </classes>
   </test> <!-- ChromeTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

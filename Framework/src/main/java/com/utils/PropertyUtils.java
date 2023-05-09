@@ -13,7 +13,7 @@ import net.bytebuddy.utility.privilege.GetSystemPropertyAction;
 public class PropertyUtils {
 	
 	public static final String currentDir = System.getProperty("user.dir");
-	public static String filePath = currentDir + "//src//main//resources//";
+	public static String filePath = currentDir + "\\src\\main\\resources\\";
 	
 	public static Properties getProperty(String fileName) throws IOException {
 		FileInputStream fis=null;;
