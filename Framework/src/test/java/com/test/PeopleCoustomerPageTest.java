@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.base.AutomationBase;
+import com.constants.AutomationConstants;
 import com.pages.HomePage;
 import com.pages.LoginPage;
 import com.pages.PeopleCustomerPage;
@@ -37,19 +38,16 @@ public class PeopleCoustomerPageTest extends AutomationBase {
 		driver = getDriver();
 		login = new LoginPage(driver);
 		webbrowser = new WebBrowserUtils();
-		prop=PropertyUtils.getProperty("config.properties");
+		prop = PropertyUtils.getProperty("config.properties");
 		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
-		ppage = homepg.navigateToProductPage();
-		storepage = ppage.navigateToStoresPage();
-		waiter = storepage.navigateToPeoplePage();
-		// customer= storepage.navigateToPeoplePage();
+		waiter= homepg.navigateToPeoplePage();
 	}
 
-	@Test(priority = 1, enabled = true ,groups= {"sanity"})
+	@Test(priority = 1, enabled = true, groups = { "sanity" })
 	public void validateTheElementInAddCustomerPopup() {
 		customer.clickOnCustomerLink();
 		customer.clickOnAddCustomerBtn();
-
+		customer.clickOnAddCustomerCloseBtn();
 		SoftAssert soft = new SoftAssert();
 		soft.assertTrue(customer.isCustomerNameDisplayed(), "Failure message::customer name is not displayed");
 		soft.assertTrue(customer.isCustomerPhoneDisplayed(), "Failure message::customer Phone  is not displayed");
@@ -59,7 +57,7 @@ public class PeopleCoustomerPageTest extends AutomationBase {
 
 	}
 
-	@Test(priority = 2, enabled = true ,groups= {"smoke","sanity"})
+	@Test(priority = 2, enabled = true, groups = { "smoke", "sanity" })
 	public void validateAddCustomerPopUpfields() {
 		customer.clickOnCustomerLink();
 		customer.clickOnAddCustomerBtn();
@@ -70,16 +68,15 @@ public class PeopleCoustomerPageTest extends AutomationBase {
 		customer.searchByCustomerName("Anish");
 		SoftAssert soft = new SoftAssert();
 		soft.assertEquals(customer.getCustomerEmailFromSearchResult(), "abc@gmail.com",
-				"failure message: customer email is not informat");
+				AutomationConstants.addFeildValidateErrorMessage);
 		soft.assertEquals(customer.getCustomerPhoneFromSearchResult(), "1234567894",
-				"failure message:customer phone is not informat ");
+				AutomationConstants.addFeildValidateErrorMessage);
 		soft.assertEquals(customer.getCustomerDiscountFromSearchResult(), "12",
-				"failure message:customer discount is not informat ");
-
+				AutomationConstants.addFeildValidateErrorMessage);
 		soft.assertAll();
 	}
 
-	@Test(priority = 3, enabled = true, groups= {"smoke","regression"})
+	@Test(priority = 3, enabled = true, groups = { "smoke", "regression" })
 	public void validateValueEntredInAddWaiterPopUpIsSaved() {
 		customer.clickOnCustomerLink();
 		customer.clickOnAddCustomerBtn();
@@ -90,18 +87,15 @@ public class PeopleCoustomerPageTest extends AutomationBase {
 		customer.clickOnAddCustomerSubmitBtn();
 		customer.searchByCustomerName("Anish");
 		SoftAssert soft = new SoftAssert();
-		soft.assertEquals(customer.getcustomerNameFromSearchResult(), "Anish",
-				"failure message:mismatch in the customer name search result");
+		soft.assertEquals(customer.getcustomerNameFromSearchResult(), "Anish", AutomationConstants.errorMessage);
 		soft.assertEquals(customer.getCustomerEmailFromSearchResult(), "abc@gmail.com",
-				"failure message: mismatch in the customer Email search result");
-		soft.assertEquals(customer.getCustomerPhoneFromSearchResult(), "147545687",
-				"failure message:mismatch in the customer Phone search result");
-		soft.assertEquals(customer.getCustomerDiscountFromSearchResult(), "10",
-				"failure message: mismatch in the customer discount search result");
+				AutomationConstants.errorMessage);
+		soft.assertEquals(customer.getCustomerPhoneFromSearchResult(), "147545687", AutomationConstants.errorMessage);
+		soft.assertEquals(customer.getCustomerDiscountFromSearchResult(), "10", AutomationConstants.errorMessage);
 		soft.assertAll();
 	}
 
-	@Test(priority = 4, enabled = true ,groups= {"regression"})
+	@Test(priority = 4, enabled = true, groups = { "regression" })
 	public void modifyTheExistingRecordOfStores() {
 
 		customer.clickOnCustomerLink();
@@ -113,18 +107,15 @@ public class PeopleCoustomerPageTest extends AutomationBase {
 		customer.clickOnCustomerEditSubmit();
 		customer.searchByCustomerName("Anish");
 		SoftAssert soft = new SoftAssert();
-		soft.assertEquals(customer.getcustomerNameFromSearchResult(), "Anish",
-				"failure message:mismatch in the customer name search result");
+		soft.assertEquals(customer.getcustomerNameFromSearchResult(), "Anish", AutomationConstants.errorMessage);
 		soft.assertEquals(customer.getCustomerEmailFromSearchResult(), "anuj@gmail.com",
-				"failure message: mismatch in the customer Email search result");
-		soft.assertEquals(customer.getCustomerPhoneFromSearchResult(), "4567531821",
-				"failure message:mismatch in the customer Phone search result");
-		soft.assertEquals(customer.getCustomerDiscountFromSearchResult(), "2",
-				"failure message: mismatch in the customer discount search result");
+				AutomationConstants.errorMessage);
+		soft.assertEquals(customer.getCustomerPhoneFromSearchResult(), "4567531821", AutomationConstants.errorMessage);
+		soft.assertEquals(customer.getCustomerDiscountFromSearchResult(), "2", AutomationConstants.errorMessage);
 		soft.assertAll();
 	}
 
-	@Test(priority = 5, enabled = true ,groups= {"smoke"})
+	@Test(priority = 5, enabled = true, groups = { "smoke" })
 	public void validateDeleteFunctiongOfExistingRecord() {
 		customer.clickOnCustomerLink();
 		customer.searchByCustomerName("Anish");
@@ -132,7 +123,7 @@ public class PeopleCoustomerPageTest extends AutomationBase {
 		customer.clickOnCustomerDeleteConformMsgBtn();
 		customer.searchByCustomerName("Anish");
 		assertEquals(customer.getTheSearchResultOfDeletedEntry(), "No matching records found",
-				"failure message:: failed to delete the customer entry");
+				AutomationConstants.deleteCheck);
 	}
 
 }

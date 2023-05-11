@@ -80,6 +80,19 @@ public class ExpensePage {
 	@FindBy(xpath = "//button[@class='btn btn-add']")
 	WebElement editSubmitBtn;
 	
+	@FindBy(xpath = "//button[@class='btn btn-default']")
+	WebElement addExpenseCloseBtn;
+	
+	public  ExpensePage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	
+	public void clickOnaddExpenseCloseBtn() {
+
+		element.clickOnTheElement(driver, addExpenseCloseBtn);
+	}
 	
 	public void clickOnEditSubmit() {
 
@@ -109,11 +122,6 @@ public class ExpensePage {
 	public void clickOnEditIcon() {
 
 		element.clickOnTheElement(driver, expenseEditBtn);
-	}
-	
-	public  ExpensePage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
 	}
 	
 	public String getExpensDateFromSearchResult() {

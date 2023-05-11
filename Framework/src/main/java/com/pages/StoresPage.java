@@ -42,6 +42,9 @@ public class StoresPage {
 	@FindBy(xpath = "//button[@class='btn btn-add btn-lg']")
 	WebElement storeAddBtn;
 	
+	@FindBy(xpath = "//button[@class='btn btn-default']")
+	WebElement storeAddCloseBtn;
+	
 	
 	@FindBy(xpath = "//input[@class='form-control input-sm']")
 	WebElement storeSearchbtn;
@@ -93,6 +96,11 @@ public class StoresPage {
 
 	}
 
+	public void clickOnstoreAddCloseBtn() {
+
+		element.clickOnTheElement(driver, storeAddCloseBtn);
+	}
+	
 	public void clickOnEditIcon() {
 
 		element.clickOnTheElement(driver, storeEditBtn);
@@ -229,11 +237,5 @@ public class StoresPage {
 
 	}
 
-	public PeopleWaiterPage navigateToPeoplePage() {
-
-		element.clickOnTheElement(driver, peopleLink);
-
-		return new PeopleWaiterPage(driver);
-
-	}
+	
 }

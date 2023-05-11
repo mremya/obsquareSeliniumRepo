@@ -15,6 +15,7 @@ import com.constants.AutomationConstants;
 import com.pages.HomePage;
 import com.pages.LoginPage;
 import com.pages.ProductPage;
+import com.pages.StoresPage;
 import com.utils.ExcelUtils;
 import com.utils.PropertyUtils;
 import com.utils.WebBrowserUtils;
@@ -29,6 +30,7 @@ public class ProductPageTest extends AutomationBase {
 	HomePage hpage;
 	ProductPage ppage;
 	Properties prop;
+	StoresPage storepage;
 
 	@BeforeMethod
 	public void prerun() throws Exception {
@@ -36,20 +38,19 @@ public class ProductPageTest extends AutomationBase {
 		driver = getDriver();
 		login = new LoginPage(driver);
 		hpage = new HomePage(driver);
+		
 		ppage = new ProductPage(driver);
 		prop = new Properties();
 		webbrowser = new WebBrowserUtils();
 		prop = PropertyUtils.getProperty("config.properties");
 		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
 		ppage = hpage.navigateToProductPage();
-
 	}
 
 	@Test(priority = 1, enabled = true)
 	public void validateTheElementInAddProductPopup() {
 
 		ppage.clickOnAddProduct();
-
 		SoftAssert soft = new SoftAssert();
 		soft.assertTrue(ppage.isProductTypeDisplayed(), AutomationConstants.addDisplayedErrorMsg);
 		soft.assertTrue(ppage.isproductCodeDisplayed(), AutomationConstants.addDisplayedErrorMsg);
@@ -63,8 +64,9 @@ public class ProductPageTest extends AutomationBase {
 		soft.assertTrue(ppage.isProductTaxMethodDisplayed(), AutomationConstants.addDisplayedErrorMsg);
 		soft.assertTrue(ppage.isProductAlertQuantityDisplayed(), AutomationConstants.addDisplayedErrorMsg);
 		soft.assertTrue(ppage.isProductOptionsDisplayed(), AutomationConstants.addDisplayedErrorMsg);
-		soft.assertAll();
 		ppage.clickOnAddProductClose();
+		soft.assertAll();
+		
 
 	}
 
@@ -76,7 +78,6 @@ public class ProductPageTest extends AutomationBase {
 		ppage.enterValueForProductName("maggi");
 		ppage.enterValueForProductTax("abc");
 		ppage.selectValueForProductAlertQuantity("abc");
-
 		ppage.clickOnAddProductSubmit();
 		ppage.searchByProductCode("111");
 		SoftAssert soft = new SoftAssert();

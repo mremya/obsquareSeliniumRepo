@@ -1,151 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="9" passed="2" failed="5" skipped="0">
+<testng-results ignored="1" total="7" passed="1" failed="1" skipped="4">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-10T00:40:57 IST" name="Suite" finished-at="2023-05-10T00:43:01 IST" duration-ms="123555">
+  <suite started-at="2023-05-12T02:35:15 IST" name="Suite" finished-at="2023-05-12T02:36:39 IST" duration-ms="83378">
     <groups>
       <group name="smoke">
-        <method signature="HomePageTest.validateMenuLinksDisplayedInHomePage()[pri:0, instance:com.test.HomePageTest@7b98f307]" name="validateMenuLinksDisplayedInHomePage" class="com.test.HomePageTest"/>
-        <method signature="LoginPageTest.validateLogin()[pri:0, instance:com.test.LoginPageTest@3270d194]" name="validateLogin" class="com.test.LoginPageTest"/>
+        <method signature="LoginPageTest.validateLogin()[pri:0, instance:com.test.LoginPageTest@765d7657]" name="validateLogin" class="com.test.LoginPageTest"/>
       </group> <!-- smoke -->
     </groups>
-    <test started-at="2023-05-10T00:40:57 IST" name="ChromeTest" finished-at="2023-05-10T00:43:01 IST" duration-ms="123555">
-      <class name="com.test.HomePageTest">
-        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.HomePageTest@7b98f307]" started-at="2023-05-10T00:41:34 IST" name="prerun" finished-at="2023-05-10T00:42:22 IST" duration-ms="47361" status="PASS">
+    <test started-at="2023-05-12T02:35:15 IST" name="ChromeTest" finished-at="2023-05-12T02:36:39 IST" duration-ms="83378">
+      <class name="com.test.LoginPageTest">
+        <test-method is-config="true" signature="preLaunch(java.lang.String)[pri:0, instance:com.test.LoginPageTest@765d7657]" started-at="2023-05-12T02:35:16 IST" name="preLaunch" finished-at="2023-05-12T02:36:32 IST" duration-ms="76599" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- prerun -->
-        <test-method signature="validateMenuLinksDisplayedInHomePage()[pri:0, instance:com.test.HomePageTest@7b98f307]" started-at="2023-05-10T00:42:22 IST" name="validateMenuLinksDisplayedInHomePage" finished-at="2023-05-10T00:42:23 IST" duration-ms="708" status="PASS">
+        </test-method> <!-- preLaunch -->
+        <test-method signature="validateLogin()[pri:0, instance:com.test.LoginPageTest@765d7657]" started-at="2023-05-12T02:36:33 IST" name="validateLogin" finished-at="2023-05-12T02:36:38 IST" duration-ms="5149" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateMenuLinksDisplayedInHomePage -->
-      </class> <!-- com.test.HomePageTest -->
-      <class name="com.test.ProductPageTest">
-        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.ProductPageTest@4802796d]" started-at="2023-05-10T00:42:23 IST" name="prerun" finished-at="2023-05-10T00:42:44 IST" duration-ms="21768" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- prerun -->
-        <test-method signature="validateTheElementInAddProductPopup()[pri:1, instance:com.test.ProductPageTest@4802796d]" started-at="2023-05-10T00:42:44 IST" name="validateTheElementInAddProductPopup" finished-at="2023-05-10T00:42:46 IST" duration-ms="1416" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The following asserts failed:
-Failure message::add product attribute is not displayed expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-Failure message::add product attribute is not displayed expected [true] but found [false]
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
-at com.test.ProductPageTest.validateTheElementInAddProductPopup(ProductPageTest.java:66)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:829)
-at org.testng.TestRunner.run(TestRunner.java:602)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-at org.testng.TestNG.runSuites(TestNG.java:1099)
-at org.testng.TestNG.run(TestNG.java:1067)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validateTheElementInAddProductPopup -->
-        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.ProductPageTest@4802796d]" started-at="2023-05-10T00:42:46 IST" name="prerun" finished-at="2023-05-10T00:42:47 IST" duration-ms="1200" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- prerun -->
-        <test-method signature="validatenAddStoresPopUpfields()[pri:2, instance:com.test.ProductPageTest@4802796d]" started-at="2023-05-10T00:42:47 IST" name="validatenAddStoresPopUpfields" finished-at="2023-05-10T00:42:52 IST" duration-ms="5239" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The following asserts failed:
-failure message: no validation check for add Product attribute was found expected [111] but found [000203420342034],
-failure message: no validation check for add Product attribute was found expected [maggi] but found [233nokianokianokia],
-failure message: no validation check for add Product attribute was found expected [abc] but found [21],
-failure message: no validation check for add Product attribute was found expected [abc] but found [233.000 abc1234569]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-failure message: no validation check for add Product attribute was found expected [111] but found [000203420342034],
-failure message: no validation check for add Product attribute was found expected [maggi] but found [233nokianokianokia],
-failure message: no validation check for add Product attribute was found expected [abc] but found [21],
-failure message: no validation check for add Product attribute was found expected [abc] but found [233.000 abc1234569]
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
-at com.test.ProductPageTest.validatenAddStoresPopUpfields(ProductPageTest.java:87)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:829)
-at org.testng.TestRunner.run(TestRunner.java:602)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-at org.testng.TestNG.runSuites(TestNG.java:1099)
-at org.testng.TestNG.run(TestNG.java:1067)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validatenAddStoresPopUpfields -->
-        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.ProductPageTest@4802796d]" started-at="2023-05-10T00:42:52 IST" name="prerun" finished-at="2023-05-10T00:42:53 IST" duration-ms="1210" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- prerun -->
-        <test-method signature="validateValueEntredInAddProductPopUpIsSaved()[pri:3, instance:com.test.ProductPageTest@4802796d]" started-at="2023-05-10T00:42:53 IST" name="validateValueEntredInAddProductPopUpIsSaved" finished-at="2023-05-10T00:42:58 IST" duration-ms="4964" status="FAIL">
+        </test-method> <!-- validateLogin -->
+      </class> <!-- com.test.LoginPageTest -->
+      <class name="com.test.ExpensePageTest">
+        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.ExpensePageTest@411f53a0]" started-at="2023-05-12T02:36:38 IST" name="prerun" finished-at="2023-05-12T02:36:39 IST" duration-ms="743" status="FAIL">
           <exception class="java.lang.NullPointerException">
             <message>
-              <![CDATA[Cannot invoke "org.apache.poi.xssf.usermodel.XSSFCell.getStringCellValue()" because the return value of "org.apache.poi.xssf.usermodel.XSSFRow.getCell(int)" is null]]>
+              <![CDATA[Cannot invoke "com.pages.HomePage.navigateToExpensePage()" because "this.homepg" is null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.apache.poi.xssf.usermodel.XSSFCell.getStringCellValue()" because the return value of "org.apache.poi.xssf.usermodel.XSSFRow.getCell(int)" is null
-at com.utils.ExcelUtils.readStringData(ExcelUtils.java:50)
-at com.test.ProductPageTest.validateValueEntredInAddProductPopUpIsSaved(ProductPageTest.java:95)
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "com.pages.HomePage.navigateToExpensePage()" because "this.homepg" is null
+at com.test.ExpensePageTest.prerun(ExpensePageTest.java:49)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:823)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:590)
 at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
 at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
 at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
@@ -173,26 +72,25 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateValueEntredInAddProductPopUpIsSaved -->
-        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.ProductPageTest@4802796d]" started-at="2023-05-10T00:42:58 IST" name="prerun" finished-at="2023-05-10T00:43:00 IST" duration-ms="1235" status="PASS">
-          <reporter-output>
-          </reporter-output>
         </test-method> <!-- prerun -->
-        <test-method signature="validateEditFunctionOfExistingRecord()[pri:4, instance:com.test.ProductPageTest@4802796d]" started-at="2023-05-10T00:43:00 IST" name="validateEditFunctionOfExistingRecord" finished-at="2023-05-10T00:43:00 IST" duration-ms="80" status="FAIL">
+        <test-method signature="validateTheElementInAddExpensePopup()[pri:1, instance:com.test.ExpensePageTest@411f53a0]" started-at="2023-05-12T02:36:39 IST" name="validateTheElementInAddExpensePopup" finished-at="2023-05-12T02:36:39 IST" duration-ms="0" status="SKIP">
           <exception class="java.lang.NullPointerException">
             <message>
-              <![CDATA[Cannot invoke "org.apache.poi.xssf.usermodel.XSSFCell.getStringCellValue()" because the return value of "org.apache.poi.xssf.usermodel.XSSFRow.getCell(int)" is null]]>
+              <![CDATA[Cannot invoke "com.pages.HomePage.navigateToExpensePage()" because "this.homepg" is null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.apache.poi.xssf.usermodel.XSSFCell.getStringCellValue()" because the return value of "org.apache.poi.xssf.usermodel.XSSFRow.getCell(int)" is null
-at com.utils.ExcelUtils.readStringData(ExcelUtils.java:50)
-at com.test.ProductPageTest.validateEditFunctionOfExistingRecord(ProductPageTest.java:137)
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "com.pages.HomePage.navigateToExpensePage()" because "this.homepg" is null
+at com.test.ExpensePageTest.prerun(ExpensePageTest.java:49)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:823)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:590)
 at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
 at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
 at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
@@ -220,26 +118,119 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateEditFunctionOfExistingRecord -->
-        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.ProductPageTest@4802796d]" started-at="2023-05-10T00:43:00 IST" name="prerun" finished-at="2023-05-10T00:43:01 IST" duration-ms="1140" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- prerun -->
-        <test-method signature="validateDeleteFunctiongOfExistingRecord()[pri:5, instance:com.test.ProductPageTest@4802796d]" started-at="2023-05-10T00:43:01 IST" name="validateDeleteFunctiongOfExistingRecord" finished-at="2023-05-10T00:43:01 IST" duration-ms="99" status="FAIL">
+        </test-method> <!-- validateTheElementInAddExpensePopup -->
+        <test-method signature="validatenAddExpensePopUpfields()[pri:2, instance:com.test.ExpensePageTest@411f53a0]" started-at="2023-05-12T02:36:39 IST" name="validatenAddExpensePopUpfields" finished-at="2023-05-12T02:36:39 IST" duration-ms="0" status="SKIP">
           <exception class="java.lang.NullPointerException">
             <message>
-              <![CDATA[Cannot invoke "org.apache.poi.xssf.usermodel.XSSFRow.getCell(int)" because the return value of "org.apache.poi.xssf.usermodel.XSSFSheet.getRow(int)" is null]]>
+              <![CDATA[Cannot invoke "com.pages.HomePage.navigateToExpensePage()" because "this.homepg" is null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.apache.poi.xssf.usermodel.XSSFRow.getCell(int)" because the return value of "org.apache.poi.xssf.usermodel.XSSFSheet.getRow(int)" is null
-at com.utils.ExcelUtils.readStringData(ExcelUtils.java:50)
-at com.test.ProductPageTest.validateDeleteFunctiongOfExistingRecord(ProductPageTest.java:165)
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "com.pages.HomePage.navigateToExpensePage()" because "this.homepg" is null
+at com.test.ExpensePageTest.prerun(ExpensePageTest.java:49)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:823)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:590)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validatenAddExpensePopUpfields -->
+        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.ExpensePageTest@411f53a0]" started-at="2023-05-12T02:36:39 IST" name="prerun" finished-at="2023-05-12T02:36:39 IST" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- prerun -->
+        <test-method signature="validateEnteredValueInAddExpensePopUpIsSaved(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:com.test.ExpensePageTest@411f53a0]" started-at="2023-05-12T02:36:39 IST" name="validateEnteredValueInAddExpensePopUpIsSaved" finished-at="2023-05-12T02:36:39 IST" duration-ms="0" status="FAIL">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Cannot inject @Test annotated Method [validateEnteredValueInAddExpensePopUpIsSaved] with [class java.lang.String, class java.lang.String, class java.lang.String, class java.lang.String, class java.lang.String].
+For more information on native dependency injection please refer to https://testng.org/doc/documentation-main.html#native-dependency-injection]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Cannot inject @Test annotated Method [validateEnteredValueInAddExpensePopUpIsSaved] with [class java.lang.String, class java.lang.String, class java.lang.String, class java.lang.String, class java.lang.String].
+For more information on native dependency injection please refer to https://testng.org/doc/documentation-main.html#native-dependency-injection
+at org.testng.internal.Parameters.checkParameterTypes(Parameters.java:436)
+at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:350)
+at org.testng.internal.Parameters.createParameters(Parameters.java:693)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:879)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:728)
+at org.testng.internal.invokers.ParameterHandler.handleParameters(ParameterHandler.java:72)
+at org.testng.internal.invokers.ParameterHandler.createParameters(ParameterHandler.java:51)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:924)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateEnteredValueInAddExpensePopUpIsSaved -->
+        <test-method signature="validateDeleteFunctiongOfExistingRecord()[pri:5, instance:com.test.ExpensePageTest@411f53a0]" started-at="2023-05-12T02:36:39 IST" name="validateDeleteFunctiongOfExistingRecord" finished-at="2023-05-12T02:36:39 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "com.pages.HomePage.navigateToExpensePage()" because "this.homepg" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "com.pages.HomePage.navigateToExpensePage()" because "this.homepg" is null
+at com.test.ExpensePageTest.prerun(ExpensePageTest.java:49)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:823)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:590)
 at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
 at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
 at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
@@ -268,24 +259,61 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateDeleteFunctiongOfExistingRecord -->
-      </class> <!-- com.test.ProductPageTest -->
-      <class name="com.test.LoginPageTest">
-        <test-method is-config="true" signature="preLaunch(java.lang.String)[pri:0, instance:com.test.LoginPageTest@3270d194]" started-at="2023-05-10T00:40:57 IST" name="preLaunch" finished-at="2023-05-10T00:41:27 IST" duration-ms="29968" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="modifyTheExistingRecordOfExpense()[pri:4, instance:com.test.ExpensePageTest@411f53a0]" started-at="2023-05-12T02:36:39 IST" name="modifyTheExistingRecordOfExpense" finished-at="2023-05-12T02:36:39 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "com.pages.HomePage.navigateToExpensePage()" because "this.homepg" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "com.pages.HomePage.navigateToExpensePage()" because "this.homepg" is null
+at com.test.ExpensePageTest.prerun(ExpensePageTest.java:49)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:823)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:590)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- preLaunch -->
-        <test-method signature="validateLogin()[pri:0, instance:com.test.LoginPageTest@3270d194]" started-at="2023-05-10T00:41:28 IST" name="validateLogin" finished-at="2023-05-10T00:41:34 IST" duration-ms="6822" status="PASS">
+        </test-method> <!-- modifyTheExistingRecordOfExpense -->
+        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.ExpensePageTest@411f53a0]" started-at="2023-05-12T02:36:39 IST" name="prerun" finished-at="2023-05-12T02:36:39 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateLogin -->
-      </class> <!-- com.test.LoginPageTest -->
+        </test-method> <!-- prerun -->
+        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.ExpensePageTest@411f53a0]" started-at="2023-05-12T02:36:39 IST" name="prerun" finished-at="2023-05-12T02:36:39 IST" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- prerun -->
+      </class> <!-- com.test.ExpensePageTest -->
     </test> <!-- ChromeTest -->
   </suite> <!-- Suite -->
 </testng-results>

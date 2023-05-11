@@ -35,6 +35,10 @@ public class PeopleWaiterPage {
 	@FindBy(xpath="//button[@class='btn btn-add']")
 	WebElement  addWaiterSubmitBtn;
 	
+	@FindBy(xpath="//button[@class='btn btn-add']")
+	WebElement  addWaiterCloseBtn;
+	
+	
 	@FindBy(xpath="//input[@type='search']")
 	WebElement  waiterSearchBtn;
 	
@@ -76,7 +80,10 @@ public class PeopleWaiterPage {
 	public String getWaiterSearchResultOfDeletedEntry() {
 		return element.getTextFunction(driver, delete_searchresult);
 		
-	}	
+	}
+	public void clickOnaddWaiterCloseBtn() {
+		 element.clickOnTheElement(driver, addWaiterCloseBtn);
+	}
 	
 	public void clickOnDeleteConformMsg() {
 		 element.clickOnTheElement(driver, conformDeleteMsg);
@@ -176,12 +183,6 @@ public String getWaiterStoreFromSearchResult() {
 	return element.getTextFunction(driver, waiterStore_SearchResult);
 	
 }	
-public ExpensePage navigateToExpensePage() {
 
-	element.clickOnTheElement(driver, expenseLink);
-
-	return new ExpensePage(driver);
-
-}
 	
 }

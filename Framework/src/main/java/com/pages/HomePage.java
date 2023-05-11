@@ -9,10 +9,8 @@ import com.utils.WebActionUtils;
 
 public class HomePage {
 	WebDriver driver;
-
 	WebActionUtils element = new WebActionUtils();
-
-	// @FindBy(xpath = "//span[text='POS']")
+	
 	@FindBy(xpath = "(//span[@class='menu-text'])[1]")
 	WebElement posLink;
 
@@ -112,6 +110,27 @@ public class HomePage {
 		element.clickOnTheElement(driver, productLink);
 
 		return new ProductPage(driver);
+
+	}
+	public StoresPage navigateToStoresPage() {
+
+		element.clickOnTheElement(driver, storesLink);
+
+		return new StoresPage(driver);
+
+	}
+	public ExpensePage navigateToExpensePage() {
+
+		element.clickOnTheElement(driver, expenseLink);
+
+		return new ExpensePage(driver);
+
+	}
+	public PeopleWaiterPage navigateToPeoplePage() {
+
+		element.clickOnTheElement(driver, peopleLink);
+
+		return new PeopleWaiterPage(driver);
 
 	}
 

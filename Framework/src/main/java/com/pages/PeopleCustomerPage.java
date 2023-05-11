@@ -53,6 +53,10 @@ public class PeopleCustomerPage {
 	@FindBy(xpath = "(//a[@class='btn btn-default'])[2]")
 	WebElement customerEditBtn	;
 	
+	@FindBy(xpath = "(//button[@class='btn btn-default'] ")
+	WebElement AddcustomerClosetBtn	;
+	
+	
 	@FindBy(xpath = "(//a[@class='btn btn-default'])[1]")
 	WebElement storeDeleteBtn;
 	
@@ -110,6 +114,11 @@ public class PeopleCustomerPage {
 		element.clickOnTheElement(driver, addCustomerBtn);
 		
 	}
+	public void clickOnAddCustomerCloseBtn() {
+		element.clickOnTheElement(driver, addCustomerBtn);
+		
+	}
+	
 	public void clickOnAddCustomerSubmitBtn() {
 		element.clickOnTheElement(driver, customerLink);
 		

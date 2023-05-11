@@ -8,6 +8,6 @@ public class AutomationConstants {
 	public static final String loginCkeck="Failure message:Login is failed ";
 	public static final String addDisplayedErrorMsg="Failure message::add product attribute is not displayed";
 	public static final String addFeildValidateErrorMessage="failure message: no validation check for add Product attribute was found";
-	public static final String addStoresDisplayedErrorMsg="Failure message::add stores attribute is not displayed";
+	
 
 }

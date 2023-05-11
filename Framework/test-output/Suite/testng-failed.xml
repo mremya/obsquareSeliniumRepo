@@ -4,17 +4,17 @@
   <test thread-count="5" name="ChromeTest(failed)">
     <parameter name="browserName" value="Chrome"/>
     <classes>
-      <class name="com.test.ProductPageTest">
+      <class name="com.test.ExpensePageTest">
         <methods>
-          <include name="validateTheElementInAddProductPopup"/>
+          <include name="validatenAddExpensePopUpfields"/>
           <include name="prerun"/>
-          <include name="validateDeleteFunctiongOfExistingRecord"/>
+          <include name="validateEnteredValueInAddExpensePopUpIsSaved"/>
           <include name="preLaunch"/>
-          <include name="validateValueEntredInAddProductPopUpIsSaved"/>
-          <include name="validateEditFunctionOfExistingRecord"/>
-          <include name="validatenAddStoresPopUpfields"/>
+          <include name="modifyTheExistingRecordOfExpense"/>
+          <include name="validateTheElementInAddExpensePopup"/>
+          <include name="validateDeleteFunctiongOfExistingRecord"/>
         </methods>
-      </class> <!-- com.test.ProductPageTest -->
+      </class> <!-- com.test.ExpensePageTest -->
     </classes>
   </test> <!-- ChromeTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

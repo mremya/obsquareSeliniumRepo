@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 
 import com.base.AutomationBase;
 import com.constants.AutomationConstants;
-import com.pages.HomePage;
 import com.pages.LoginPage;
 import com.utils.PropertyUtils;
 
@@ -18,7 +17,7 @@ public class LoginPageTest extends AutomationBase {
 
 	LoginPage login;
 	Properties prop;
-	HomePage hpage;
+	
 
 	@Test(enabled = true, groups = { "smoke" }, retryAnalyzer = com.analyzer.RetryAnalyzer.class)
 	public void validateLogin() throws Exception {

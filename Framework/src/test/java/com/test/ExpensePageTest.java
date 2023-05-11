@@ -38,54 +38,54 @@ public class ExpensePageTest extends AutomationBase {
 	PeopleWaiterPage waiter;
 	ExpensePage expensep;
 	Properties prop;
-	
 
 	@BeforeMethod
 	public void prerun() throws Exception {
 		driver = getDriver();
 		login = new LoginPage(driver);
 		webbrowser = new WebBrowserUtils();
-		prop=PropertyUtils.getProperty("config.properties");
+		prop = PropertyUtils.getProperty("config.properties");
 		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
-		ppage = homepg.navigateToProductPage();
-		storepage = ppage.navigateToStoresPage();
-		waiter = storepage.navigateToPeoplePage();
-		expensep=waiter.navigateToExpensePage();
+		expensep = homepg.navigateToExpensePage();
 	}
-	
-	
-	@Test(priority = 1, enabled = true )
+
+	@Test(priority = 1, enabled = true)
 	public void validateTheElementInAddExpensePopup() {
 
 		expensep.clickOnAddExpense();
-
+		expensep.clickOnaddExpenseCloseBtn();
 		SoftAssert soft = new SoftAssert();
-	soft.assertTrue(expensep.isExpenseDateDisplayed(), AutomationConstants.addDisplayedErrorMsg);
+		soft.assertTrue(expensep.isExpenseDateDisplayed(), AutomationConstants.addDisplayedErrorMsg);
 		soft.assertTrue(expensep.isExpenseReferenceDisplayed(), AutomationConstants.addDisplayedErrorMsg);
 		soft.assertTrue(expensep.isExpenseCategoryDisplayed(), AutomationConstants.addDisplayedErrorMsg);
 		soft.assertTrue(expensep.isExpenseStoreDisplayed(), AutomationConstants.addDisplayedErrorMsg);
 		soft.assertTrue(expensep.isExpenseAmountDisplayed(), AutomationConstants.addDisplayedErrorMsg);
-		
 		soft.assertAll();
+		
 
 	}
-	
-	@Test(priority = 2, enabled = true )
+
+	@Test(priority = 2, enabled = true)
 	public void validatenAddExpensePopUpfields() {
 		expensep.clickOnAddExpense();
 		expensep.selectValueForExpenseStore("Shibina");
 		expensep.enterValueForExpenseAmount("xyz");
-		
+
 		expensep.clickOnAddExpenseSubmit();
 		expensep.searchByExpenseStore("MNC");
 		SoftAssert soft = new SoftAssert();
-		soft.assertEquals(expensep.getExpensStoreFromSearchResult(), "MNC",AutomationConstants.addFeildValidateErrorMessage);
-		soft.assertEquals(expensep.getExpensAmountFromSearchResult(), "10", AutomationConstants.addFeildValidateErrorMessage);
+		soft.assertEquals(expensep.getExpensStoreFromSearchResult(), "MNC",
+				AutomationConstants.addFeildValidateErrorMessage);
+		soft.assertEquals(expensep.getExpensAmountFromSearchResult(), "10",
+				AutomationConstants.addFeildValidateErrorMessage);
 		soft.assertAll();
-	
+		expensep.clickOnaddExpenseCloseBtn();
+
 	}
-	@Test(priority = 3, enabled = true,dataProviderClass = ExpenseDataSupplier.class)
-	public void validateEnteredValueInAddExpensePopUpIsSaved(String date,String ref,String cat , String store , String amt) {
+
+	@Test(priority = 3, enabled = true, dataProviderClass = ExpenseDataSupplier.class)
+	public void validateEnteredValueInAddExpensePopUpIsSaved(String date, String ref, String cat, String store,
+			String amt) {
 		expensep.clickOnAddExpense();
 		expensep.enterValueForExpenseDate(date);
 		expensep.enterValueForExpenseReference(ref);
@@ -94,16 +94,16 @@ public class ExpensePageTest extends AutomationBase {
 		expensep.selectValueForExpenseStore(store);
 		expensep.clickOnAddExpenseSubmit();
 		expensep.searchByExpenseStore("MNC");
-	SoftAssert soft = new SoftAssert();
-	soft.assertEquals(expensep.getExpensDateFromSearchResult(), "04\04\2023", AutomationConstants.);
-	soft.assertEquals(expensep.getExpensReferenceFromSearchResult(), "abc", "failure message: expense reference data mismatch");
-	soft.assertEquals(expensep.getExpensCategoryFromSearchResult(), "Pasta", "failure message: expense category data mismatch");
-	soft.assertEquals(expensep.getExpensAmountFromSearchResult(), "1200", "failure message: expense amount data mismatch");
-	soft.assertEquals(expensep.getExpensStoreFromSearchResult(), "MNC", "failure message: expense store data mismatch");
-	
-	soft.assertAll();
+		SoftAssert soft = new SoftAssert();
+		soft.assertEquals(expensep.getExpensDateFromSearchResult(), "04\04\2023", AutomationConstants.errorMessage);
+		soft.assertEquals(expensep.getExpensReferenceFromSearchResult(), "abc", AutomationConstants.errorMessage);
+		soft.assertEquals(expensep.getExpensCategoryFromSearchResult(), "Pasta", AutomationConstants.errorMessage);
+		soft.assertEquals(expensep.getExpensAmountFromSearchResult(), "1200", AutomationConstants.errorMessage);
+		soft.assertEquals(expensep.getExpensStoreFromSearchResult(), "MNC", AutomationConstants.errorMessage);
+
+		soft.assertAll();
 	}
-	
+
 	@Test(priority = 4, enabled = true)
 	public void modifyTheExistingRecordOfExpense() {
 		expensep.searchByExpenseStore("MNC");
@@ -114,16 +114,14 @@ public class ExpensePageTest extends AutomationBase {
 		expensep.selectValueForExpenseStore("stor2");
 		expensep.searchByExpenseStore("MNC");
 		SoftAssert soft = new SoftAssert();
-		
-		soft.assertEquals(expensep.getExpensReferenceFromSearchResult(), "abc", "failure message: expense reference data mismatch");
-		soft.assertEquals(expensep.getExpensCategoryFromSearchResult(), "Pasta", "failure message: expense category data mismatch");
-		soft.assertEquals(expensep.getExpensAmountFromSearchResult(), "1200", "failure message: expense amount data mismatch");
-		soft.assertEquals(expensep.getExpensStoreFromSearchResult(), "MNC", "failure message: expense store data mismatch");
-	soft.assertAll();
-	}
-	
 
-	
+		soft.assertEquals(expensep.getExpensReferenceFromSearchResult(), "abc", AutomationConstants.errorMessage);
+		soft.assertEquals(expensep.getExpensCategoryFromSearchResult(), "Pasta", AutomationConstants.errorMessage);
+		soft.assertEquals(expensep.getExpensAmountFromSearchResult(), "1200", AutomationConstants.errorMessage);
+		soft.assertEquals(expensep.getExpensStoreFromSearchResult(), "MNC", AutomationConstants.errorMessage);
+		soft.assertAll();
+	}
+
 	@Test(priority = 5, enabled = true)
 	public void validateDeleteFunctiongOfExistingRecord() throws IOException {
 		expensep.selectValueForExpenseStore("Shibina");
@@ -131,10 +129,9 @@ public class ExpensePageTest extends AutomationBase {
 		expensep.clickOnDeleteConformMsg();
 		expensep.clickOnDeleteOk();
 		expensep.selectValueForExpenseStore("Shibina");
-		assertEquals(storepage.getTheSearchResultOfDeletedEntry(), "No matching records found",AutomationConstants.deleteCheck);
-		
-	}
-	
+		assertEquals(storepage.getTheSearchResultOfDeletedEntry(), "No matching records found",
+				AutomationConstants.deleteCheck);
 
+	}
 
 }

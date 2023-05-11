@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.base.AutomationBase;
+import com.constants.AutomationConstants;
 import com.pages.HomePage;
 import com.pages.LoginPage;
 import com.pages.PeopleWaiterPage;
@@ -39,21 +40,19 @@ public class PeopleWaiterPageTest extends AutomationBase {
 			webbrowser = new WebBrowserUtils();
 			prop=PropertyUtils.getProperty("config.properties");
 			login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
-			ppage = homepg.navigateToProductPage();
-			storepage = ppage.navigateToStoresPage();
-			waiter = storepage.navigateToPeoplePage();
+			waiter = homepg.navigateToPeoplePage();
 }
 
 	 @Test(priority = 1, enabled = true ,groups= {"smoke"})
 	public void validateTheElementInAddWaiterPopup() {
 		waiter.clickOnWaiterLink();
 		waiter.clickOnAddWaiterBtn();
-
+		waiter.clickOnaddWaiterCloseBtn();
 		SoftAssert soft = new SoftAssert();
-		soft.assertTrue(waiter.isWaiterNameDisplayed(), "Failure message::waiter name is not displayed");
-		soft.assertTrue(waiter.isWaiterEmailDisplayed(), "Failure message::waiter email  is not displayed");
-		soft.assertTrue(waiter.isWaiterPhoneDisplayed(), "Failure message::waiter phone  is not displayed");
-		soft.assertTrue(waiter.isWaiterStoreDisplayed(), "Failure message::waiter Store  is not displayed");
+		soft.assertTrue(waiter.isWaiterNameDisplayed(), AutomationConstants.addDisplayedErrorMsg);
+		soft.assertTrue(waiter.isWaiterEmailDisplayed(),AutomationConstants.addDisplayedErrorMsg);
+		soft.assertTrue(waiter.isWaiterPhoneDisplayed(), AutomationConstants.addDisplayedErrorMsg);
+		soft.assertTrue(waiter.isWaiterStoreDisplayed(), AutomationConstants.addDisplayedErrorMsg);
 		soft.assertAll();
 
 	}
@@ -69,9 +68,9 @@ public class PeopleWaiterPageTest extends AutomationBase {
 		waiter.searchByWaitersName("Arav");
 		SoftAssert soft = new SoftAssert();
 		soft.assertEquals(waiter.getWaiterEmailFromSearchResult(), "abc@gmail.com",
-				"failure message: waiters email is not informat");
+				AutomationConstants.addFeildValidateErrorMessage);
 		soft.assertEquals(waiter.getWaiterPhoneFromSearchResult(), "1234567894",
-				"failure message:waiters phone is not informat ");
+				AutomationConstants.addFeildValidateErrorMessage);
 
 		soft.assertAll();
 	}
@@ -89,13 +88,13 @@ public class PeopleWaiterPageTest extends AutomationBase {
 
 		SoftAssert soft = new SoftAssert();
 		soft.assertEquals(waiter.getWaiterNameFromSearchResult(), "Ramesh",
-				"failure message:mismatch in the waitername search result");
+				AutomationConstants.errorMessage);
 		soft.assertEquals(waiter.getWaiterPhoneFromSearchResult(), "1234567894",
-				"failure message: mismatch in the waiter phone search result");
+				AutomationConstants.errorMessage);
 		soft.assertEquals(waiter.getWaiterEmailFromSearchResult(), "abc@gmail.com",
-				"failure message:mismatch in the waiter email search result");
+				AutomationConstants.errorMessage);
 		soft.assertEquals(waiter.getWaiterStoreFromSearchResult(), "store2",
-				"failure message: mismatch in the waiter store search result");
+				AutomationConstants.errorMessage);
 		soft.assertAll();
 	}
 
@@ -114,12 +113,12 @@ public class PeopleWaiterPageTest extends AutomationBase {
 		waiter.searchByWaitersName("Ramesh");
 		SoftAssert soft = new SoftAssert();
 		soft.assertEquals(waiter.getWaiterNameFromSearchResult(), "Ramesh",
-				"failure message : Waiters name is not modified");
-		soft.assertEquals(waiter.getWaiterPhoneFromSearchResult(), "1234", "failure message: phone  is not modified");
+				AutomationConstants.errorMessage);
+		soft.assertEquals(waiter.getWaiterPhoneFromSearchResult(), "1234",AutomationConstants.errorMessage);
 		soft.assertEquals(waiter.getWaiterEmailFromSearchResult(), "pqr@gmail.com",
-				"failure message: the waiter email is not modified");
+				AutomationConstants.errorMessage);
 		soft.assertEquals(waiter.getWaiterStoreFromSearchResult(), "store2",
-				"failure message: the waiter store is not  modified");
+				AutomationConstants.errorMessage);
 		soft.assertAll();
 	}
 
@@ -132,7 +131,7 @@ public class PeopleWaiterPageTest extends AutomationBase {
 		waiter.searchByWaitersName("ammu");
 
 		assertEquals(waiter.getWaiterSearchResultOfDeletedEntry(), "No matching records found",
-				"failure message:: failed to delete the waiter entry");
+				AutomationConstants.deleteCheck);
 	}
 
 }

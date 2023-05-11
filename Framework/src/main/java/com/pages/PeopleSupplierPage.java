@@ -32,13 +32,16 @@ public class PeopleSupplierPage {
 	@FindBy(xpath="//button[@class='btn btn-add']")
 	WebElement supplierAddSubmitBtn;
 	
+	@FindBy(xpath="//button[@class='btn btn-default']")
+	WebElement supplierAddSubmitCloseBtn;
+	
 	@FindBy(xpath="(//table[@id='Table']//tr//td)[1]")
 	WebElement supplierName_searchResult;
 	
-	@FindBy(xpath="//button[@class='btn btn-add']")
+	@FindBy(xpath="(//table[@id='Table']//tr//td)[2]")
 	WebElement supplierPhone_searchResult;
 	
-	@FindBy(xpath="//button[@class='btn btn-add']")
+	@FindBy(xpath="(//table[@id='Table']//tr//td)[3]")
 	WebElement supplierEmail_searchResult;
 	
 	@FindBy(xpath="//input[@type='search']")
@@ -68,6 +71,11 @@ public class PeopleSupplierPage {
 		element.clickOnTheElement(driver, supplierEditSubmitBtn);
 		
 	}
+	public void clickOnSupplierAddCloseBtn() {
+		element.clickOnTheElement(driver, supplierAddSubmitCloseBtn);
+		
+	}
+	
 	public void clickOnSupplierDeleteConformMsg() {
 		element.clickOnTheElement(driver, conformDeleteMsg);
 		

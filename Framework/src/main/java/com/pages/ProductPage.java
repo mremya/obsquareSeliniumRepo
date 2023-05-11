@@ -329,13 +329,7 @@ public void clearTheWebElementValue(WebElement webelement1) {
 }
 	
 	
-public StoresPage navigateToStoresPage() {
 
-	element.clickOnTheElement(driver, storesLink);
-
-	return new StoresPage(driver);
-
-}
 	
 	
 	
