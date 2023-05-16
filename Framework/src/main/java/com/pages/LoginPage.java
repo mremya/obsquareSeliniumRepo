@@ -19,7 +19,7 @@ public class LoginPage {
 	    @FindBy(xpath="//input[@name='password']")
 		WebElement password;
 	    
-	    @FindBy(xpath="//input[@name='submit']")
+	    @FindBy(xpath="//input[@class='login loginmodal-submit']")
 	    WebElement loginSubmit;
 	    
 	    @FindBy(xpath="//h1[@class='text-center choose_store']")
@@ -34,11 +34,11 @@ public class LoginPage {
 	    
 	 public void enterValueToUserName( String usernm) {
 		 element.entreTheValue(driver, username,usernm);
-		 System.out.println("username"+usernm );
+		 
 	 }
 
 	 public void enterValueToPassword(String pasword) {
-		 element.entreTheValue(driver, password, pasword);
+		 element.entreTheValue(driver, password,pasword);
 	 }
 	 
 	 public Boolean isSuccessHomeLoginMsg() {
@@ -53,17 +53,15 @@ public class LoginPage {
 	 public void performlogin(String username , String password) throws Exception {
 		 enterValueToUserName(username);
 		enterValueToPassword(password);
-		clickOnTheLoginSubmit();
-		 
-		
-		 
+		clickOnTheLoginSubmit();	 
 	 }
 
 	 public HomePage login(String username , String password) throws Exception {
-		 enterValueToUserName(username);
-		enterValueToPassword(password);
-		clickOnTheLoginSubmit();
-		 
+		 performlogin( username ,  password);
+			/*
+			 * enterValueToUserName(username); enterValueToPassword(password);
+			 * clickOnTheLoginSubmit();
+			 */
 		return new HomePage(driver);
 		 
 	 }

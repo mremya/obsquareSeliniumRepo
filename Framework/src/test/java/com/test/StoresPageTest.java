@@ -25,6 +25,7 @@ import com.utils.WebBrowserUtils;
 public class StoresPageTest extends AutomationBase {
 	WebDriver driver;
 	WebBrowserUtils webbrowser;
+	ExcelUtils excelutil;
 	LoginPage login;
 	HomePage hpage;
 	ProductPage ppage;
@@ -39,6 +40,7 @@ public class StoresPageTest extends AutomationBase {
 		login = new LoginPage(driver);
 		hpage = new HomePage(driver);
 		ppage = new ProductPage(driver);
+		excelutil = new ExcelUtils();
 		webbrowser = new WebBrowserUtils();
 		prop = PropertyUtils.getProperty("config.properties");
 		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
@@ -65,47 +67,69 @@ public class StoresPageTest extends AutomationBase {
 
 	@Test(priority = 3, enabled = true)
 	public void validateEnteredValueInAddStoresPopUpIsSaved() {
+		String sname = excelutil.readStringData("Store",1,2);
+		String semail = excelutil.readStringData("Store",2,2);
+		String sphone = excelutil.readStringData("Store",3,2);
+		String scountry = excelutil.readStringData("Store",4,2);
+		String scity = excelutil.readStringData("Store",5,2);
+		String saddress= excelutil.readStringData("Store",6,2);
+		String sfooter= excelutil.readStringData("Store",7,2);
+		
 		storepage.clickOnAddStores();
-		storepage.enterValueForStoreName("althaf");
-		storepage.enterValueForStoreEmail("abc@gmail.com");
-		storepage.enterValueForStorePhone("1234567894");
-		storepage.enterValueForStoreAddress("kerala");
-		storepage.enterValueForStoreCity("Trivandrum");
-		storepage.enterValueForStoreCountry("India");
-		storepage.enterValueForStoreCustomerFooter("made by althaf");
+		storepage.enterValueForStoreName(sname);
+		storepage.enterValueForStoreEmail(semail);
+		storepage.enterValueForStorePhone(sphone);
+		storepage.enterValueForStoreAddress(scountry);
+		storepage.enterValueForStoreCity(scity);
+		storepage.enterValueForStoreCountry(saddress);
+		storepage.enterValueForStoreCustomerFooter(sfooter);
 		storepage.clickOnAddStoresSubmit();
-		storepage.searchByStoreName("althaf");
+		storepage.searchByStoreName(sname);
 		SoftAssert soft = new SoftAssert();
-		soft.assertEquals(storepage.getStoreNameFromSearchResult(), "althaf", AutomationConstants.errorMessage);
-		soft.assertEquals(storepage.getStoreEmailFromSearchResult(), "abc@gmail.com", AutomationConstants.errorMessage);
-		soft.assertEquals(storepage.getStorePhoneFromSearchResult(), "1234567894", AutomationConstants.errorMessage);
-		soft.assertEquals(storepage.getStoreCityFromSearchResult(), "Trivandrum", AutomationConstants.errorMessage);
-		soft.assertEquals(storepage.getStoreCountryFromSearchResult(), "India", AutomationConstants.errorMessage);
+		soft.assertEquals(storepage.getStoreNameFromSearchResult(), sname, AutomationConstants.errorMessage);
+		soft.assertEquals(storepage.getStoreEmailFromSearchResult(), semail, AutomationConstants.errorMessage);
+		soft.assertEquals(storepage.getStorePhoneFromSearchResult(),sphone, AutomationConstants.errorMessage);
+		soft.assertEquals(storepage.getStoreCityFromSearchResult(), scity, AutomationConstants.errorMessage);
+		soft.assertEquals(storepage.getStoreCountryFromSearchResult(),scountry, AutomationConstants.errorMessage);
 		soft.assertAll();
 	}
 
 	@Test(priority = 4, enabled = true)
 	public void modifyTheExistingRecordOfStores() {
-		storepage.searchByStoreName("cake world");
+		String sname = excelutil.readStringData("Store",10,2);
+		String semail = excelutil.readStringData("Store",11,2);
+		String sphone = excelutil.readStringData("Store",12,2);
+		String scountry = excelutil.readStringData("Store",13,2);
+		String scity = excelutil.readStringData("Store",14,2);
+		String saddress= excelutil.readStringData("Store",15,2);
+		
+		
+		storepage.searchByStoreName(sname);
 		storepage.clickOnEditIcon();
-		storepage.enterValueForStoreCountry("India");
-		storepage.enterValueForStoreCity("Pune");
+		storepage.enterValueForStoreName(sname);
+		storepage.enterValueForStoreEmail(semail);
+		storepage.enterValueForStorePhone(sphone);
+		storepage.enterValueForStoreCountry(scountry);
+		storepage.enterValueForStoreCity(scity);
+		storepage.enterValueForStoreCountry(saddress);
 		storepage.clickOnEditSubmitIcon();
-		storepage.searchByStoreName("cake world");
+		storepage.searchByStoreName(sname);
 		SoftAssert soft = new SoftAssert();
-		soft.assertEquals(storepage.getStoreNameFromSearchResult(), "cake world", AutomationConstants.errorMessage);
-		soft.assertEquals(storepage.getStoreEmailFromSearchResult(), "alpha@gmail.com",AutomationConstants.errorMessage);
-		soft.assertEquals(storepage.getStorePhoneFromSearchResult(), "7894561234", AutomationConstants.errorMessage);
-		soft.assertEquals(storepage.getStoreCityFromSearchResult(), "lanka", AutomationConstants.errorMessage);
-		soft.assertEquals(storepage.getStoreCountryFromSearchResult(), "sri lanka", AutomationConstants.errorMessage);
+		soft.assertEquals(storepage.getStoreNameFromSearchResult(),sname, AutomationConstants.errorMessage);
+		soft.assertEquals(storepage.getStoreEmailFromSearchResult(),semail,AutomationConstants.errorMessage);
+		soft.assertEquals(storepage.getStorePhoneFromSearchResult(), sphone, AutomationConstants.errorMessage);
+		soft.assertEquals(storepage.getStoreCityFromSearchResult(), scity, AutomationConstants.errorMessage);
+		soft.assertEquals(storepage.getStoreCountryFromSearchResult(),scountry, AutomationConstants.errorMessage);
 		soft.assertAll();
 	}
 
 	@Test(priority = 5, enabled = true)
 	public void deleteExistingRecord() {
-		storepage.searchByStoreName("alsaj");
+		String sname = excelutil.readStringData("Store",18,2);
+		storepage.enterValueForStoreName(sname);
+		storepage.searchByStoreName(sname);
 		storepage.clickOnDeleteIcon();
-		storepage.searchByStoreName("alsaj");
+		storepage.searchByStoreName(sname);
 		assertEquals(storepage.getTheSearchResultOfDeletedEntry(), "No matching records found",
 				AutomationConstants.deleteCheck);
 
@@ -113,16 +137,22 @@ public class StoresPageTest extends AutomationBase {
 
 	@Test(priority = 2, enabled = true)
 	public void validatenAddStoresPopUpfields() {
+		String sname = excelutil.readStringData("Store",21,2);
+		String semail = excelutil.readStringData("Store",22,2);
+		String sphone = excelutil.readStringData("Store",23,2);
+		storepage.enterValueForStoreName(sname);
+		storepage.enterValueForStoreEmail(semail);
+		storepage.enterValueForStorePhone(sphone);
 		storepage.clickOnAddStores();
-		storepage.enterValueForStoreName("Alfy");
-		storepage.enterValueForStoreEmail("abc@gm@il.com");
-		storepage.enterValueForStorePhone("123456789445789");
+		storepage.enterValueForStoreName(sname);
+		storepage.enterValueForStoreEmail(semail);
+		storepage.enterValueForStorePhone(sphone);
 		storepage.clickOnAddStoresSubmit();
-		storepage.searchByStoreName("althaf");
+		storepage.searchByStoreName(sname);
 		SoftAssert soft = new SoftAssert();
-		soft.assertEquals(storepage.getStoreNameFromSearchResult(), "Alfy", AutomationConstants.errorMessage);
-		soft.assertEquals(storepage.getStoreEmailFromSearchResult(), "abc@gmail.com", AutomationConstants.errorMessage);
-		soft.assertEquals(storepage.getStorePhoneFromSearchResult(), "1234567894", AutomationConstants.errorMessage);
+		soft.assertEquals(storepage.getStoreNameFromSearchResult(), sname, AutomationConstants.errorMessage);
+		soft.assertEquals(storepage.getStoreEmailFromSearchResult(),semail, AutomationConstants.errorMessage);
+		soft.assertEquals(storepage.getStorePhoneFromSearchResult(),sphone, AutomationConstants.errorMessage);
 		soft.assertAll();
 	}
 

@@ -17,6 +17,7 @@ import com.pages.LoginPage;
 import com.pages.PeopleWaiterPage;
 import com.pages.ProductPage;
 import com.pages.StoresPage;
+import com.utils.ExcelUtils;
 import com.utils.PropertyUtils;
 import com.utils.WebBrowserUtils;
 
@@ -26,6 +27,7 @@ public class PeopleWaiterPageTest extends AutomationBase {
 	WebBrowserUtils webbrowser;
 	LoginPage login;
 	HomePage homepg;
+	ExcelUtils excelutil;
 	ProductPage ppage;
 	StoresPage storepage;
 	PeopleWaiterPage waiter;
@@ -37,6 +39,7 @@ public class PeopleWaiterPageTest extends AutomationBase {
 			
 			driver = getDriver();
 			login = new LoginPage(driver);
+			excelutil = new ExcelUtils();
 			webbrowser = new WebBrowserUtils();
 			prop=PropertyUtils.getProperty("config.properties");
 			login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
@@ -59,17 +62,25 @@ public class PeopleWaiterPageTest extends AutomationBase {
 
 	 @Test(priority = 2, enabled = true,groups= {"sanity"})
 	public void validatenAddWaiterPopUpfields() {
+		 String waitername = excelutil.readStringData("PeopleWaiter",14,2);
+			String wemail = excelutil.readStringData("PeopleWaiter",15, 2);
+			String wphone = excelutil.readStringData("PeopleWaiter",16, 2);
+			String wstore = excelutil.readStringData("PeopleWaiter",17, 2);
+			String rwaitername = excelutil.readStringData("PeopleWaiter",1,2);
+			String rwemail = excelutil.readStringData("PeopleWaiter",2, 2);
+			String rwphone = excelutil.readStringData("PeopleWaiter",3, 2);
+			String rwstore = excelutil.readStringData("PeopleWaiter",4,2);
 		 waiter.clickOnWaiterLink();
 		waiter.clickOnAddWaiterBtn();
-		waiter.enterValueForWaiterName("Arav");
-		waiter.enterValueForWaiterEmail("##@gmail.com");
-		waiter.enterValueForWaiterPhone("1475");
+		waiter.enterValueForWaiterName(waitername);
+		waiter.enterValueForWaiterEmail(wemail);
+		waiter.enterValueForWaiterPhone(wphone );
 		waiter.clickOnsubmitBtnInWaitersAddPopUp();
-		waiter.searchByWaitersName("Arav");
+		waiter.searchByWaitersName(rwaitername);
 		SoftAssert soft = new SoftAssert();
-		soft.assertEquals(waiter.getWaiterEmailFromSearchResult(), "abc@gmail.com",
+		soft.assertEquals(waiter.getWaiterEmailFromSearchResult(),rwemail,
 				AutomationConstants.addFeildValidateErrorMessage);
-		soft.assertEquals(waiter.getWaiterPhoneFromSearchResult(), "1234567894",
+		soft.assertEquals(waiter.getWaiterPhoneFromSearchResult(), rwphone,
 				AutomationConstants.addFeildValidateErrorMessage);
 
 		soft.assertAll();
@@ -77,58 +88,65 @@ public class PeopleWaiterPageTest extends AutomationBase {
 
 	@Test(priority = 3, enabled = true , groups= {"smoke"})
 	public void validateValueEntredInAddWaiterPopUpIsSaved() {
+		String waitername = excelutil.readStringData("PeopleWaiter",1,2);
+		String wemail = excelutil.readStringData("PeopleWaiter",2, 2);
+		String wphone = excelutil.readStringData("PeopleWaiter",3, 2);
+		String wstore = excelutil.readStringData("PeopleWaiter",4,2);
+		
 		waiter.clickOnWaiterLink();
 		waiter.clickOnAddWaiterBtn();
-		waiter.selectValueForWaiterStore("store2");
-		waiter.enterValueForWaiterName("Ramesh");
-		waiter.enterValueForWaiterPhone("1234567894");
-		waiter.enterValueForWaiterEmail("abc@gmail.com");
+		waiter.selectValueForWaiterStore(wstore);
+		waiter.enterValueForWaiterName(waitername);
+		waiter.enterValueForWaiterPhone(wphone);
+		waiter.enterValueForWaiterEmail(wemail);
 		waiter.clickOnsubmitBtnInWaitersAddPopUp();
 		waiter.searchByWaitersName("Ramesh");
 
 		SoftAssert soft = new SoftAssert();
-		soft.assertEquals(waiter.getWaiterNameFromSearchResult(), "Ramesh",
+		soft.assertEquals(waiter.getWaiterNameFromSearchResult(),waitername,
 				AutomationConstants.errorMessage);
-		soft.assertEquals(waiter.getWaiterPhoneFromSearchResult(), "1234567894",
+		soft.assertEquals(waiter.getWaiterPhoneFromSearchResult(),wphone,
 				AutomationConstants.errorMessage);
-		soft.assertEquals(waiter.getWaiterEmailFromSearchResult(), "abc@gmail.com",
+		soft.assertEquals(waiter.getWaiterEmailFromSearchResult(),wemail,
 				AutomationConstants.errorMessage);
-		soft.assertEquals(waiter.getWaiterStoreFromSearchResult(), "store2",
+		soft.assertEquals(waiter.getWaiterStoreFromSearchResult(),wstore,
 				AutomationConstants.errorMessage);
 		soft.assertAll();
 	}
 
 	@Test(priority = 4, enabled = true ,groups= {"smoke","sanity"})
 	public void validateEditFunctionOfExistingRecord() {
+		String waitername = excelutil.readStringData("PeopleWaiter",7,2);
+		String wemail = excelutil.readStringData("PeopleWaiter",8, 2);
+		String wphone = excelutil.readStringData("PeopleWaiter",9, 2);
+		String wstore = excelutil.readStringData("PeopleWaiter",10,2);
 		waiter.clickOnWaiterLink();
-		
-		waiter.searchByWaitersName("Ramesh");
-
+		waiter.searchByWaitersName(waitername);
 		waiter.clickOnEditIconInWaiter();
-		waiter.enterValueForWaiterEmail("pqr@gmail.com");
-		waiter.enterValueForWaiterPhone("1234");
-
-		waiter.selectValueForWaiterStore("store2");
+		waiter.enterValueForWaiterName(waitername);
+		waiter.enterValueForWaiterPhone(wphone);
+		waiter.enterValueForWaiterEmail(wemail);
 		waiter.clickOnEditWaiterSubmit();
-		waiter.searchByWaitersName("Ramesh");
+		waiter.searchByWaitersName(waitername);
 		SoftAssert soft = new SoftAssert();
-		soft.assertEquals(waiter.getWaiterNameFromSearchResult(), "Ramesh",
+		soft.assertEquals(waiter.getWaiterNameFromSearchResult(),waitername,
 				AutomationConstants.errorMessage);
-		soft.assertEquals(waiter.getWaiterPhoneFromSearchResult(), "1234",AutomationConstants.errorMessage);
-		soft.assertEquals(waiter.getWaiterEmailFromSearchResult(), "pqr@gmail.com",
+		soft.assertEquals(waiter.getWaiterPhoneFromSearchResult(),wphone, AutomationConstants.errorMessage);
+		soft.assertEquals(waiter.getWaiterEmailFromSearchResult(),wemail,
 				AutomationConstants.errorMessage);
-		soft.assertEquals(waiter.getWaiterStoreFromSearchResult(), "store2",
+		soft.assertEquals(waiter.getWaiterStoreFromSearchResult(),wstore,
 				AutomationConstants.errorMessage);
 		soft.assertAll();
 	}
 
 	@Test(priority = 5, enabled = true, groups= {"smoke","sanity" ,"regression"})
 	public void validateDeleteFunctiongOfExistingRecord() {
+		String waitername = excelutil.readStringData("PeopleWaiter",12,2);
 		waiter.clickOnWaiterLink();
-		waiter.searchByWaitersName("ammu");
+		waiter.searchByWaitersName(waitername);
 		waiter.clickOnDeleteIconInWaiter();
 		waiter.clickOnDeleteConformMsg();
-		waiter.searchByWaitersName("ammu");
+		waiter.searchByWaitersName(waitername);
 
 		assertEquals(waiter.getWaiterSearchResultOfDeletedEntry(), "No matching records found",
 				AutomationConstants.deleteCheck);

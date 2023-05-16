@@ -304,37 +304,24 @@ public String getProductPriceFromSearchResult() {
 	return element.getTextFunction(driver, productprice_searchresult);
 	
 }
-	
-
-	public void searchByProductCode(String productcode) {
+public void searchByProductCode(String productcode) {
 		element.clearFunction(searchbtn);
 		element.clickOnTheElement(driver, searchbtn);
 		
 		element.entreTheValue(driver, searchbtn, productcode);
-	}
+}
 	
-	public void clickOnEditProduct() {
+public void clickOnEditProduct() {
 		 element.clickOnTheElement(driver, editicon);
-	}
+}
 	
-	public void clickOnEditProductSubmit() {
+public void clickOnEditProductSubmit() {
 		 element.clickOnTheElement(driver, editiconSubmit);
-	}
-	
-	
-	
+}
+		
 public void clearTheWebElementValue(WebElement webelement1) {
 	
 	element.clearFunction(webelement1);
-}
-	
-	
-
-	
-	
-	
-	
-	
-	
+}	
 	
 }

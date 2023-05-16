@@ -51,15 +51,16 @@ public class ExpensePageTest extends AutomationBase {
 
 	@Test(priority = 1, enabled = true)
 	public void validateTheElementInAddExpensePopup() {
-
+		
 		expensep.clickOnAddExpense();
-		expensep.clickOnaddExpenseCloseBtn();
+		
 		SoftAssert soft = new SoftAssert();
 		soft.assertTrue(expensep.isExpenseDateDisplayed(), AutomationConstants.addDisplayedErrorMsg);
 		soft.assertTrue(expensep.isExpenseReferenceDisplayed(), AutomationConstants.addDisplayedErrorMsg);
 		soft.assertTrue(expensep.isExpenseCategoryDisplayed(), AutomationConstants.addDisplayedErrorMsg);
 		soft.assertTrue(expensep.isExpenseStoreDisplayed(), AutomationConstants.addDisplayedErrorMsg);
 		soft.assertTrue(expensep.isExpenseAmountDisplayed(), AutomationConstants.addDisplayedErrorMsg);
+		expensep.clickOnaddExpenseCloseBtn();
 		soft.assertAll();
 		
 
