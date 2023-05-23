@@ -2,14 +2,9 @@ package com.test;
 
 import static org.testng.Assert.assertEquals;
 
-import java.io.IOException;
-import java.time.Duration;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -39,18 +34,13 @@ public class ExpensePageTest extends AutomationBase {
 	ExpensePage expensep;
 	Properties prop;
 
-	@BeforeMethod
-	public void prerun() throws Exception {
-		driver = getDriver();
+	@Test(priority = 1, enabled = true)
+	public void validateTheElementInAddExpensePopup() {
 		login = new LoginPage(driver);
 		webbrowser = new WebBrowserUtils();
 		prop = PropertyUtils.getProperty("config.properties");
 		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
 		expensep = homepg.navigateToExpensePage();
-	}
-
-	@Test(priority = 1, enabled = true)
-	public void validateTheElementInAddExpensePopup() {
 		
 		expensep.clickOnAddExpense();
 		
@@ -68,8 +58,16 @@ public class ExpensePageTest extends AutomationBase {
 
 	@Test(priority = 2, enabled = true)
 	public void validatenAddExpensePopUpfields() {
+		
+		login = new LoginPage(driver);
+		webbrowser = new WebBrowserUtils();
+		prop = PropertyUtils.getProperty("config.properties");
+		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
+		expensep = homepg.navigateToExpensePage();
+		
 		expensep.clickOnAddExpense();
-		expensep.selectValueForExpenseStore("Shibina");
+		expensep.enterValueForExpenseDate("2023-02-04");
+		//expensep.enterValueForExpenseReference(reference);
 		expensep.enterValueForExpenseAmount("xyz");
 
 		expensep.clickOnAddExpenseSubmit();
@@ -85,28 +83,40 @@ public class ExpensePageTest extends AutomationBase {
 	}
 
 	@Test(priority = 3, enabled = true, dataProviderClass = ExpenseDataSupplier.class)
-	public void validateEnteredValueInAddExpensePopUpIsSaved(String date, String ref, String cat, String store,
-			String amt) {
+	public void validateEnteredValueInAddExpensePopUpIsSaved(String date, String reference, String category, String store,
+			String amount) {
+		login = new LoginPage(driver);
+		webbrowser = new WebBrowserUtils();
+		prop = PropertyUtils.getProperty("config.properties");
+		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
+		expensep = homepg.navigateToExpensePage();
+		
 		expensep.clickOnAddExpense();
 		expensep.enterValueForExpenseDate(date);
-		expensep.enterValueForExpenseReference(ref);
-		expensep.enterValueForExpenseAmount(amt);
-		expensep.selectValueForExpenseCategory(cat);
+		expensep.enterValueForExpenseReference(reference);
+		expensep.enterValueForExpenseAmount(amount);
+		expensep.selectValueForExpenseCategory(category);
 		expensep.selectValueForExpenseStore(store);
 		expensep.clickOnAddExpenseSubmit();
-		expensep.searchByExpenseStore("MNC");
+		expensep.searchByExpenseStore(store);
 		SoftAssert soft = new SoftAssert();
-		soft.assertEquals(expensep.getExpensDateFromSearchResult(), "04\04\2023", AutomationConstants.errorMessage);
-		soft.assertEquals(expensep.getExpensReferenceFromSearchResult(), "abc", AutomationConstants.errorMessage);
-		soft.assertEquals(expensep.getExpensCategoryFromSearchResult(), "Pasta", AutomationConstants.errorMessage);
-		soft.assertEquals(expensep.getExpensAmountFromSearchResult(), "1200", AutomationConstants.errorMessage);
-		soft.assertEquals(expensep.getExpensStoreFromSearchResult(), "MNC", AutomationConstants.errorMessage);
+		soft.assertEquals(expensep.getExpensDateFromSearchResult(), date, AutomationConstants.errorMessage);
+		soft.assertEquals(expensep.getExpensReferenceFromSearchResult(), reference, AutomationConstants.errorMessage);
+		soft.assertEquals(expensep.getExpensCategoryFromSearchResult(),category, AutomationConstants.errorMessage);
+		soft.assertEquals(expensep.getExpensAmountFromSearchResult(), store, AutomationConstants.errorMessage);
+		soft.assertEquals(expensep.getExpensStoreFromSearchResult(),amount, AutomationConstants.errorMessage);
 
 		soft.assertAll();
 	}
 
 	@Test(priority = 4, enabled = true)
 	public void modifyTheExistingRecordOfExpense() {
+		login = new LoginPage(driver);
+		webbrowser = new WebBrowserUtils();
+		prop = PropertyUtils.getProperty("config.properties");
+		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
+		expensep = homepg.navigateToExpensePage();	
+		
 		expensep.searchByExpenseStore("MNC");
 		expensep.clickOnEditIcon();
 		expensep.enterValueForExpenseAmount("4500");
@@ -124,15 +134,24 @@ public class ExpensePageTest extends AutomationBase {
 	}
 
 	@Test(priority = 5, enabled = true)
-	public void validateDeleteFunctiongOfExistingRecord() throws IOException {
-		expensep.selectValueForExpenseStore("Shibina");
+	public void validateDeleteFunctiongOfExistingRecord(){
+		login = new LoginPage(driver);
+		webbrowser = new WebBrowserUtils();
+		prop = PropertyUtils.getProperty("config.properties");
+		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
+		expensep = homepg.navigateToExpensePage();	
+		
+		
+		expensep.searchByExpenseStore("MNC");
 		expensep.clickOnDeleteIcon();
 		expensep.clickOnDeleteConformMsg();
 		expensep.clickOnDeleteOk();
-		expensep.selectValueForExpenseStore("Shibina");
-		assertEquals(storepage.getTheSearchResultOfDeletedEntry(), "No matching records found",
+		
+		
+		expensep.searchByExpenseStore("MNC");
+		assertEquals(expensep.getTheSearchResultOfDeletedEntry(), "No matching records found",
 				AutomationConstants.deleteCheck);
-
 	}
 
+	
 }

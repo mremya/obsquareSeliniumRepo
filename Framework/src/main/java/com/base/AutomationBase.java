@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
@@ -17,13 +18,13 @@ import com.utils.WebBrowserUtils;
 
 public class AutomationBase {
 
-	static WebDriver driver;
+	public WebDriver driver;
 
 	WebBrowserUtils webbrowser;
 	LoginPage login;
 	Properties prop;
 
-	@BeforeTest
+	@BeforeMethod
 	@Parameters("browserName")
 	public void preLaunch(String browserName) {
 		try {
@@ -81,12 +82,5 @@ public class AutomationBase {
 
 	}
 
-	public WebDriver getDriver() {// to return the driver
-		return driver;
-	}
-
-	//@AfterTest
-	public void quitBrowser() {
-		webbrowser.closeCurrentWebPage(driver);
-	}
+	
 }

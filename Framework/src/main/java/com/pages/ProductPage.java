@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.utils.GenericUtils;
+import com.utils.WaitUtils;
 import com.utils.WebActionUtils;
 
 public class ProductPage {
@@ -14,6 +15,7 @@ public class ProductPage {
 
 	WebActionUtils element = new WebActionUtils();
      GenericUtils  dropdownsel=new GenericUtils();
+     WaitUtils wait=new WaitUtils();
 	
 	@FindBy( xpath ="(//select[@class='form-control'])[2]")
 	WebElement productType;
@@ -112,7 +114,7 @@ public class ProductPage {
 		 element.clickOnTheElement(driver, conformDeleteMsg);
 	}
 	public Boolean isAddProductDisplayed() {
-		
+		wait.waitForElementToBeClickable(driver, addProduct, 20);
 		return element.isDisplayedFunction(driver, addProduct);
 
 }
@@ -267,6 +269,7 @@ public void clickOnAddProductSubmit() {
 }
 	
 public void clickOnAddProductClose() {
+	//wait.waitForElementToBeClickable(driver, addProductCloseBtn, 20);
 	 element.clickOnTheElement(driver, addProductCloseBtn);
 }
 
@@ -323,5 +326,8 @@ public void clearTheWebElementValue(WebElement webelement1) {
 	
 	element.clearFunction(webelement1);
 }	
+public void waitForClickOnAddCloseButton() {
 	
+	wait.waitForElementToBeClickable(driver, addProductCloseBtn, 20);
+}	
 }

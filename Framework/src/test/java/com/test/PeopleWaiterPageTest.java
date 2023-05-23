@@ -2,11 +2,8 @@ package com.test;
 
 import static org.testng.Assert.assertEquals;
 
-import java.time.Duration;
 import java.util.Properties;
 
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -23,7 +20,7 @@ import com.utils.WebBrowserUtils;
 
 public class PeopleWaiterPageTest extends AutomationBase {
 
-	WebDriver driver;
+	
 	WebBrowserUtils webbrowser;
 	LoginPage login;
 	HomePage homepg;
@@ -34,20 +31,16 @@ public class PeopleWaiterPageTest extends AutomationBase {
 	Properties prop;
 
 	
-		@BeforeMethod
-		public void prerun() throws Exception {
-			
-			driver = getDriver();
-			login = new LoginPage(driver);
+
+	 @Test(priority = 1, enabled = true ,groups= {"smoke"})
+	public void validateTheElementInAddWaiterPopup() {
+		 login = new LoginPage(driver);
 			excelutil = new ExcelUtils();
 			webbrowser = new WebBrowserUtils();
 			prop=PropertyUtils.getProperty("config.properties");
 			login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
 			waiter = homepg.navigateToPeoplePage();
-}
-
-	 @Test(priority = 1, enabled = true ,groups= {"smoke"})
-	public void validateTheElementInAddWaiterPopup() {
+		 
 		waiter.clickOnWaiterLink();
 		waiter.clickOnAddWaiterBtn();
 		waiter.clickOnaddWaiterCloseBtn();
@@ -62,6 +55,13 @@ public class PeopleWaiterPageTest extends AutomationBase {
 
 	 @Test(priority = 2, enabled = true,groups= {"sanity"})
 	public void validatenAddWaiterPopUpfields() {
+		 login = new LoginPage(driver);
+			excelutil = new ExcelUtils();
+			webbrowser = new WebBrowserUtils();
+			prop=PropertyUtils.getProperty("config.properties");
+			login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
+			waiter = homepg.navigateToPeoplePage();
+		 
 		 String waitername = excelutil.readStringData("PeopleWaiter",14,2);
 			String wemail = excelutil.readStringData("PeopleWaiter",15, 2);
 			String wphone = excelutil.readStringData("PeopleWaiter",16, 2);
@@ -88,6 +88,13 @@ public class PeopleWaiterPageTest extends AutomationBase {
 
 	@Test(priority = 3, enabled = true , groups= {"smoke"})
 	public void validateValueEntredInAddWaiterPopUpIsSaved() {
+		login = new LoginPage(driver);
+		excelutil = new ExcelUtils();
+		webbrowser = new WebBrowserUtils();
+		prop=PropertyUtils.getProperty("config.properties");
+		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
+		waiter = homepg.navigateToPeoplePage();
+		
 		String waitername = excelutil.readStringData("PeopleWaiter",1,2);
 		String wemail = excelutil.readStringData("PeopleWaiter",2, 2);
 		String wphone = excelutil.readStringData("PeopleWaiter",3, 2);
@@ -116,6 +123,13 @@ public class PeopleWaiterPageTest extends AutomationBase {
 
 	@Test(priority = 4, enabled = true ,groups= {"smoke","sanity"})
 	public void validateEditFunctionOfExistingRecord() {
+		login = new LoginPage(driver);
+		excelutil = new ExcelUtils();
+		webbrowser = new WebBrowserUtils();
+		prop=PropertyUtils.getProperty("config.properties");
+		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
+		waiter = homepg.navigateToPeoplePage();
+		
 		String waitername = excelutil.readStringData("PeopleWaiter",7,2);
 		String wemail = excelutil.readStringData("PeopleWaiter",8, 2);
 		String wphone = excelutil.readStringData("PeopleWaiter",9, 2);
@@ -141,6 +155,13 @@ public class PeopleWaiterPageTest extends AutomationBase {
 
 	@Test(priority = 5, enabled = true, groups= {"smoke","sanity" ,"regression"})
 	public void validateDeleteFunctiongOfExistingRecord() {
+		login = new LoginPage(driver);
+		excelutil = new ExcelUtils();
+		webbrowser = new WebBrowserUtils();
+		prop=PropertyUtils.getProperty("config.properties");
+		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
+		waiter = homepg.navigateToPeoplePage();
+		
 		String waitername = excelutil.readStringData("PeopleWaiter",12,2);
 		waiter.clickOnWaiterLink();
 		waiter.searchByWaitersName(waitername);

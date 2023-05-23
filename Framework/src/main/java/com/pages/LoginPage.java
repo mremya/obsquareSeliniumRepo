@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.utils.ExcelUtils;
+import com.utils.WaitUtils;
 import com.utils.WebActionUtils;
 
 public class LoginPage {
@@ -12,6 +14,7 @@ public class LoginPage {
 	WebDriver driver;  
 	
 		WebActionUtils element=  new WebActionUtils();
+		WaitUtils waitobj=new WaitUtils();
 		
 		@FindBy(xpath="//input[@name='username']")
 		WebElement username;
@@ -19,7 +22,7 @@ public class LoginPage {
 	    @FindBy(xpath="//input[@name='password']")
 		WebElement password;
 	    
-	    @FindBy(xpath="//input[@class='login loginmodal-submit']")
+	    @FindBy(xpath="//input[@type='submit']")
 	    WebElement loginSubmit;
 	    
 	    @FindBy(xpath="//h1[@class='text-center choose_store']")
@@ -46,17 +49,19 @@ public class LoginPage {
 	 }
 	 
 	 public void clickOnTheLoginSubmit() {
+		 waitobj.waitForElementToBeClickable(driver, loginSubmit, 20);
 			element.clickOnTheElement(driver, loginSubmit);
 		}
 
 	 
-	 public void performlogin(String username , String password) throws Exception {
+	 public void performlogin(String username , String password)  {
+		// waitobj.implicitWait(driver, 20);
 		 enterValueToUserName(username);
 		enterValueToPassword(password);
 		clickOnTheLoginSubmit();	 
 	 }
 
-	 public HomePage login(String username , String password) throws Exception {
+	 public HomePage login(String username , String password)  {
 		 performlogin( username ,  password);
 			/*
 			 * enterValueToUserName(username); enterValueToPassword(password);

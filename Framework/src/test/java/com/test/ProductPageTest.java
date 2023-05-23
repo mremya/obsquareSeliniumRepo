@@ -23,7 +23,7 @@ import com.utils.WebBrowserUtils;
 public class ProductPageTest extends AutomationBase {
 
 	ExcelUtils excelutil;
-	WebDriver driver;
+	
 	WebBrowserUtils webbrowser;
 	LoginPage login;
 	HomePage hpage;
@@ -31,10 +31,11 @@ public class ProductPageTest extends AutomationBase {
 	Properties prop;
 	StoresPage storepage;
 
-	@BeforeMethod
-	public void prerun() throws Exception {
+	
+
+	@Test(priority = 1, enabled = true)
+	public void validateTheElementInAddProductPopup() throws Exception {
 		excelutil = new ExcelUtils();
-		driver = getDriver();
 		login = new LoginPage(driver);
 		hpage = new HomePage(driver);
 		ppage = new ProductPage(driver);
@@ -43,10 +44,6 @@ public class ProductPageTest extends AutomationBase {
 		prop = PropertyUtils.getProperty("config.properties");
 		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
 		ppage = hpage.navigateToProductPage();
-	}
-
-	@Test(priority = 1, enabled = true)
-	public void validateTheElementInAddProductPopup() {
 
 		ppage.clickOnAddProduct();
 		SoftAssert soft = new SoftAssert();
@@ -62,14 +59,26 @@ public class ProductPageTest extends AutomationBase {
 		soft.assertTrue(ppage.isProductTaxMethodDisplayed(), AutomationConstants.addDisplayedErrorMsg);
 		soft.assertTrue(ppage.isProductAlertQuantityDisplayed(), AutomationConstants.addDisplayedErrorMsg);
 		soft.assertTrue(ppage.isProductOptionsDisplayed(), AutomationConstants.addDisplayedErrorMsg);
+		ppage.waitForClickOnAddCloseButton();
 		ppage.clickOnAddProductClose();
 		soft.assertAll();
 
 	}
 
 	@Test(priority = 2, enabled = true)
-	public void validatenAddStoresPopUpfields() {
+	public void validatenAddProductPopUpfields() {
+		excelutil = new ExcelUtils();
+		login = new LoginPage(driver);
+		hpage = new HomePage(driver);
+		ppage = new ProductPage(driver);
+		prop = new Properties();
+		webbrowser = new WebBrowserUtils();
+		prop = PropertyUtils.getProperty("config.properties");
+		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
+		ppage = hpage.navigateToProductPage();
 
+		
+		
 		String pcode = excelutil.readStringData("Product", 2, 3);
 		String pname = excelutil.readStringData("Product",3, 3);
 		String ptax = excelutil.readStringData("Product",7, 3);
@@ -97,6 +106,18 @@ public class ProductPageTest extends AutomationBase {
 	@Test(priority = 3, enabled = true)
 
 	public void validateValueEntredInAddProductPopUpIsSaved()  {
+		excelutil = new ExcelUtils();
+		login = new LoginPage(driver);
+		hpage = new HomePage(driver);
+		ppage = new ProductPage(driver);
+		prop = new Properties();
+		webbrowser = new WebBrowserUtils();
+		prop = PropertyUtils.getProperty("config.properties");
+		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
+		ppage = hpage.navigateToProductPage();
+
+		
+		
 		ppage.clickOnAddProduct();
 		String ptype = excelutil.readStringData("Product",1, 2);
 		String pcode = excelutil.readStringData("Product",2, 2);
@@ -139,6 +160,18 @@ public class ProductPageTest extends AutomationBase {
 
 	@Test(priority = 4, enabled = true)
 	public void validateEditFunctionOfExistingRecord()  {
+		
+		excelutil = new ExcelUtils();
+		login = new LoginPage(driver);
+		hpage = new HomePage(driver);
+		ppage = new ProductPage(driver);
+		prop = new Properties();
+		webbrowser = new WebBrowserUtils();
+		prop = PropertyUtils.getProperty("config.properties");
+		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
+		ppage = hpage.navigateToProductPage();
+
+		
 
 		String pcode = excelutil.readStringData("Product",18, 2);
 		String pname = excelutil.readStringData("Product",15, 2);
@@ -173,6 +206,18 @@ public class ProductPageTest extends AutomationBase {
 
 	@Test(priority = 5, enabled = true)
 	public void validateDeleteFunctiongOfExistingRecord(){
+		excelutil = new ExcelUtils();
+		login = new LoginPage(driver);
+		hpage = new HomePage(driver);
+		ppage = new ProductPage(driver);
+		prop = new Properties();
+		webbrowser = new WebBrowserUtils();
+		prop = PropertyUtils.getProperty("config.properties");
+		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
+		ppage = hpage.navigateToProductPage();
+
+		
+		
 		String pcode = excelutil.readStringData("Product",20, 2);
 		ppage.searchByProductCode(pcode);
 		ppage.clickOnProductDeleteIcon();

@@ -9,42 +9,30 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">ChromeTest</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num attn">4</td><td class="num">97,961</td><td></td><td></td></tr>
+<tr><td><a href="#t0">ChromeTest</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num attn">4</td><td class="num">600,479</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">ChromeTest &#8212; failed</th></tr><tr class="failedeven"><td rowspan="4">com.test.ProductPageTest</td><td><a href="#m0">validateDeleteFunctiongOfExistingRecord</a></td><td rowspan="1">1684154733638</td><td rowspan="1">56</td></tr><tr class="failedeven"><td><a href="#m1">validateEditFunctionOfExistingRecord</a></td><td rowspan="1">1684154732354</td><td rowspan="1">111</td></tr><tr class="failedeven"><td><a href="#m2">validateValueEntredInAddProductPopUpIsSaved</a></td><td rowspan="1">1684154720519</td><td rowspan="1">10368</td></tr><tr class="failedeven"><td><a href="#m3">validatenAddStoresPopUpfields</a></td><td rowspan="1">1684154714907</td><td rowspan="1">4374</td></tr><tr><th colspan="4">ChromeTest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.test.LoginPageTest</td><td><a href="#m4">validateLogin</a></td><td rowspan="1">1684154700693</td><td rowspan="1">5231</td></tr><tr class="passedodd"><td rowspan="1">com.test.ProductPageTest</td><td><a href="#m5">validateTheElementInAddProductPopup</a></td><td rowspan="1">1684154710659</td><td rowspan="1">1542</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">ChromeTest &#8212; failed</th></tr><tr class="failedeven"><td rowspan="4">com.test.ProductPageTest</td><td><a href="#m0">validateDeleteFunctiongOfExistingRecord</a></td><td rowspan="1">1684857758693</td><td rowspan="1">5</td></tr><tr class="failedeven"><td><a href="#m1">validateEditFunctionOfExistingRecord</a></td><td rowspan="1">1684857656760</td><td rowspan="1">2</td></tr><tr class="failedeven"><td><a href="#m2">validateValueEntredInAddProductPopUpIsSaved</a></td><td rowspan="1">1684857553981</td><td rowspan="1">1122</td></tr><tr class="failedeven"><td><a href="#m3">validatenAddStoresPopUpfields</a></td><td rowspan="1">1684857451707</td><td rowspan="1">6</td></tr><tr><th colspan="4">ChromeTest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.test.LoginPageTest</td><td><a href="#m4">validateLogin</a></td><td rowspan="1">1684857180644</td><td rowspan="1">2534</td></tr><tr class="passedodd"><td rowspan="1">com.test.ProductPageTest</td><td><a href="#m5">validateTheElementInAddProductPopup</a></td><td rowspan="1">1684857287002</td><td rowspan="1">63235</td></tr></tbody>
 </table>
-<h2>ChromeTest</h2><h3 id="m0">com.test.ProductPageTest#validateDeleteFunctiongOfExistingRecord</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.IllegalStateException: Cannot get a STRING value from a NUMERIC cell
-	at org.apache.poi.xssf.usermodel.XSSFCell.typeMismatch(XSSFCell.java:946)
-	at org.apache.poi.xssf.usermodel.XSSFCell.getRichStringCellValue(XSSFCell.java:336)
-	at org.apache.poi.xssf.usermodel.XSSFCell.getStringCellValue(XSSFCell.java:280)
-	at com.utils.ExcelUtils.readStringData(ExcelUtils.java:71)
-	at com.test.ProductPageTest.validateDeleteFunctiongOfExistingRecord(ProductPageTest.java:166)
+<h2>ChromeTest</h2><h3 id="m0">com.test.ProductPageTest#validateDeleteFunctiongOfExistingRecord</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.RuntimeException: Error during reading file
+	at com.utils.ExcelUtils.readStringData(ExcelUtils.java:61)
+	at com.test.ProductPageTest.validateDeleteFunctiongOfExistingRecord(ProductPageTest.java:177)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 ... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.test.ProductPageTest#validateEditFunctionOfExistingRecord</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.IllegalStateException: Cannot get a STRING value from a NUMERIC cell
-	at org.apache.poi.xssf.usermodel.XSSFCell.typeMismatch(XSSFCell.java:946)
-	at org.apache.poi.xssf.usermodel.XSSFCell.getRichStringCellValue(XSSFCell.java:336)
-	at org.apache.poi.xssf.usermodel.XSSFCell.getStringCellValue(XSSFCell.java:280)
-	at com.utils.ExcelUtils.readStringData(ExcelUtils.java:71)
-	at com.test.ProductPageTest.validateEditFunctionOfExistingRecord(ProductPageTest.java:138)
+<h3 id="m1">com.test.ProductPageTest#validateEditFunctionOfExistingRecord</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.RuntimeException: Error during reading file
+	at com.utils.ExcelUtils.readStringData(ExcelUtils.java:61)
+	at com.test.ProductPageTest.validateEditFunctionOfExistingRecord(ProductPageTest.java:144)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 ... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.test.ProductPageTest#validateValueEntredInAddProductPopUpIsSaved</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.IllegalStateException: Cannot get a STRING value from a NUMERIC cell
-	at org.apache.poi.xssf.usermodel.XSSFCell.typeMismatch(XSSFCell.java:946)
-	at org.apache.poi.xssf.usermodel.XSSFCell.getRichStringCellValue(XSSFCell.java:336)
-	at org.apache.poi.xssf.usermodel.XSSFCell.getStringCellValue(XSSFCell.java:280)
-	at com.utils.ExcelUtils.readStringData(ExcelUtils.java:71)
-	at com.test.ProductPageTest.validateValueEntredInAddProductPopUpIsSaved(ProductPageTest.java:101)
+<h3 id="m2">com.test.ProductPageTest#validateValueEntredInAddProductPopUpIsSaved</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.RuntimeException: Error during reading file
+	at com.utils.ExcelUtils.readStringData(ExcelUtils.java:61)
+	at com.test.ProductPageTest.validateValueEntredInAddProductPopUpIsSaved(ProductPageTest.java:102)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 ... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.test.ProductPageTest#validatenAddStoresPopUpfields</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
-	failure message: no validation check for add Product attribute was found expected [111] but found [000203420342034],
-	failure message: no validation check for add Product attribute was found expected [maggi] but found [233nokianokianokia],
-	failure message: no validation check for add Product attribute was found expected [abc] but found [21],
-	failure message: no validation check for add Product attribute was found expected [abc] but found [233.000 abc1234569]
-	at com.test.ProductPageTest.validatenAddStoresPopUpfields(ProductPageTest.java:88)
+<h3 id="m3">com.test.ProductPageTest#validatenAddStoresPopUpfields</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.RuntimeException: Error during reading file
+	at com.utils.ExcelUtils.readStringData(ExcelUtils.java:61)
+	at com.test.ProductPageTest.validatenAddStoresPopUpfields(ProductPageTest.java:74)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m4">com.test.LoginPageTest#validateLogin</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m5">com.test.ProductPageTest#validateTheElementInAddProductPopup</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>

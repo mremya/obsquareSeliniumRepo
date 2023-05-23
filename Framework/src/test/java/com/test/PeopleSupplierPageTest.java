@@ -36,19 +36,15 @@ public class PeopleSupplierPageTest extends AutomationBase {
 	PeopleSupplierPage supplier;
 	Properties prop;
 
-	@BeforeMethod
-	public void prerun() throws Exception {
-		driver = getDriver();
+	@Test(priority = 1, enabled = true, groups = { "sanity" })
+	public void validateTheElementInAddSupplierPopup() {
 		login = new LoginPage(driver);
 		excelutil = new ExcelUtils();
 		webbrowser = new WebBrowserUtils();
 		prop = PropertyUtils.getProperty("config.properties");
 		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
 		waiter= homepg.navigateToPeoplePage();
-	}
-
-	@Test(priority = 1, enabled = true, groups = { "sanity" })
-	public void validateTheElementInAddSupplierPopup() {
+		
 		supplier.clickOnSuplierLink();
 		supplier.clickOnAddSupplierBtn();
 		
@@ -64,6 +60,13 @@ public class PeopleSupplierPageTest extends AutomationBase {
 
 	@Test(priority = 2, enabled = true, groups = { "regression" })
 	public void validateAddSupplierPopUpfields() {
+		
+		login = new LoginPage(driver);
+		excelutil = new ExcelUtils();
+		webbrowser = new WebBrowserUtils();
+		prop = PropertyUtils.getProperty("config.properties");
+		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
+		waiter= homepg.navigateToPeoplePage();
 		
 		String sname = excelutil.readStringData("PeopleSupplier",13, 2);
 		String sphone = excelutil.readStringData("PeopleSupplier",14, 2);
@@ -96,6 +99,13 @@ public class PeopleSupplierPageTest extends AutomationBase {
 
 	@Test(priority = 3, enabled = true, groups = { "sanity" })
 	public void validateValueEntredInAddSupplierPopUpIsSaved() {
+		login = new LoginPage(driver);
+		excelutil = new ExcelUtils();
+		webbrowser = new WebBrowserUtils();
+		prop = PropertyUtils.getProperty("config.properties");
+		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
+		waiter= homepg.navigateToPeoplePage();
+		
 		String sname = excelutil.readStringData("PeopleSupplier",1, 2);
 		String sphone = excelutil.readStringData("PeopleSupplier",2, 2);
 		String semail = excelutil.readStringData("PeopleSupplier",3,2);
@@ -121,6 +131,13 @@ public class PeopleSupplierPageTest extends AutomationBase {
 
 	@Test(priority = 4, enabled = true, groups = { "smoke" })
 	public void modifyTheExistingRecordOfSupplier() {
+		login = new LoginPage(driver);
+		excelutil = new ExcelUtils();
+		webbrowser = new WebBrowserUtils();
+		prop = PropertyUtils.getProperty("config.properties");
+		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
+		waiter= homepg.navigateToPeoplePage();
+		
 		String sname = excelutil.readStringData("PeopleSupplier",1, 2);
 		String sphone = excelutil.readStringData("PeopleSupplier",2, 2);
 		String semail = excelutil.readStringData("PeopleSupplier",3,2);
@@ -152,6 +169,13 @@ public class PeopleSupplierPageTest extends AutomationBase {
 
 	@Test(priority = 5, enabled = true, groups = { "smoke" })
 	public void validateDeleteFunctiongOfExistingRecord() {
+		login = new LoginPage(driver);
+		excelutil = new ExcelUtils();
+		webbrowser = new WebBrowserUtils();
+		prop = PropertyUtils.getProperty("config.properties");
+		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
+		waiter= homepg.navigateToPeoplePage();
+		
 		String sname = excelutil.readStringData("PeopleSupplier",10, 2);
 		supplier.clickOnSuplierLink();
 		supplier.searchBySupplierName(sname);

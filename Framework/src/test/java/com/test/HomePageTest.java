@@ -24,10 +24,10 @@ public class HomePageTest extends AutomationBase {
 	HomePage hpage;
 	ProductPage ppage;
 	Properties prop;
-	
-	@BeforeMethod
-	public void prerun() throws Exception {
-		driver=getDriver();
+
+	@Test( enabled = true ,groups= {"smoke"})
+	public void validateMenuLinksDisplayedInHomePage()  {
+		
 		login=new LoginPage(driver);
 		 hpage= new HomePage(driver);
 		 ppage=new ProductPage(driver);
@@ -35,11 +35,6 @@ public class HomePageTest extends AutomationBase {
 		prop=PropertyUtils.getProperty("config.properties");
 		hpage=login.login(prop.getProperty("username"), prop.getProperty("password"));
 		ppage = hpage.navigateToProductPage();
-	
-	}
-
-	@Test( enabled = true ,groups= {"smoke"})
-	public void validateMenuLinksDisplayedInHomePage() throws Exception {
 		
 		SoftAssert soft=new SoftAssert();
 		soft.assertTrue(hpage.isProductLinkDisplayed(),AutomationConstants.linkDisplayCkeck);

@@ -23,7 +23,7 @@ import com.utils.WebActionUtils;
 import com.utils.WebBrowserUtils;
 
 public class StoresPageTest extends AutomationBase {
-	WebDriver driver;
+	
 	WebBrowserUtils webbrowser;
 	ExcelUtils excelutil;
 	LoginPage login;
@@ -33,10 +33,8 @@ public class StoresPageTest extends AutomationBase {
 	WebActionUtils webaction;
 	Properties prop;
 
-	@BeforeMethod
-	public void prerun() throws Exception {
-
-		driver = getDriver();
+	@Test(priority = 1, enabled = true)
+	public void isTheFieldsInAddStorePopupIsDisplayed() {
 		login = new LoginPage(driver);
 		hpage = new HomePage(driver);
 		ppage = new ProductPage(driver);
@@ -45,11 +43,6 @@ public class StoresPageTest extends AutomationBase {
 		prop = PropertyUtils.getProperty("config.properties");
 		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
 		storepage=hpage.navigateToStoresPage();
-
-	}
-
-	@Test(priority = 1, enabled = true)
-	public void validateTheElementInAddStorePopup() {
 
 		storepage.clickOnAddStores();
 		SoftAssert soft = new SoftAssert();
@@ -67,6 +60,15 @@ public class StoresPageTest extends AutomationBase {
 
 	@Test(priority = 3, enabled = true)
 	public void validateEnteredValueInAddStoresPopUpIsSaved() {
+		login = new LoginPage(driver);
+		hpage = new HomePage(driver);
+		ppage = new ProductPage(driver);
+		excelutil = new ExcelUtils();
+		webbrowser = new WebBrowserUtils();
+		prop = PropertyUtils.getProperty("config.properties");
+		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
+		storepage=hpage.navigateToStoresPage();
+		
 		String sname = excelutil.readStringData("Store",1,2);
 		String semail = excelutil.readStringData("Store",2,2);
 		String sphone = excelutil.readStringData("Store",3,2);
@@ -96,6 +98,15 @@ public class StoresPageTest extends AutomationBase {
 
 	@Test(priority = 4, enabled = true)
 	public void modifyTheExistingRecordOfStores() {
+		login = new LoginPage(driver);
+		hpage = new HomePage(driver);
+		ppage = new ProductPage(driver);
+		excelutil = new ExcelUtils();
+		webbrowser = new WebBrowserUtils();
+		prop = PropertyUtils.getProperty("config.properties");
+		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
+		storepage=hpage.navigateToStoresPage();
+		
 		String sname = excelutil.readStringData("Store",10,2);
 		String semail = excelutil.readStringData("Store",11,2);
 		String sphone = excelutil.readStringData("Store",12,2);
@@ -125,6 +136,15 @@ public class StoresPageTest extends AutomationBase {
 
 	@Test(priority = 5, enabled = true)
 	public void deleteExistingRecord() {
+		login = new LoginPage(driver);
+		hpage = new HomePage(driver);
+		ppage = new ProductPage(driver);
+		excelutil = new ExcelUtils();
+		webbrowser = new WebBrowserUtils();
+		prop = PropertyUtils.getProperty("config.properties");
+		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
+		storepage=hpage.navigateToStoresPage();
+		
 		String sname = excelutil.readStringData("Store",18,2);
 		storepage.enterValueForStoreName(sname);
 		storepage.searchByStoreName(sname);
@@ -137,6 +157,15 @@ public class StoresPageTest extends AutomationBase {
 
 	@Test(priority = 2, enabled = true)
 	public void validatenAddStoresPopUpfields() {
+		login = new LoginPage(driver);
+		hpage = new HomePage(driver);
+		ppage = new ProductPage(driver);
+		excelutil = new ExcelUtils();
+		webbrowser = new WebBrowserUtils();
+		prop = PropertyUtils.getProperty("config.properties");
+		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
+		storepage=hpage.navigateToStoresPage();
+		
 		String sname = excelutil.readStringData("Store",21,2);
 		String semail = excelutil.readStringData("Store",22,2);
 		String sphone = excelutil.readStringData("Store",23,2);

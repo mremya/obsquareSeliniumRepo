@@ -13,15 +13,13 @@ import com.utils.PropertyUtils;
 
 public class LoginPageTest extends AutomationBase {
 
-	WebDriver driver;
-
+	
 	LoginPage login;
 	Properties prop;
 	
 
 	@Test(enabled = true, groups = { "smoke" }, retryAnalyzer = com.analyzer.RetryAnalyzer.class)
 	public void validateLogin() throws Exception {
-		driver = getDriver();
 		login = new LoginPage(driver);
 		prop = new Properties();
 		prop = PropertyUtils.getProperty("config.properties");

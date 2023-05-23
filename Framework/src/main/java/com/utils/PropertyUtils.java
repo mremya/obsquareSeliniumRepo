@@ -15,7 +15,7 @@ public class PropertyUtils {
 	public static final String currentDir = System.getProperty("user.dir");
 	public static String filePath = currentDir + "\\src\\main\\resources\\";
 	
-	public static Properties getProperty(String fileName) throws IOException {
+	public static Properties getProperty(String fileName)  {
 		FileInputStream fis=null;;
 		Properties prop=null;
 		
@@ -30,7 +30,12 @@ public class PropertyUtils {
 			
 			e.printStackTrace();
 		}finally {
-			fis.close();
+			try {
+				fis.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
 	

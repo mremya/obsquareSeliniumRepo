@@ -35,19 +35,16 @@ public class PeopleCoustomerPageTest extends AutomationBase {
 	PeopleCustomerPage customer;
 	Properties prop;
 
-	@BeforeMethod
-	public void prerun() throws Exception {
-		driver = getDriver();
+
+	@Test(priority = 1, enabled = true, groups = { "sanity" })
+	public void validateTheElementInAddCustomerPopup() {
 		login = new LoginPage(driver);
 		webbrowser = new WebBrowserUtils();
 		excelutil = new ExcelUtils();
 		prop = PropertyUtils.getProperty("config.properties");
 		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
 		waiter= homepg.navigateToPeoplePage();
-	}
-
-	@Test(priority = 1, enabled = true, groups = { "sanity" })
-	public void validateTheElementInAddCustomerPopup() {
+		
 		customer.clickOnCustomerLink();
 		customer.clickOnAddCustomerBtn();
 		
@@ -63,14 +60,21 @@ public class PeopleCoustomerPageTest extends AutomationBase {
 
 	@Test(priority = 2, enabled = true, groups = { "smoke", "sanity" })
 	public void validateAddCustomerPopUpfields() {
-		String cname = excelutil.readStringData("PeopleWaiter",15,2);
-		String cphone = excelutil.readStringData("PeopleWaiter",16, 2);
-		String cemail = excelutil.readStringData("PeopleWaiter",17, 2);
-		String cdiscount = excelutil.readStringData("PeopleWaiter",18, 2);
-		String rcname = excelutil.readStringData("PeopleWaiter",1,2);
-		String rcphone = excelutil.readStringData("PeopleWaiter",2, 2);
-		String rcemail = excelutil.readStringData("PeopleWaiter",3, 2);
-		String rcdiscount= excelutil.readStringData("PeopleWaiter",4,2);
+		login = new LoginPage(driver);
+		webbrowser = new WebBrowserUtils();
+		excelutil = new ExcelUtils();
+		prop = PropertyUtils.getProperty("config.properties");
+		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
+		waiter= homepg.navigateToPeoplePage();
+		
+		String cname = excelutil.readStringData("PeopleCustomer",15,2);
+		String cphone = excelutil.readStringData("PeopleCustomer",16, 2);
+		String cemail = excelutil.readStringData("PeopleCustomer",17, 2);
+		String cdiscount = excelutil.readStringData("PeopleCustomer",18, 2);
+		String rcname = excelutil.readStringData("PeopleCustomer",1,2);
+		String rcphone = excelutil.readStringData("PeopleCustomer",2, 2);
+		String rcemail = excelutil.readStringData("PeopleCustomer",3, 2);
+		String rcdiscount= excelutil.readStringData("PeopleCustomer",4,2);
 		
 		customer.clickOnCustomerLink();
 		customer.clickOnAddCustomerBtn();
@@ -91,10 +95,17 @@ public class PeopleCoustomerPageTest extends AutomationBase {
 
 	@Test(priority = 3, enabled = true, groups = { "smoke", "regression" })
 	public void validateValueEntredInAddWaiterPopUpIsSaved() {
-		String cname = excelutil.readStringData("PeopleWaiter",1,2);
-		String cphone = excelutil.readStringData("PeopleWaiter",2, 2);
-		String cemail = excelutil.readStringData("PeopleWaiter",3, 2);
-		String cdiscount= excelutil.readStringData("PeopleWaiter",4,2);
+		login = new LoginPage(driver);
+		webbrowser = new WebBrowserUtils();
+		excelutil = new ExcelUtils();
+		prop = PropertyUtils.getProperty("config.properties");
+		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
+		waiter= homepg.navigateToPeoplePage();
+		
+		String cname = excelutil.readStringData("PeopleCustomer",1,2);
+		String cphone = excelutil.readStringData("PeopleCustomer",2, 2);
+		String cemail = excelutil.readStringData("PeopleCustomer",3, 2);
+		String cdiscount= excelutil.readStringData("PeopleCustomer",4,2);
 		
 		customer.clickOnCustomerLink();
 		customer.clickOnAddCustomerBtn();
@@ -115,10 +126,17 @@ public class PeopleCoustomerPageTest extends AutomationBase {
 
 	@Test(priority = 4, enabled = true, groups = { "regression" })
 	public void modifyTheExistingRecordOfStores() {
-		String cname = excelutil.readStringData("PeopleWaiter",7,2);
-		String cphone = excelutil.readStringData("PeopleWaiter",8, 2);
-		String cemail = excelutil.readStringData("PeopleWaiter",9, 2);
-		String cdiscount= excelutil.readStringData("PeopleWaiter",10,2);
+		login = new LoginPage(driver);
+		webbrowser = new WebBrowserUtils();
+		excelutil = new ExcelUtils();
+		prop = PropertyUtils.getProperty("config.properties");
+		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
+		waiter= homepg.navigateToPeoplePage();
+		
+		String cname = excelutil.readStringData("PeopleCustomer",7,2);
+		String cphone = excelutil.readStringData("PeopleCustomer",8, 2);
+		String cemail = excelutil.readStringData("PeopleCustomer",9, 2);
+		String cdiscount= excelutil.readStringData("PeopleCustomer",10,2);
 		
 		
 		customer.clickOnCustomerLink();
@@ -140,7 +158,14 @@ public class PeopleCoustomerPageTest extends AutomationBase {
 
 	@Test(priority = 5, enabled = true, groups = { "smoke" })
 	public void validateDeleteFunctiongOfExistingRecord() {
-		String cname = excelutil.readStringData("PeopleWaiter",17,2);
+		login = new LoginPage(driver);
+		webbrowser = new WebBrowserUtils();
+		excelutil = new ExcelUtils();
+		prop = PropertyUtils.getProperty("config.properties");
+		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
+		waiter= homepg.navigateToPeoplePage();
+		
+		String cname = excelutil.readStringData("PeopleCustomer",17,2);
 		customer.clickOnCustomerLink();
 		customer.searchByCustomerName(cname);
 		customer.clickOnCustomerDeleteIconBtn();

@@ -2,44 +2,35 @@
 <testng-results ignored="1" total="7" passed="2" failed="4" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-15T18:13:55 IST" name="Suite" finished-at="2023-05-15T18:15:33 IST" duration-ms="97961">
+  <suite started-at="2023-05-23T21:22:38 IST" name="Suite" finished-at="2023-05-23T21:32:39 IST" duration-ms="600479">
     <groups>
       <group name="smoke">
-        <method signature="LoginPageTest.validateLogin()[pri:0, instance:com.test.LoginPageTest@55141def]" name="validateLogin" class="com.test.LoginPageTest"/>
+        <method signature="LoginPageTest.validateLogin()[pri:0, instance:com.test.LoginPageTest@55182842]" name="validateLogin" class="com.test.LoginPageTest"/>
       </group> <!-- smoke -->
     </groups>
-    <test started-at="2023-05-15T18:13:55 IST" name="ChromeTest" finished-at="2023-05-15T18:15:33 IST" duration-ms="97961">
+    <test started-at="2023-05-23T21:22:38 IST" name="ChromeTest" finished-at="2023-05-23T21:32:39 IST" duration-ms="600479">
       <class name="com.test.ProductPageTest">
-        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.ProductPageTest@73a1e9a9]" started-at="2023-05-15T18:15:05 IST" name="prerun" finished-at="2023-05-15T18:15:10 IST" duration-ms="4690" status="PASS">
+        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.ProductPageTest@71d44a3]" started-at="2023-05-23T21:23:03 IST" name="prerun" finished-at="2023-05-23T21:24:47 IST" duration-ms="103738" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- prerun -->
-        <test-method signature="validateTheElementInAddProductPopup()[pri:1, instance:com.test.ProductPageTest@73a1e9a9]" started-at="2023-05-15T18:15:10 IST" name="validateTheElementInAddProductPopup" finished-at="2023-05-15T18:15:12 IST" duration-ms="1542" status="PASS">
+        <test-method signature="validateTheElementInAddProductPopup()[pri:1, instance:com.test.ProductPageTest@71d44a3]" started-at="2023-05-23T21:24:47 IST" name="validateTheElementInAddProductPopup" finished-at="2023-05-23T21:25:50 IST" duration-ms="63235" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateTheElementInAddProductPopup -->
-        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.ProductPageTest@73a1e9a9]" started-at="2023-05-15T18:15:12 IST" name="prerun" finished-at="2023-05-15T18:15:14 IST" duration-ms="2703" status="PASS">
+        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.ProductPageTest@71d44a3]" started-at="2023-05-23T21:25:50 IST" name="prerun" finished-at="2023-05-23T21:27:31 IST" duration-ms="101466" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- prerun -->
-        <test-method signature="validatenAddStoresPopUpfields()[pri:2, instance:com.test.ProductPageTest@73a1e9a9]" started-at="2023-05-15T18:15:14 IST" name="validatenAddStoresPopUpfields" finished-at="2023-05-15T18:15:19 IST" duration-ms="4374" status="FAIL">
-          <exception class="java.lang.AssertionError">
+        <test-method signature="validatenAddStoresPopUpfields()[pri:2, instance:com.test.ProductPageTest@71d44a3]" started-at="2023-05-23T21:27:31 IST" name="validatenAddStoresPopUpfields" finished-at="2023-05-23T21:27:31 IST" duration-ms="6" status="FAIL">
+          <exception class="java.lang.RuntimeException">
             <message>
-              <![CDATA[The following asserts failed:
-failure message: no validation check for add Product attribute was found expected [111] but found [000203420342034],
-failure message: no validation check for add Product attribute was found expected [maggi] but found [233nokianokianokia],
-failure message: no validation check for add Product attribute was found expected [abc] but found [21],
-failure message: no validation check for add Product attribute was found expected [abc] but found [233.000 abc1234569]]]>
+              <![CDATA[Error during reading file]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-failure message: no validation check for add Product attribute was found expected [111] but found [000203420342034],
-failure message: no validation check for add Product attribute was found expected [maggi] but found [233nokianokianokia],
-failure message: no validation check for add Product attribute was found expected [abc] but found [21],
-failure message: no validation check for add Product attribute was found expected [abc] but found [233.000 abc1234569]
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
-at com.test.ProductPageTest.validatenAddStoresPopUpfields(ProductPageTest.java:88)
+              <![CDATA[java.lang.RuntimeException: Error during reading file
+at com.utils.ExcelUtils.readStringData(ExcelUtils.java:61)
+at com.test.ProductPageTest.validatenAddStoresPopUpfields(ProductPageTest.java:74)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -70,26 +61,23 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- java.lang.RuntimeException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validatenAddStoresPopUpfields -->
-        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.ProductPageTest@73a1e9a9]" started-at="2023-05-15T18:15:19 IST" name="prerun" finished-at="2023-05-15T18:15:20 IST" duration-ms="1181" status="PASS">
+        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.ProductPageTest@71d44a3]" started-at="2023-05-23T21:27:32 IST" name="prerun" finished-at="2023-05-23T21:29:13 IST" duration-ms="101581" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- prerun -->
-        <test-method signature="validateValueEntredInAddProductPopUpIsSaved()[pri:3, instance:com.test.ProductPageTest@73a1e9a9]" started-at="2023-05-15T18:15:20 IST" name="validateValueEntredInAddProductPopUpIsSaved" finished-at="2023-05-15T18:15:30 IST" duration-ms="10368" status="FAIL">
-          <exception class="java.lang.IllegalStateException">
+        <test-method signature="validateValueEntredInAddProductPopUpIsSaved()[pri:3, instance:com.test.ProductPageTest@71d44a3]" started-at="2023-05-23T21:29:13 IST" name="validateValueEntredInAddProductPopUpIsSaved" finished-at="2023-05-23T21:29:15 IST" duration-ms="1122" status="FAIL">
+          <exception class="java.lang.RuntimeException">
             <message>
-              <![CDATA[Cannot get a STRING value from a NUMERIC cell]]>
+              <![CDATA[Error during reading file]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.IllegalStateException: Cannot get a STRING value from a NUMERIC cell
-at org.apache.poi.xssf.usermodel.XSSFCell.typeMismatch(XSSFCell.java:946)
-at org.apache.poi.xssf.usermodel.XSSFCell.getRichStringCellValue(XSSFCell.java:336)
-at org.apache.poi.xssf.usermodel.XSSFCell.getStringCellValue(XSSFCell.java:280)
-at com.utils.ExcelUtils.readStringData(ExcelUtils.java:71)
-at com.test.ProductPageTest.validateValueEntredInAddProductPopUpIsSaved(ProductPageTest.java:101)
+              <![CDATA[java.lang.RuntimeException: Error during reading file
+at com.utils.ExcelUtils.readStringData(ExcelUtils.java:61)
+at com.test.ProductPageTest.validateValueEntredInAddProductPopUpIsSaved(ProductPageTest.java:102)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -120,26 +108,23 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.IllegalStateException -->
+          </exception> <!-- java.lang.RuntimeException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateValueEntredInAddProductPopUpIsSaved -->
-        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.ProductPageTest@73a1e9a9]" started-at="2023-05-15T18:15:30 IST" name="prerun" finished-at="2023-05-15T18:15:32 IST" duration-ms="1457" status="PASS">
+        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.ProductPageTest@71d44a3]" started-at="2023-05-23T21:29:15 IST" name="prerun" finished-at="2023-05-23T21:30:56 IST" duration-ms="101417" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- prerun -->
-        <test-method signature="validateEditFunctionOfExistingRecord()[pri:4, instance:com.test.ProductPageTest@73a1e9a9]" started-at="2023-05-15T18:15:32 IST" name="validateEditFunctionOfExistingRecord" finished-at="2023-05-15T18:15:32 IST" duration-ms="111" status="FAIL">
-          <exception class="java.lang.IllegalStateException">
+        <test-method signature="validateEditFunctionOfExistingRecord()[pri:4, instance:com.test.ProductPageTest@71d44a3]" started-at="2023-05-23T21:30:56 IST" name="validateEditFunctionOfExistingRecord" finished-at="2023-05-23T21:30:56 IST" duration-ms="2" status="FAIL">
+          <exception class="java.lang.RuntimeException">
             <message>
-              <![CDATA[Cannot get a STRING value from a NUMERIC cell]]>
+              <![CDATA[Error during reading file]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.IllegalStateException: Cannot get a STRING value from a NUMERIC cell
-at org.apache.poi.xssf.usermodel.XSSFCell.typeMismatch(XSSFCell.java:946)
-at org.apache.poi.xssf.usermodel.XSSFCell.getRichStringCellValue(XSSFCell.java:336)
-at org.apache.poi.xssf.usermodel.XSSFCell.getStringCellValue(XSSFCell.java:280)
-at com.utils.ExcelUtils.readStringData(ExcelUtils.java:71)
-at com.test.ProductPageTest.validateEditFunctionOfExistingRecord(ProductPageTest.java:138)
+              <![CDATA[java.lang.RuntimeException: Error during reading file
+at com.utils.ExcelUtils.readStringData(ExcelUtils.java:61)
+at com.test.ProductPageTest.validateEditFunctionOfExistingRecord(ProductPageTest.java:144)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -170,26 +155,23 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.IllegalStateException -->
+          </exception> <!-- java.lang.RuntimeException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateEditFunctionOfExistingRecord -->
-        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.ProductPageTest@73a1e9a9]" started-at="2023-05-15T18:15:32 IST" name="prerun" finished-at="2023-05-15T18:15:33 IST" duration-ms="1169" status="PASS">
+        <test-method is-config="true" signature="prerun()[pri:0, instance:com.test.ProductPageTest@71d44a3]" started-at="2023-05-23T21:30:57 IST" name="prerun" finished-at="2023-05-23T21:32:38 IST" duration-ms="101560" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- prerun -->
-        <test-method signature="validateDeleteFunctiongOfExistingRecord()[pri:5, instance:com.test.ProductPageTest@73a1e9a9]" started-at="2023-05-15T18:15:33 IST" name="validateDeleteFunctiongOfExistingRecord" finished-at="2023-05-15T18:15:33 IST" duration-ms="56" status="FAIL">
-          <exception class="java.lang.IllegalStateException">
+        <test-method signature="validateDeleteFunctiongOfExistingRecord()[pri:5, instance:com.test.ProductPageTest@71d44a3]" started-at="2023-05-23T21:32:38 IST" name="validateDeleteFunctiongOfExistingRecord" finished-at="2023-05-23T21:32:38 IST" duration-ms="5" status="FAIL">
+          <exception class="java.lang.RuntimeException">
             <message>
-              <![CDATA[Cannot get a STRING value from a NUMERIC cell]]>
+              <![CDATA[Error during reading file]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.IllegalStateException: Cannot get a STRING value from a NUMERIC cell
-at org.apache.poi.xssf.usermodel.XSSFCell.typeMismatch(XSSFCell.java:946)
-at org.apache.poi.xssf.usermodel.XSSFCell.getRichStringCellValue(XSSFCell.java:336)
-at org.apache.poi.xssf.usermodel.XSSFCell.getStringCellValue(XSSFCell.java:280)
-at com.utils.ExcelUtils.readStringData(ExcelUtils.java:71)
-at com.test.ProductPageTest.validateDeleteFunctiongOfExistingRecord(ProductPageTest.java:166)
+              <![CDATA[java.lang.RuntimeException: Error during reading file
+at com.utils.ExcelUtils.readStringData(ExcelUtils.java:61)
+at com.test.ProductPageTest.validateDeleteFunctiongOfExistingRecord(ProductPageTest.java:177)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -220,13 +202,13 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.IllegalStateException -->
+          </exception> <!-- java.lang.RuntimeException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateDeleteFunctiongOfExistingRecord -->
       </class> <!-- com.test.ProductPageTest -->
       <class name="com.test.LoginPageTest">
-        <test-method is-config="true" signature="preLaunch(java.lang.String)[pri:0, instance:com.test.LoginPageTest@55141def]" started-at="2023-05-15T18:13:55 IST" name="preLaunch" finished-at="2023-05-15T18:15:00 IST" duration-ms="64335" status="PASS">
+        <test-method is-config="true" signature="preLaunch(java.lang.String)[pri:0, instance:com.test.LoginPageTest@55182842]" started-at="2023-05-23T21:22:39 IST" name="preLaunch" finished-at="2023-05-23T21:23:00 IST" duration-ms="21053" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -237,7 +219,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preLaunch -->
-        <test-method signature="validateLogin()[pri:0, instance:com.test.LoginPageTest@55141def]" started-at="2023-05-15T18:15:00 IST" name="validateLogin" finished-at="2023-05-15T18:15:05 IST" duration-ms="5231" status="PASS">
+        <test-method signature="validateLogin()[pri:0, instance:com.test.LoginPageTest@55182842]" started-at="2023-05-23T21:23:00 IST" name="validateLogin" finished-at="2023-05-23T21:23:03 IST" duration-ms="2534" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateLogin -->
