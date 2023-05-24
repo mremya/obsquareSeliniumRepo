@@ -33,7 +33,7 @@ public class ProductPageTest extends AutomationBase {
 
 	
 
-	@Test(priority = 1, enabled = true)
+	//@Test(priority = 1, enabled = true)
 	public void validateTheElementInAddProductPopup() throws Exception {
 		excelutil = new ExcelUtils();
 		login = new LoginPage(driver);
@@ -66,7 +66,7 @@ public class ProductPageTest extends AutomationBase {
 	}
 
 	@Test(priority = 2, enabled = true)
-	public void validatenAddProductPopUpfields() {
+	public void validatenTheValueInAddProductPopUpfields() {
 		excelutil = new ExcelUtils();
 		login = new LoginPage(driver);
 		hpage = new HomePage(driver);
@@ -105,7 +105,7 @@ public class ProductPageTest extends AutomationBase {
 
 	@Test(priority = 3, enabled = true)
 
-	public void validateValueEntredInAddProductPopUpIsSaved()  {
+	public void validateValueEntredInAddProductPopUpFieldIsSaved()  {
 		excelutil = new ExcelUtils();
 		login = new LoginPage(driver);
 		hpage = new HomePage(driver);

@@ -58,24 +58,28 @@ public class ExpensePageTest extends AutomationBase {
 
 	@Test(priority = 2, enabled = true)
 	public void validatenAddExpensePopUpfields() {
-		
+		ExcelUtils excelutil = new ExcelUtils();
 		login = new LoginPage(driver);
 		webbrowser = new WebBrowserUtils();
 		prop = PropertyUtils.getProperty("config.properties");
 		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
 		expensep = homepg.navigateToExpensePage();
 		
+		String edate = excelutil.readStringData("ExpenseData", 14,2);
+		String eamt = excelutil.readStringData("ExpenseData",16,2);
+		String estore= excelutil.readStringData("ExpenseData",15,2);
+		
 		expensep.clickOnAddExpense();
-		expensep.enterValueForExpenseDate("2023-02-04");
-		//expensep.enterValueForExpenseReference(reference);
-		expensep.enterValueForExpenseAmount("xyz");
+		expensep.enterValueForExpenseDate(edate);
+		expensep.selectValueForExpenseStore(estore);
+		expensep.enterValueForExpenseAmount(eamt);
 
 		expensep.clickOnAddExpenseSubmit();
-		expensep.searchByExpenseStore("MNC");
+		expensep.searchByExpenseStore(estore);
 		SoftAssert soft = new SoftAssert();
-		soft.assertEquals(expensep.getExpensStoreFromSearchResult(), "MNC",
+		soft.assertEquals(expensep.getExpensStoreFromSearchResult(),estore,
 				AutomationConstants.addFeildValidateErrorMessage);
-		soft.assertEquals(expensep.getExpensAmountFromSearchResult(), "10",
+		soft.assertEquals(expensep.getExpensAmountFromSearchResult(),eamt,
 				AutomationConstants.addFeildValidateErrorMessage);
 		soft.assertAll();
 		expensep.clickOnaddExpenseCloseBtn();
@@ -111,44 +115,50 @@ public class ExpensePageTest extends AutomationBase {
 
 	@Test(priority = 4, enabled = true)
 	public void modifyTheExistingRecordOfExpense() {
+		ExcelUtils excelutil = new ExcelUtils();
 		login = new LoginPage(driver);
 		webbrowser = new WebBrowserUtils();
 		prop = PropertyUtils.getProperty("config.properties");
 		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
 		expensep = homepg.navigateToExpensePage();	
 		
-		expensep.searchByExpenseStore("MNC");
+		String ecategory = excelutil.readStringData("ExpenseData",18,2);
+		String eamt = excelutil.readStringData("ExpenseData",20,2);
+		String estore= excelutil.readStringData("ExpenseData",19,2);
+		String ereference= excelutil.readStringData("ExpenseData",19,2);
+		
+		expensep.searchByExpenseStore(estore);
 		expensep.clickOnEditIcon();
-		expensep.enterValueForExpenseAmount("4500");
-		expensep.enterValueForExpenseReference("xyz");
-		expensep.selectValueForExpenseCategory("ginger");
-		expensep.selectValueForExpenseStore("stor2");
-		expensep.searchByExpenseStore("MNC");
+		expensep.enterValueForExpenseAmount(eamt);
+		expensep.enterValueForExpenseReference(ereference);
+		expensep.selectValueForExpenseCategory(ecategory);
+		expensep.searchByExpenseStore(estore);
 		SoftAssert soft = new SoftAssert();
 
-		soft.assertEquals(expensep.getExpensReferenceFromSearchResult(), "abc", AutomationConstants.errorMessage);
-		soft.assertEquals(expensep.getExpensCategoryFromSearchResult(), "Pasta", AutomationConstants.errorMessage);
-		soft.assertEquals(expensep.getExpensAmountFromSearchResult(), "1200", AutomationConstants.errorMessage);
-		soft.assertEquals(expensep.getExpensStoreFromSearchResult(), "MNC", AutomationConstants.errorMessage);
+		soft.assertEquals(expensep.getExpensReferenceFromSearchResult(),ereference, AutomationConstants.errorMessage);
+		soft.assertEquals(expensep.getExpensCategoryFromSearchResult(),ecategory, AutomationConstants.errorMessage);
+		soft.assertEquals(expensep.getExpensAmountFromSearchResult(),eamt, AutomationConstants.errorMessage);
+		soft.assertEquals(expensep.getExpensStoreFromSearchResult(), estore, AutomationConstants.errorMessage);
 		soft.assertAll();
 	}
 
 	@Test(priority = 5, enabled = true)
 	public void validateDeleteFunctiongOfExistingRecord(){
+		ExcelUtils excelutil = new ExcelUtils();
 		login = new LoginPage(driver);
 		webbrowser = new WebBrowserUtils();
 		prop = PropertyUtils.getProperty("config.properties");
 		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
 		expensep = homepg.navigateToExpensePage();	
 		
-		
-		expensep.searchByExpenseStore("MNC");
+		String estore= excelutil.readStringData("ExpenseData",23,2);
+		expensep.searchByExpenseStore(estore);
 		expensep.clickOnDeleteIcon();
 		expensep.clickOnDeleteConformMsg();
 		expensep.clickOnDeleteOk();
 		
 		
-		expensep.searchByExpenseStore("MNC");
+		expensep.searchByExpenseStore(estore);
 		assertEquals(expensep.getTheSearchResultOfDeletedEntry(), "No matching records found",
 				AutomationConstants.deleteCheck);
 	}

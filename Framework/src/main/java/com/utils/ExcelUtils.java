@@ -26,6 +26,7 @@ public class ExcelUtils {
 
 	public void ExcelUtilities() {
 		try {
+			System.out.println("excel path"+filePath);
 			workbook = new XSSFWorkbook(filePath);
 		} catch (IOException e) {
 			throw new RuntimeException("Error during reading filepath");
