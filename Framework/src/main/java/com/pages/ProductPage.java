@@ -86,6 +86,7 @@ public class ProductPage {
 	@FindBy(xpath="(//table[@id='Table']//tr//td)[6]")
 	WebElement productprice_searchresult;
 	
+	
 	@FindBy(xpath="//input[@type='search']")
 	WebElement searchbtn;
 	
@@ -123,6 +124,7 @@ public class ProductPage {
 	
 public void clickOnStockCloseButton() {
 		 element.clickOnTheElement(driver, stockCloseButton);
+		 System.out.println();
 	 }
 	
 	public void clickOnAddProduct() {
