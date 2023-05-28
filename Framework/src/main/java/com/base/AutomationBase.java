@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -20,26 +21,31 @@ public class AutomationBase {
 
 	public WebDriver driver;
 
-	WebBrowserUtils webbrowser;
+	
 	LoginPage login;
 	Properties prop;
+	PropertyUtils propUtil;
+	WebBrowserUtils webbrowser = new WebBrowserUtils();
 
 	@BeforeMethod
 	@Parameters("browserName")
 	public void preLaunch(String browserName) {
-		try {
-			launchBrowser(browserName);
-			login = new LoginPage(driver);
-			webbrowser = new WebBrowserUtils();
-
-			prop = PropertyUtils.getProperty("config.properties");
-		} catch (Exception e) {
-			throw new RuntimeException("Error while reading config property file");
-		}
+		launchBrowser(browserName);
+		propUtil = new PropertyUtils();
+		prop = PropertyUtils.getProperty("config.properties");
 		webbrowser.launchUrl(driver, prop.getProperty("url"));
 	}
 
-	public void launchBrowser(String browserName) throws Exception {
+	@BeforeGroups("smoke")
+	@Parameters("browserName")
+	public void grouping(String browserName) {
+		launchBrowser(browserName);
+		propUtil = new PropertyUtils();
+		prop = PropertyUtils.getProperty("config.properties");
+		webbrowser.launchUrl(driver, prop.getProperty("url"));
+	}
+
+	public void launchBrowser(String browserName) {
 		switch (browserName) {
 		case "Chrome":
 			launchChromeBrowser();
@@ -63,24 +69,26 @@ public class AutomationBase {
 	private void launchChromeBrowser() {
 
 		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		//webbrowser.maximizeWebPageSize(driver);
+		//driver.manage().window().maximize();
+		webbrowser.maximizeWebPage(driver);
 
 	}
 
 	private void launchFirefoxBrowser() {
 
 		driver = new FirefoxDriver();
-		//webbrowser.maximizeWebPageSize(driver);
+		webbrowser.maximizeWebPage(driver);
 
 	}
 
 	private void launchEdgeBrowser() {
 
 		driver = new EdgeDriver();
-		//webbrowser.maximizeWebPageSize(driver);
+		webbrowser.maximizeWebPage(driver);
 
 	}
-
+	public WebDriver getDriver() {
+		return driver;
+	}
 	
 }

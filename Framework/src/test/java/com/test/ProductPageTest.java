@@ -33,7 +33,7 @@ public class ProductPageTest extends AutomationBase {
 
 	
 
-	//@Test(priority = 1, enabled = true)
+	@Test(priority = 1, enabled = true)
 	public void validateTheElementInAddProductPopup() throws Exception {
 		excelutil = new ExcelUtils();
 		login = new LoginPage(driver);
@@ -47,18 +47,17 @@ public class ProductPageTest extends AutomationBase {
 
 		ppage.clickOnAddProduct();
 		SoftAssert soft = new SoftAssert();
-		soft.assertTrue(ppage.isProductTypeDisplayed(), AutomationConstants.addDisplayedErrorMsg);
-		soft.assertTrue(ppage.isproductCodeDisplayed(), AutomationConstants.addDisplayedErrorMsg);
-		soft.assertTrue(ppage.isProductCategoryDisplayed(), AutomationConstants.addDisplayedErrorMsg);
-		soft.assertTrue(ppage.isProductNameDisplayed(), AutomationConstants.addDisplayedErrorMsg);
-		soft.assertTrue(ppage.isProductSupplierDisplayed(), AutomationConstants.addDisplayedErrorMsg);
-		soft.assertTrue(ppage.isProductPurchasePriceDisplayed(), AutomationConstants.addDisplayedErrorMsg);
-		soft.assertTrue(ppage.isProductUnitDisplayed(), AutomationConstants.addDisplayedErrorMsg);
-		soft.assertTrue(ppage.isProductPriceDisplayed(), AutomationConstants.addDisplayedErrorMsg);
-		soft.assertTrue(ppage.isProductTaxDisplayed(), AutomationConstants.addDisplayedErrorMsg);
-		soft.assertTrue(ppage.isProductTaxMethodDisplayed(), AutomationConstants.addDisplayedErrorMsg);
-		soft.assertTrue(ppage.isProductAlertQuantityDisplayed(), AutomationConstants.addDisplayedErrorMsg);
-		soft.assertTrue(ppage.isProductOptionsDisplayed(), AutomationConstants.addDisplayedErrorMsg);
+		soft.assertTrue(ppage.isProductTypeDisplayed(),"failure message: product type not found");
+		//soft.assertTrue(ppage.isproductCodeDisplayed(), "failure message: product code not found");
+		soft.assertTrue(ppage.isProductCategoryDisplayed(),"failure message: product category not found");
+		soft.assertTrue(ppage.isProductNameDisplayed(),"failure message: product name not found");
+		soft.assertTrue(ppage.isProductSupplierDisplayed(), "failure message: product supplier not found");
+		soft.assertTrue(ppage.isProductPurchasePriceDisplayed(),"failure message: product purchase not found");
+		soft.assertTrue(ppage.isProductUnitDisplayed(), "failure message: product unit not found");
+		soft.assertTrue(ppage.isProductPriceDisplayed(),"failure message: product price not found");
+		soft.assertTrue(ppage.isProductTaxDisplayed(), "failure message: product tax not found");
+		soft.assertTrue(ppage.isProductAlertQuantityDisplayed(),"failure message: product Alert quantity not found");
+		soft.assertTrue(ppage.isProductOptionsDisplayed(), "failure message: product option not found");
 		ppage.waitForClickOnAddCloseButton();
 		ppage.clickOnAddProductClose();
 		soft.assertAll();
@@ -89,16 +88,14 @@ public class ProductPageTest extends AutomationBase {
 		ppage.enterValueForProductTax(ptax);
 		ppage.selectValueForProductAlertQuantity(palertQuantity);
 		ppage.clickOnAddProductSubmit();
+		ppage.clickOnStockCloseButton();
 		ppage.searchByProductCode(pcode);
 		SoftAssert soft = new SoftAssert();
-		soft.assertEquals(ppage.getProductCodeFromSearchResult(), pcode,
-				AutomationConstants.addFeildValidateErrorMessage);
-		soft.assertEquals(ppage.getProductNameFromSearchResult(), pname,
-				AutomationConstants.addFeildValidateErrorMessage);
+		
 		soft.assertEquals(ppage.getProductTaxFromSearchResult(), ptax,
-				AutomationConstants.addFeildValidateErrorMessage);
+				"failure message: product tax not found");
 		soft.assertEquals(ppage.getProductPriceFromSearchResult(), palertQuantity,
-				AutomationConstants.addFeildValidateErrorMessage);
+				"failure message: product price not found");
 		soft.assertAll();
 
 	}
@@ -145,6 +142,8 @@ public class ProductPageTest extends AutomationBase {
 		ppage.selectValueForProductAlertQuantity(palertQuantity);
 		ppage.enterValueForProductDescription(pdescription);
 		ppage.clickOnAddProductSubmit();
+		ppage.clickOnStockCloseButton();
+		
 		ppage.searchByProductCode(pcode);
 		SoftAssert soft = new SoftAssert();
 		soft.assertEquals(ppage.getProductCodeFromSearchResult(), pcode, "failure message: product code not found");

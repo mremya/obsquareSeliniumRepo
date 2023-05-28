@@ -9,12 +9,11 @@
     <classes>
       <class name="com.test.ProductPageTest">
         <methods>
-          <include name="prerun"/>
           <include name="validateDeleteFunctiongOfExistingRecord"/>
+          <include name="validateValueEntredInAddProductPopUpFieldIsSaved"/>
           <include name="preLaunch"/>
-          <include name="validateValueEntredInAddProductPopUpIsSaved"/>
+          <include name="validatenTheValueInAddProductPopUpfields"/>
           <include name="validateEditFunctionOfExistingRecord"/>
-          <include name="validatenAddStoresPopUpfields"/>
         </methods>
       </class> <!-- com.test.ProductPageTest -->
     </classes>

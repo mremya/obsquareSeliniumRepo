@@ -20,6 +20,8 @@ public class ProductPage {
 	@FindBy( xpath ="(//select[@class='form-control'])[2]")
 	WebElement productType;
 	
+	@FindBy(xpath = "//button[@type='button']")
+	WebElement stockCloseButton;
 	
 	@FindBy( xpath ="(//button[@class='btn btn-default'])[2]")
 	WebElement addProductCloseBtn;
@@ -63,7 +65,7 @@ public class ProductPage {
 	@FindBy(xpath="//button[@class='btn btn-add btn-lg']")
 	WebElement addProduct;
 	
-	@FindBy(xpath="//button[@class='btn btn-add']")
+	@FindBy(xpath="(//button[@class='btn btn-add'])[1]")
 	WebElement addProduct_submit;
 	
 	@FindBy(xpath="(//table[@id='Table']//tr//td)[1]")
@@ -119,6 +121,10 @@ public class ProductPage {
 
 }
 	
+public void clickOnStockCloseButton() {
+		 element.clickOnTheElement(driver, stockCloseButton);
+	 }
+	
 	public void clickOnAddProduct() {
 		 element.clickOnTheElement(driver, addProduct);
 	 }
@@ -140,7 +146,7 @@ public Boolean isProductNameDisplayed() {
 }
 
 public Boolean isProductCategoryDisplayed() {
-	
+	wait.waitForElementToBeClickable(driver, productCategory, 20);
 	return element.isDisplayedFunction(driver, productCategory);
 
 }
@@ -308,8 +314,10 @@ public String getProductPriceFromSearchResult() {
 	
 }
 public void searchByProductCode(String productcode) {
-		element.clearFunction(searchbtn);
-		element.clickOnTheElement(driver, searchbtn);
+	element.clearFunction(searchbtn);
+	element.clickOnTheElement(driver, searchbtn);
+	
+	wait.waitForElementToBeClickable(driver, searchbtn, 20);
 		
 		element.entreTheValue(driver, searchbtn, productcode);
 }
@@ -327,6 +335,11 @@ public void clearTheWebElementValue(WebElement webelement1) {
 	element.clearFunction(webelement1);
 }	
 public void waitForClickOnAddCloseButton() {
+	
+	wait.waitForElementToBeClickable(driver, addProductCloseBtn, 20);
+}	
+
+public void waitForVisibleOfAddProductCategoryButton() {
 	
 	wait.waitForElementToBeClickable(driver, addProductCloseBtn, 20);
 }	

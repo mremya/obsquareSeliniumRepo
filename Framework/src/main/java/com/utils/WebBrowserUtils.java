@@ -143,7 +143,7 @@ public class WebBrowserUtils {
 	 * 
 	 * @param driver
 	 */
-	public void minimizeWebPageSize(WebDriver driver) {
+	public void minimizeWebPage(WebDriver driver) {
 
 		try {
 			driver.manage().window().minimize();

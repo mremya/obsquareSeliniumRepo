@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 4 failed tests</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>C:\Users\hp\git\obsquareSeliniumRepo\Framework\testng.xml</span>
+                    <span>C:\Users\user\git\obsquareSeliniumRepo\Framework\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -60,7 +60,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="group-Suite" class="navigator-link ">
-                    <span>1 group</span>
+                    <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">6 methods, 4 failed,   2 passed</span>
+                    <span class="method-stats">5 methods, 1 failed,  3 skipped,  1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -103,25 +103,34 @@
                     <div class="method-list-content failed suite-Suite">
                       <span>
                         <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.test.ProductPageTest" class="method navigator-link" hash-for-method="validatenTheValueInAddProductPopUpfields">validatenTheValueInAddProductPopUpfields</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods skipped suite-Suite"> (hide)</a> <!-- hide-methods skipped suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods skipped suite-Suite"> (show)</a> <!-- show-methods skipped suite-Suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-Suite">
+                      <span>
+                        <img src="skipped.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="com.test.ProductPageTest" class="method navigator-link" hash-for-method="validateDeleteFunctiongOfExistingRecord">validateDeleteFunctiongOfExistingRecord</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="failed.png" width="3%"/>
+                        <img src="skipped.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="com.test.ProductPageTest" class="method navigator-link" hash-for-method="validateEditFunctionOfExistingRecord">validateEditFunctionOfExistingRecord</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.test.ProductPageTest" class="method navigator-link" hash-for-method="validateValueEntredInAddProductPopUpIsSaved">validateValueEntredInAddProductPopUpIsSaved</a> <!-- method navigator-link -->
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.test.ProductPageTest" class="method navigator-link" hash-for-method="validateValueEntredInAddProductPopUpFieldIsSaved">validateValueEntredInAddProductPopUpFieldIsSaved</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.test.ProductPageTest" class="method navigator-link" hash-for-method="validatenAddStoresPopUpfields">validatenAddStoresPopUpfields</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Suite -->
+                    </div> <!-- method-list-content skipped suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -130,11 +139,6 @@
                       <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
                     </span>
                     <div class="method-list-content passed suite-Suite">
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.test.LoginPageTest" class="method navigator-link" hash-for-method="validateLogin">validateLogin</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="com.test.ProductPageTest" class="method navigator-link" hash-for-method="validateTheElementInAddProductPopup">validateTheElementInAddProductPopup</a> <!-- method navigator-link -->
@@ -160,14 +164,57 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="validatenTheValueInAddProductPopUpfields">
+                  </a> <!-- validatenTheValueInAddProductPopUpfields -->
+                  <span class="method-name">validatenTheValueInAddProductPopUpfields</span>
+                  <div class="stack-trace">java.lang.AssertionError: The following asserts failed:
+	failure message: product tax not found expected [abc] but found [21],
+	failure message: product price not found expected [abc] but found [233.000 x8fmv]
+	at com.test.ProductPageTest.validatenTheValueInAddProductPopUpfields(ProductPageTest.java:99)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.test.ProductPageTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
                   <a name="validateDeleteFunctiongOfExistingRecord">
                   </a> <!-- validateDeleteFunctiongOfExistingRecord -->
                   <span class="method-name">validateDeleteFunctiongOfExistingRecord</span>
-                  <div class="stack-trace">java.lang.RuntimeException: Error during reading file
-	at com.utils.ExcelUtils.readStringData(ExcelUtils.java:61)
-	at com.test.ProductPageTest.validateDeleteFunctiongOfExistingRecord(ProductPageTest.java:177)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames
+                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
+from no such execution context: loader has changed while resolving nodes
+  (Session info: chrome=113.0.5672.127) 
+Host info: host: &apos;DESKTOP-UJ2963A&apos;, ip: &apos;192.168.145.46&apos;
+Build info: version: &apos;4.9.0&apos;, revision: &apos;d7057100a6&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.18&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:136)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:94)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:165)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:229)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
+	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:101)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:84)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:52)
+	at com.base.AutomationBase.launchChromeBrowser(AutomationBase.java:71)
+	at com.base.AutomationBase.launchBrowser(AutomationBase.java:51)
+	at com.base.AutomationBase.preLaunch(AutomationBase.java:33)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 31 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -176,42 +223,71 @@
                   <a name="validateEditFunctionOfExistingRecord">
                   </a> <!-- validateEditFunctionOfExistingRecord -->
                   <span class="method-name">validateEditFunctionOfExistingRecord</span>
-                  <div class="stack-trace">java.lang.RuntimeException: Error during reading file
-	at com.utils.ExcelUtils.readStringData(ExcelUtils.java:61)
-	at com.test.ProductPageTest.validateEditFunctionOfExistingRecord(ProductPageTest.java:144)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames
+                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
+from no such execution context: loader has changed while resolving nodes
+  (Session info: chrome=113.0.5672.127) 
+Host info: host: &apos;DESKTOP-UJ2963A&apos;, ip: &apos;192.168.145.46&apos;
+Build info: version: &apos;4.9.0&apos;, revision: &apos;d7057100a6&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.18&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:136)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:94)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:165)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:229)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
+	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:101)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:84)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:52)
+	at com.base.AutomationBase.launchChromeBrowser(AutomationBase.java:71)
+	at com.base.AutomationBase.launchBrowser(AutomationBase.java:51)
+	at com.base.AutomationBase.preLaunch(AutomationBase.java:33)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 31 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="validateValueEntredInAddProductPopUpIsSaved">
-                  </a> <!-- validateValueEntredInAddProductPopUpIsSaved -->
-                  <span class="method-name">validateValueEntredInAddProductPopUpIsSaved</span>
-                  <div class="stack-trace">java.lang.RuntimeException: Error during reading file
-	at com.utils.ExcelUtils.readStringData(ExcelUtils.java:61)
-	at com.test.ProductPageTest.validateValueEntredInAddProductPopUpIsSaved(ProductPageTest.java:102)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="validatenAddStoresPopUpfields">
-                  </a> <!-- validatenAddStoresPopUpfields -->
-                  <span class="method-name">validatenAddStoresPopUpfields</span>
-                  <div class="stack-trace">java.lang.RuntimeException: Error during reading file
-	at com.utils.ExcelUtils.readStringData(ExcelUtils.java:61)
-	at com.test.ProductPageTest.validatenAddStoresPopUpfields(ProductPageTest.java:74)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames
+                  <a name="validateValueEntredInAddProductPopUpFieldIsSaved">
+                  </a> <!-- validateValueEntredInAddProductPopUpFieldIsSaved -->
+                  <span class="method-name">validateValueEntredInAddProductPopUpFieldIsSaved</span>
+                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
+from no such execution context: loader has changed while resolving nodes
+  (Session info: chrome=113.0.5672.127) 
+Host info: host: &apos;DESKTOP-UJ2963A&apos;, ip: &apos;192.168.145.46&apos;
+Build info: version: &apos;4.9.0&apos;, revision: &apos;d7057100a6&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.18&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:136)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:94)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:165)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:229)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
+	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:101)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:84)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:52)
+	at com.base.AutomationBase.launchChromeBrowser(AutomationBase.java:71)
+	at com.base.AutomationBase.launchBrowser(AutomationBase.java:51)
+	at com.base.AutomationBase.preLaunch(AutomationBase.java:33)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 31 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
+          </div> <!-- suite-Suite-class-skipped -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -227,25 +303,10 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Suite-class-passed -->
-          <div class="suite-Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.test.LoginPageTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="validateLogin">
-                  </a> <!-- validateLogin -->
-                  <span class="method-name">validateLogin</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\hp\git\obsquareSeliniumRepo\Framework\testng.xml</span>
+            <span class="header-content">C:\Users\user\git\obsquareSeliniumRepo\Framework\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -258,7 +319,6 @@
   &lt;test thread-count=&quot;5&quot; name=&quot;ChromeTest&quot;&gt;
     &lt;parameter name=&quot;browserName&quot; value=&quot;Chrome&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.test.LoginPageTest&quot;/&gt;
       &lt;class name=&quot;com.test.ProductPageTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- ChromeTest --&gt;
@@ -273,7 +333,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">ChromeTest (2 classes)</span>
+                <span class="test-name">ChromeTest (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -283,14 +343,6 @@
             <span class="header-content">Groups for Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="test-group">
-              <span class="test-group-name">smoke</span>
-              <br/>
-              <div class="method-in-group">
-                <span class="method-in-group-name">validateLogin</span>
-                <br/>
-              </div> <!-- method-in-group -->
-            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Suite" class="panel">
@@ -307,36 +359,32 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(6);
+data.addRows(5);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'validateTheElementInAddProductPopup')
 data.setCell(0, 2, 'com.test.ProductPageTest')
-data.setCell(0, 3, 63235);
+data.setCell(0, 3, 28014);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'validateLogin')
-data.setCell(1, 2, 'com.test.LoginPageTest')
-data.setCell(1, 3, 2534);
+data.setCell(1, 1, 'validatenTheValueInAddProductPopUpfields')
+data.setCell(1, 2, 'com.test.ProductPageTest')
+data.setCell(1, 3, 14197);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'validateValueEntredInAddProductPopUpIsSaved')
+data.setCell(2, 1, 'validateEditFunctionOfExistingRecord')
 data.setCell(2, 2, 'com.test.ProductPageTest')
-data.setCell(2, 3, 1122);
+data.setCell(2, 3, 0);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'validatenAddStoresPopUpfields')
+data.setCell(3, 1, 'validateDeleteFunctiongOfExistingRecord')
 data.setCell(3, 2, 'com.test.ProductPageTest')
-data.setCell(3, 3, 6);
+data.setCell(3, 3, 0);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'validateDeleteFunctiongOfExistingRecord')
+data.setCell(4, 1, 'validateValueEntredInAddProductPopUpFieldIsSaved')
 data.setCell(4, 2, 'com.test.ProductPageTest')
-data.setCell(4, 3, 5);
-data.setCell(5, 0, 5)
-data.setCell(5, 1, 'validateEditFunctionOfExistingRecord')
-data.setCell(5, 2, 'com.test.ProductPageTest')
-data.setCell(5, 3, 2);
+data.setCell(4, 3, 0);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 42 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -351,16 +399,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">1 ignored method</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.test.ProductPageTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">preLaunch</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Suite" class="panel">
@@ -369,65 +410,50 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.test.LoginPageTest</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
-                <span class="method-name">preLaunch(Chrome)</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- configuration-test before -->
-              <div class="test-method">
-                <span class="method-name">validateLogin</span>
-                <span class="method-start">21118 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
               <div class="chronological-class-name">com.test.ProductPageTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">prerun</span>
-                <span class="method-start">23737 ms</span>
+                <span class="method-name">preLaunch(Chrome)</span>
+                <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">validateTheElementInAddProductPopup</span>
-                <span class="method-start">127476 ms</span>
+                <span class="method-start">6491 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
-                <span class="method-name">prerun</span>
-                <span class="method-start">190715 ms</span>
+                <span class="method-name">preLaunch(Chrome)</span>
+                <span class="method-start">34520 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">validatenAddStoresPopUpfields</span>
-                <span class="method-start">292181 ms</span>
+                <span class="method-name">validatenTheValueInAddProductPopUpfields</span>
+                <span class="method-start">40140 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
-                <span class="method-name">prerun</span>
-                <span class="method-start">292874 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">validateValueEntredInAddProductPopUpIsSaved</span>
-                <span class="method-start">394455 ms</span>
+                <span class="method-name">preLaunch(Chrome)</span>
+                <span class="method-start">54621 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">validateValueEntredInAddProductPopUpFieldIsSaved</span>
+                <span class="method-start">56880 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
-                <span class="method-name">prerun</span>
-                <span class="method-start">395817 ms</span>
+                <span class="method-name">preLaunch</span>
+                <span class="method-start">56884 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">validateEditFunctionOfExistingRecord</span>
-                <span class="method-start">497234 ms</span>
+                <span class="method-start">56899 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
-                <span class="method-name">prerun</span>
-                <span class="method-start">497607 ms</span>
+                <span class="method-name">preLaunch</span>
+                <span class="method-start">56911 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">validateDeleteFunctiongOfExistingRecord</span>
-                <span class="method-start">599167 ms</span>
+                <span class="method-start">56917 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
