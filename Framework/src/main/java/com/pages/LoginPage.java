@@ -62,11 +62,12 @@ public class LoginPage {
 	 }
 
 	 public HomePage login(String username , String password)  {
-		 performlogin( username ,  password);
-			/*
-			 * enterValueToUserName(username); enterValueToPassword(password);
-			 * clickOnTheLoginSubmit();
-			 */
+		 
+			
+			  enterValueToUserName(username);
+			  enterValueToPassword(password);
+			  clickOnTheLoginSubmit();
+			 
 		return new HomePage(driver);
 		 
 	 }

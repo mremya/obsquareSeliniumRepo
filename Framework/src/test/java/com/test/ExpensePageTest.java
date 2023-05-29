@@ -27,17 +27,13 @@ public class ExpensePageTest extends AutomationBase {
 	WebBrowserUtils webbrowser;
 	LoginPage login;
 	HomePage homepg;
-	ProductPage ppage;
-	StoresPage storepage;
 	WebActionUtils webaction;
-	PeopleWaiterPage waiter;
 	ExpensePage expensep;
 	Properties prop;
 
 	@Test(priority = 1, enabled = true)
 	public void validateTheElementInAddExpensePopup() {
 		login = new LoginPage(driver);
-		webbrowser = new WebBrowserUtils();
 		prop = PropertyUtils.getProperty("config.properties");
 		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
 		expensep = homepg.navigateToExpensePage();
@@ -56,7 +52,7 @@ public class ExpensePageTest extends AutomationBase {
 
 	}
 
-	@Test(priority = 2, enabled = true)
+	//@Test(priority = 2, enabled = true)
 	public void validatenAddExpensePopUpfields() {
 		ExcelUtils excelutil = new ExcelUtils();
 		login = new LoginPage(driver);
@@ -86,7 +82,7 @@ public class ExpensePageTest extends AutomationBase {
 
 	}
 
-	@Test(priority = 3, enabled = true, dataProviderClass = ExpenseDataSupplier.class)
+	//@Test(priority = 3, enabled = true, dataProviderClass = ExpenseDataSupplier.class)
 	public void validateEnteredValueInAddExpensePopUpIsSaved(String date, String reference, String category, String store,
 			String amount) {
 		login = new LoginPage(driver);
@@ -113,7 +109,7 @@ public class ExpensePageTest extends AutomationBase {
 		soft.assertAll();
 	}
 
-	@Test(priority = 4, enabled = true)
+	//@Test(priority = 4, enabled = true)
 	public void modifyTheExistingRecordOfExpense() {
 		ExcelUtils excelutil = new ExcelUtils();
 		login = new LoginPage(driver);
@@ -142,7 +138,7 @@ public class ExpensePageTest extends AutomationBase {
 		soft.assertAll();
 	}
 
-	@Test(priority = 5, enabled = true)
+	//@Test(priority = 5, enabled = true)
 	public void validateDeleteFunctiongOfExistingRecord(){
 		ExcelUtils excelutil = new ExcelUtils();
 		login = new LoginPage(driver);

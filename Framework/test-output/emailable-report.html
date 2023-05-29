@@ -9,122 +9,25 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">ChromeTest</a></td><td class="num">1</td><td class="num attn">3</td><td class="num">0</td><td class="num attn">1</td><td class="num">57,539</td><td></td><td></td></tr>
+<tr><td><a href="#t0">ChromeTest</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">34,272</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">ChromeTest &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">com.test.ProductPageTest</td><td><a href="#m0">preLaunch</a></td><td rowspan="1">1685306213420</td><td rowspan="1">2249</td></tr><tr><th colspan="4">ChromeTest &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.test.ProductPageTest</td><td><a href="#m1">validatenTheValueInAddProductPopUpfields</a></td><td rowspan="1">1685306198939</td><td rowspan="1">14197</td></tr><tr><th colspan="4">ChromeTest &#8212; skipped (configuration methods)</th></tr><tr class="skippedeven"><td rowspan="2">com.test.ProductPageTest</td><td><a href="#m2">preLaunch</a></td><td rowspan="2">1685306215683</td><td rowspan="2">0</td></tr><tr class="skippedeven"><td><a href="#m3">preLaunch</a></td></tr><tr><th colspan="4">ChromeTest &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="3">com.test.ProductPageTest</td><td><a href="#m4">validateDeleteFunctiongOfExistingRecord</a></td><td rowspan="1">1685306215716</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m5">validateEditFunctionOfExistingRecord</a></td><td rowspan="1">1685306215698</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m6">validateValueEntredInAddProductPopUpFieldIsSaved</a></td><td rowspan="1">1685306215679</td><td rowspan="1">0</td></tr><tr><th colspan="4">ChromeTest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.test.ProductPageTest</td><td><a href="#m7">validateTheElementInAddProductPopup</a></td><td rowspan="1">1685306165290</td><td rowspan="1">28014</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">ChromeTest &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">com.test.PeopleCustomerPageTest</td><td><a href="#m0">modifyTheExistingRecordOfStores</a></td><td rowspan="1">1685401647416</td><td rowspan="1">8103</td></tr><tr class="failedeven"><td><a href="#m1">validateValueEntredInAddWaiterPopUpIsSaved</a></td><td rowspan="1">1685401637478</td><td rowspan="1">7396</td></tr><tr><th colspan="4">ChromeTest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.test.PeopleCustomerPageTest</td><td><a href="#m2">validateDeleteFunctiongOfExistingRecord</a></td><td rowspan="1">1685401658281</td><td rowspan="1">6978</td></tr></tbody>
 </table>
-<h2>ChromeTest</h2><h3 id="m0">com.test.ProductPageTest#preLaunch</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>Chrome</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
-from no such execution context: loader has changed while resolving nodes
-  (Session info: chrome=113.0.5672.127) 
-Host info: host: &apos;DESKTOP-UJ2963A&apos;, ip: &apos;192.168.145.46&apos;
-Build info: version: &apos;4.9.0&apos;, revision: &apos;d7057100a6&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.18&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:136)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:94)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:165)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:229)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
-	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:101)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:88)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:84)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:52)
-	at com.base.AutomationBase.launchChromeBrowser(AutomationBase.java:71)
-	at com.base.AutomationBase.launchBrowser(AutomationBase.java:51)
-	at com.base.AutomationBase.preLaunch(AutomationBase.java:33)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.test.ProductPageTest#validatenTheValueInAddProductPopUpfields</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
-	failure message: product tax not found expected [abc] but found [21],
-	failure message: product price not found expected [abc] but found [233.000 x8fmv]
-	at com.test.ProductPageTest.validatenTheValueInAddProductPopUpfields(ProductPageTest.java:99)
+<h2>ChromeTest</h2><h3 id="m0">com.test.PeopleCustomerPageTest#modifyTheExistingRecordOfStores</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	no matching records found expected [Ashish] but found [No matching records found],
+	no matching records found expected [pqr@gmail.com] but found [null],
+	no matching records found expected [1234] but found [null],
+	no matching records found expected [5] but found [null]
+	at com.test.PeopleCustomerPageTest.modifyTheExistingRecordOfStores(PeopleCustomerPageTest.java:155)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
 ... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.test.ProductPageTest#preLaunch</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.test.ProductPageTest#preLaunch</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">com.test.ProductPageTest#validateDeleteFunctiongOfExistingRecord</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
-from no such execution context: loader has changed while resolving nodes
-  (Session info: chrome=113.0.5672.127) 
-Host info: host: &apos;DESKTOP-UJ2963A&apos;, ip: &apos;192.168.145.46&apos;
-Build info: version: &apos;4.9.0&apos;, revision: &apos;d7057100a6&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.18&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:136)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:94)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:165)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:229)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
-	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:101)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:88)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:84)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:52)
-	at com.base.AutomationBase.launchChromeBrowser(AutomationBase.java:71)
-	at com.base.AutomationBase.launchBrowser(AutomationBase.java:51)
-	at com.base.AutomationBase.preLaunch(AutomationBase.java:33)
+<h3 id="m1">com.test.PeopleCustomerPageTest#validateValueEntredInAddWaiterPopUpIsSaved</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	no matching records found expected [abc@gmail.com] but found [##abc@gmail.com],
+	no matching records found expected [1234578902] but found [12341234578902],
+	no matching records found expected [10] but found [abc]
+	at com.test.PeopleCustomerPageTest.validateValueEntredInAddWaiterPopUpIsSaved(PeopleCustomerPageTest.java:123)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">com.test.ProductPageTest#validateEditFunctionOfExistingRecord</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
-from no such execution context: loader has changed while resolving nodes
-  (Session info: chrome=113.0.5672.127) 
-Host info: host: &apos;DESKTOP-UJ2963A&apos;, ip: &apos;192.168.145.46&apos;
-Build info: version: &apos;4.9.0&apos;, revision: &apos;d7057100a6&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.18&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:136)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:94)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:165)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:229)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
-	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:101)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:88)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:84)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:52)
-	at com.base.AutomationBase.launchChromeBrowser(AutomationBase.java:71)
-	at com.base.AutomationBase.launchBrowser(AutomationBase.java:51)
-	at com.base.AutomationBase.preLaunch(AutomationBase.java:33)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m6">com.test.ProductPageTest#validateValueEntredInAddProductPopUpFieldIsSaved</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
-from no such execution context: loader has changed while resolving nodes
-  (Session info: chrome=113.0.5672.127) 
-Host info: host: &apos;DESKTOP-UJ2963A&apos;, ip: &apos;192.168.145.46&apos;
-Build info: version: &apos;4.9.0&apos;, revision: &apos;d7057100a6&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.18&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:136)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:94)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:165)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:229)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
-	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:101)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:88)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:84)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:52)
-	at com.base.AutomationBase.launchChromeBrowser(AutomationBase.java:71)
-	at com.base.AutomationBase.launchBrowser(AutomationBase.java:51)
-	at com.base.AutomationBase.preLaunch(AutomationBase.java:33)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m7">com.test.ProductPageTest#validateTheElementInAddProductPopup</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.test.PeopleCustomerPageTest#validateDeleteFunctiongOfExistingRecord</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

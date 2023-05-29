@@ -18,7 +18,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtils {
 	public final static String currentDir = System.getProperty("user.dir");
-	public static String filePath = currentDir + ".//src/test//resources//restaurantdata.xlsx";
+	public static String filePath = currentDir + ".//src/test//resources//data.xlsx";
 	static XSSFWorkbook workbook;
 	static XSSFSheet sheet;
 	static FileInputStream fs;

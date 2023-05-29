@@ -69,7 +69,6 @@ public class AutomationBase {
 	private void launchChromeBrowser() {
 
 		driver = new ChromeDriver();
-		//driver.manage().window().maximize();
 		webbrowser.maximizeWebPage(driver);
 
 	}

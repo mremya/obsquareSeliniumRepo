@@ -22,6 +22,9 @@ public class HomePage {
 
 	@FindBy(xpath = "(//span[@class='menu-text'])[4]")
 	WebElement peopleLink;
+	
+	@FindBy(xpath="(//span[@class='menu-text'])[6]")
+	WebElement  customerLink;
 
 	@FindBy(xpath = "(//span[@class='menu-text'])[8]")
 	WebElement salesLink;
@@ -132,6 +135,12 @@ public class HomePage {
 
 		return new PeopleWaiterPage(driver);
 
+	}
+	
+	public PeopleCustomerPage navigateToCustomersInPeopleLink() {
+		element.clickOnTheElement(driver, peopleLink);
+		element.clickOnTheElement(driver, customerLink);
+		return new PeopleCustomerPage(driver);
 	}
 
 }

@@ -1,13 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="1" failed="1" skipped="3">
+<testng-results ignored="0" total="3" passed="1" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-28T13:35:58 GMT-07:00" name="Suite" finished-at="2023-05-28T13:36:55 GMT-07:00" duration-ms="57539">
+  <suite started-at="2023-05-29T16:07:10 GMT-07:00" name="Suite" finished-at="2023-05-29T16:07:45 GMT-07:00" duration-ms="34272">
     <groups>
+      <group name="regression">
+        <method signature="PeopleCustomerPageTest.validateValueEntredInAddWaiterPopUpIsSaved()[pri:3, instance:com.test.PeopleCustomerPageTest@663c9e7a]" name="validateValueEntredInAddWaiterPopUpIsSaved" class="com.test.PeopleCustomerPageTest"/>
+        <method signature="PeopleCustomerPageTest.modifyTheExistingRecordOfStores()[pri:4, instance:com.test.PeopleCustomerPageTest@663c9e7a]" name="modifyTheExistingRecordOfStores" class="com.test.PeopleCustomerPageTest"/>
+      </group> <!-- regression -->
+      <group name="smoke">
+        <method signature="PeopleCustomerPageTest.validateValueEntredInAddWaiterPopUpIsSaved()[pri:3, instance:com.test.PeopleCustomerPageTest@663c9e7a]" name="validateValueEntredInAddWaiterPopUpIsSaved" class="com.test.PeopleCustomerPageTest"/>
+        <method signature="PeopleCustomerPageTest.validateDeleteFunctiongOfExistingRecord()[pri:5, instance:com.test.PeopleCustomerPageTest@663c9e7a]" name="validateDeleteFunctiongOfExistingRecord" class="com.test.PeopleCustomerPageTest"/>
+      </group> <!-- smoke -->
     </groups>
-    <test started-at="2023-05-28T13:35:58 GMT-07:00" name="ChromeTest" finished-at="2023-05-28T13:36:55 GMT-07:00" duration-ms="57539">
-      <class name="com.test.ProductPageTest">
-        <test-method is-config="true" signature="preLaunch(java.lang.String)[pri:0, instance:com.test.ProductPageTest@663c9e7a]" started-at="2023-05-28T13:35:58 GMT-07:00" name="preLaunch" finished-at="2023-05-28T13:36:05 GMT-07:00" duration-ms="6490" status="PASS">
+    <test started-at="2023-05-29T16:07:10 GMT-07:00" name="ChromeTest" finished-at="2023-05-29T16:07:45 GMT-07:00" duration-ms="34272">
+      <class name="com.test.PeopleCustomerPageTest">
+        <test-method is-config="true" signature="grouping(java.lang.String)[pri:0, instance:com.test.PeopleCustomerPageTest@663c9e7a]" started-at="2023-05-29T16:07:11 GMT-07:00" name="grouping" finished-at="2023-05-29T16:07:15 GMT-07:00" duration-ms="3813" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- grouping -->
+        <test-method is-config="true" signature="preLaunch(java.lang.String)[pri:0, instance:com.test.PeopleCustomerPageTest@663c9e7a]" started-at="2023-05-29T16:07:15 GMT-07:00" name="preLaunch" finished-at="2023-05-29T16:07:17 GMT-07:00" duration-ms="2271" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,35 +37,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preLaunch -->
-        <test-method signature="validateTheElementInAddProductPopup()[pri:1, instance:com.test.ProductPageTest@663c9e7a]" started-at="2023-05-28T13:36:05 GMT-07:00" name="validateTheElementInAddProductPopup" finished-at="2023-05-28T13:36:33 GMT-07:00" duration-ms="28014" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validateTheElementInAddProductPopup -->
-        <test-method is-config="true" signature="preLaunch(java.lang.String)[pri:0, instance:com.test.ProductPageTest@663c9e7a]" started-at="2023-05-28T13:36:33 GMT-07:00" name="preLaunch" finished-at="2023-05-28T13:36:38 GMT-07:00" duration-ms="5620" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- preLaunch -->
-        <test-method signature="validatenTheValueInAddProductPopUpfields()[pri:2, instance:com.test.ProductPageTest@663c9e7a]" started-at="2023-05-28T13:36:38 GMT-07:00" name="validatenTheValueInAddProductPopUpfields" finished-at="2023-05-28T13:36:53 GMT-07:00" duration-ms="14197" status="FAIL">
+        <test-method signature="validateValueEntredInAddWaiterPopUpIsSaved()[pri:3, instance:com.test.PeopleCustomerPageTest@663c9e7a]" started-at="2023-05-29T16:07:17 GMT-07:00" name="validateValueEntredInAddWaiterPopUpIsSaved" finished-at="2023-05-29T16:07:24 GMT-07:00" duration-ms="7396" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[The following asserts failed:
-failure message: product tax not found expected [abc] but found [21],
-failure message: product price not found expected [abc] but found [233.000 x8fmv]]]>
+no matching records found expected [abc@gmail.com] but found [##abc@gmail.com],
+no matching records found expected [1234578902] but found [12341234578902],
+no matching records found expected [10] but found [abc]]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.AssertionError: The following asserts failed:
-failure message: product tax not found expected [abc] but found [21],
-failure message: product price not found expected [abc] but found [233.000 x8fmv]
+no matching records found expected [abc@gmail.com] but found [##abc@gmail.com],
+no matching records found expected [1234578902] but found [12341234578902],
+no matching records found expected [10] but found [abc]
 at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
 at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
-at com.test.ProductPageTest.validatenTheValueInAddProductPopUpfields(ProductPageTest.java:99)
+at com.test.PeopleCustomerPageTest.validateValueEntredInAddWaiterPopUpIsSaved(PeopleCustomerPageTest.java:123)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -80,8 +86,8 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validatenTheValueInAddProductPopUpfields -->
-        <test-method is-config="true" signature="preLaunch(java.lang.String)[pri:0, instance:com.test.ProductPageTest@663c9e7a]" started-at="2023-05-28T13:36:53 GMT-07:00" name="preLaunch" finished-at="2023-05-28T13:36:55 GMT-07:00" duration-ms="2249" status="FAIL">
+        </test-method> <!-- validateValueEntredInAddWaiterPopUpIsSaved -->
+        <test-method is-config="true" signature="preLaunch(java.lang.String)[pri:0, instance:com.test.PeopleCustomerPageTest@663c9e7a]" started-at="2023-05-29T16:07:25 GMT-07:00" name="preLaunch" finished-at="2023-05-29T16:07:27 GMT-07:00" duration-ms="2329" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -89,127 +95,33 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.SessionNotCreatedException">
-            <message>
-              <![CDATA[Could not start a new session. Response code 500. Message: session not created
-from no such execution context: loader has changed while resolving nodes
-  (Session info: chrome=113.0.5672.127) 
-Host info: host: 'DESKTOP-UJ2963A', ip: '192.168.145.46'
-Build info: version: '4.9.0', revision: 'd7057100a6'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
-from no such execution context: loader has changed while resolving nodes
-  (Session info: chrome=113.0.5672.127) 
-Host info: host: 'DESKTOP-UJ2963A', ip: '192.168.145.46'
-Build info: version: '4.9.0', revision: 'd7057100a6'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:136)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:94)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:165)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:229)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:157)
-at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:101)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:84)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:52)
-at com.base.AutomationBase.launchChromeBrowser(AutomationBase.java:71)
-at com.base.AutomationBase.launchBrowser(AutomationBase.java:51)
-at com.base.AutomationBase.preLaunch(AutomationBase.java:33)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:823)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:590)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-at org.testng.TestRunner.privateRun(TestRunner.java:829)
-at org.testng.TestRunner.run(TestRunner.java:602)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-at org.testng.TestNG.runSuites(TestNG.java:1099)
-at org.testng.TestNG.run(TestNG.java:1067)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preLaunch -->
-        <test-method signature="validateValueEntredInAddProductPopUpFieldIsSaved()[pri:3, instance:com.test.ProductPageTest@663c9e7a]" started-at="2023-05-28T13:36:55 GMT-07:00" name="validateValueEntredInAddProductPopUpFieldIsSaved" finished-at="2023-05-28T13:36:55 GMT-07:00" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.SessionNotCreatedException">
+        <test-method signature="modifyTheExistingRecordOfStores()[pri:4, instance:com.test.PeopleCustomerPageTest@663c9e7a]" started-at="2023-05-29T16:07:27 GMT-07:00" name="modifyTheExistingRecordOfStores" finished-at="2023-05-29T16:07:35 GMT-07:00" duration-ms="8103" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Could not start a new session. Response code 500. Message: session not created
-from no such execution context: loader has changed while resolving nodes
-  (Session info: chrome=113.0.5672.127) 
-Host info: host: 'DESKTOP-UJ2963A', ip: '192.168.145.46'
-Build info: version: '4.9.0', revision: 'd7057100a6'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]]]>
+              <![CDATA[The following asserts failed:
+no matching records found expected [Ashish] but found [No matching records found],
+no matching records found expected [pqr@gmail.com] but found [null],
+no matching records found expected [1234] but found [null],
+no matching records found expected [5] but found [null]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
-from no such execution context: loader has changed while resolving nodes
-  (Session info: chrome=113.0.5672.127) 
-Host info: host: 'DESKTOP-UJ2963A', ip: '192.168.145.46'
-Build info: version: '4.9.0', revision: 'd7057100a6'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:136)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:94)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:165)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:229)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:157)
-at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:101)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:84)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:52)
-at com.base.AutomationBase.launchChromeBrowser(AutomationBase.java:71)
-at com.base.AutomationBase.launchBrowser(AutomationBase.java:51)
-at com.base.AutomationBase.preLaunch(AutomationBase.java:33)
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+no matching records found expected [Ashish] but found [No matching records found],
+no matching records found expected [pqr@gmail.com] but found [null],
+no matching records found expected [1234] but found [null],
+no matching records found expected [5] but found [null]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+at com.test.PeopleCustomerPageTest.modifyTheExistingRecordOfStores(PeopleCustomerPageTest.java:155)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:823)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:590)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
 at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
 at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
 at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
@@ -234,169 +146,26 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateValueEntredInAddProductPopUpFieldIsSaved -->
-        <test-method is-config="true" signature="preLaunch(java.lang.String)[pri:0, instance:com.test.ProductPageTest@663c9e7a]" started-at="2023-05-28T13:36:55 GMT-07:00" name="preLaunch" finished-at="2023-05-28T13:36:55 GMT-07:00" duration-ms="0" status="SKIP">
+        </test-method> <!-- modifyTheExistingRecordOfStores -->
+        <test-method is-config="true" signature="preLaunch(java.lang.String)[pri:0, instance:com.test.PeopleCustomerPageTest@663c9e7a]" started-at="2023-05-29T16:07:35 GMT-07:00" name="preLaunch" finished-at="2023-05-29T16:07:38 GMT-07:00" duration-ms="2595" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preLaunch -->
-        <test-method signature="validateEditFunctionOfExistingRecord()[pri:4, instance:com.test.ProductPageTest@663c9e7a]" started-at="2023-05-28T13:36:55 GMT-07:00" name="validateEditFunctionOfExistingRecord" finished-at="2023-05-28T13:36:55 GMT-07:00" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.SessionNotCreatedException">
-            <message>
-              <![CDATA[Could not start a new session. Response code 500. Message: session not created
-from no such execution context: loader has changed while resolving nodes
-  (Session info: chrome=113.0.5672.127) 
-Host info: host: 'DESKTOP-UJ2963A', ip: '192.168.145.46'
-Build info: version: '4.9.0', revision: 'd7057100a6'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
-from no such execution context: loader has changed while resolving nodes
-  (Session info: chrome=113.0.5672.127) 
-Host info: host: 'DESKTOP-UJ2963A', ip: '192.168.145.46'
-Build info: version: '4.9.0', revision: 'd7057100a6'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:136)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:94)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:165)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:229)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:157)
-at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:101)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:84)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:52)
-at com.base.AutomationBase.launchChromeBrowser(AutomationBase.java:71)
-at com.base.AutomationBase.launchBrowser(AutomationBase.java:51)
-at com.base.AutomationBase.preLaunch(AutomationBase.java:33)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:823)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:590)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-at org.testng.TestRunner.privateRun(TestRunner.java:829)
-at org.testng.TestRunner.run(TestRunner.java:602)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-at org.testng.TestNG.runSuites(TestNG.java:1099)
-at org.testng.TestNG.run(TestNG.java:1067)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validateEditFunctionOfExistingRecord -->
-        <test-method is-config="true" signature="preLaunch(java.lang.String)[pri:0, instance:com.test.ProductPageTest@663c9e7a]" started-at="2023-05-28T13:36:55 GMT-07:00" name="preLaunch" finished-at="2023-05-28T13:36:55 GMT-07:00" duration-ms="0" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- preLaunch -->
-        <test-method signature="validateDeleteFunctiongOfExistingRecord()[pri:5, instance:com.test.ProductPageTest@663c9e7a]" started-at="2023-05-28T13:36:55 GMT-07:00" name="validateDeleteFunctiongOfExistingRecord" finished-at="2023-05-28T13:36:55 GMT-07:00" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.SessionNotCreatedException">
-            <message>
-              <![CDATA[Could not start a new session. Response code 500. Message: session not created
-from no such execution context: loader has changed while resolving nodes
-  (Session info: chrome=113.0.5672.127) 
-Host info: host: 'DESKTOP-UJ2963A', ip: '192.168.145.46'
-Build info: version: '4.9.0', revision: 'd7057100a6'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
-from no such execution context: loader has changed while resolving nodes
-  (Session info: chrome=113.0.5672.127) 
-Host info: host: 'DESKTOP-UJ2963A', ip: '192.168.145.46'
-Build info: version: '4.9.0', revision: 'd7057100a6'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:136)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:94)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:165)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:229)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:157)
-at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:101)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:84)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:52)
-at com.base.AutomationBase.launchChromeBrowser(AutomationBase.java:71)
-at com.base.AutomationBase.launchBrowser(AutomationBase.java:51)
-at com.base.AutomationBase.preLaunch(AutomationBase.java:33)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:823)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:590)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-at org.testng.TestRunner.privateRun(TestRunner.java:829)
-at org.testng.TestRunner.run(TestRunner.java:602)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-at org.testng.TestNG.runSuites(TestNG.java:1099)
-at org.testng.TestNG.run(TestNG.java:1067)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
+        <test-method signature="validateDeleteFunctiongOfExistingRecord()[pri:5, instance:com.test.PeopleCustomerPageTest@663c9e7a]" started-at="2023-05-29T16:07:38 GMT-07:00" name="validateDeleteFunctiongOfExistingRecord" finished-at="2023-05-29T16:07:45 GMT-07:00" duration-ms="6978" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateDeleteFunctiongOfExistingRecord -->
-      </class> <!-- com.test.ProductPageTest -->
+      </class> <!-- com.test.PeopleCustomerPageTest -->
     </test> <!-- ChromeTest -->
   </suite> <!-- Suite -->
 </testng-results>

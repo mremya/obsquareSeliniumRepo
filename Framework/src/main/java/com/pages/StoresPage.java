@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.utils.GenericUtils;
+import com.utils.WaitUtils;
 import com.utils.WebActionUtils;
 
 public class StoresPage {
@@ -14,6 +15,7 @@ public class StoresPage {
 
 	WebActionUtils element = new WebActionUtils();
 	GenericUtils dropdownsel = new GenericUtils();
+	WaitUtils wait=new WaitUtils();
 
 	@FindBy(xpath = "//input[@id='StoreName']")
 	WebElement storeName;
@@ -127,37 +129,37 @@ public class StoresPage {
 	}
 
 	public Boolean isStoreNameDisplayed() {
-
+wait.waitForElementToBeClickable(driver, storeName, 20);
 		return element.isDisplayedFunction(driver, storeName);
 
 	}
 
 	public Boolean isStoreEmailDisplayed() {
-
+		wait.waitForElementToBeClickable(driver, storeEmail, 20);
 		return element.isDisplayedFunction(driver, storeEmail);
 
 	}
 
 	public Boolean isStorePhoneDisplayed() {
-
+		wait.waitForElementToBeClickable(driver, storePhone, 20);
 		return element.isDisplayedFunction(driver, storePhone);
 
 	}
 
 	public Boolean isStoreCountryDisplayed() {
-
+		wait.waitForElementToBeClickable(driver, storeCountry, 20);
 		return element.isDisplayedFunction(driver, storeCountry);
 
 	}
 
 	public Boolean isStoreCityDisplayed() {
-
+		wait.waitForElementToBeClickable(driver, storeCity, 20);
 		return element.isDisplayedFunction(driver, storeCity);
 
 	}
 
 	public Boolean isStoreAddressDisplayed() {
-
+		wait.waitForElementToBeClickable(driver, storeAddress, 20);
 		return element.isDisplayedFunction(driver, storeAddress);
 
 	}
@@ -173,6 +175,7 @@ public class StoresPage {
 	}
 
 	public void enterValueForStoreName(String value) {
+		wait.waitForElementToBeClickable(driver, storeName, 20);
 		element.clearFunction(storeName);
 		element.entreTheValue(driver, storeName, value);
 	}

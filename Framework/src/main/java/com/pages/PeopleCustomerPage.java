@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.utils.GenericUtils;
+import com.utils.WaitUtils;
 import com.utils.WebActionUtils;
 
 public class PeopleCustomerPage {
@@ -13,6 +14,7 @@ public class PeopleCustomerPage {
 	WebDriver driver;  
 	WebActionUtils element = new WebActionUtils();
     GenericUtils  dropdownsel=new GenericUtils();
+    WaitUtils wait=new WaitUtils();
     
 	@FindBy(xpath="//input[@id='CustomerName']")
 	WebElement customerName;
@@ -26,10 +28,10 @@ public class PeopleCustomerPage {
 	@FindBy(xpath="//input[@id='CustomerDiscount']")
 	WebElement  customerDiscount;
 	
-	@FindBy(xpath="//input[@id='CustomerDiscount']")
+	@FindBy(xpath="//button[@class='btn btn-add btn-lg']")
 	WebElement  addCustomerBtn;
 	
-	@FindBy(xpath="//input[@id='CustomerDiscount']")
+	@FindBy(xpath="//button[@class='btn btn-add']")
 	WebElement  addCustomerSubmitBtn;
 	
 	@FindBy(xpath="(//span[@class='menu-text'])[6]")
@@ -103,9 +105,7 @@ public class PeopleCustomerPage {
 	
 	public void clickOnCustomerEditSubmit() {
 		element.clickOnTheElement(driver, editSubmitBtn);
-		
 	}
-	
 	public void clickOnCustomerLink() {
 		element.clickOnTheElement(driver, customerLink);
 		
@@ -115,12 +115,13 @@ public class PeopleCustomerPage {
 		
 	}
 	public void clickOnAddCustomerCloseBtn() {
-		element.clickOnTheElement(driver, addCustomerBtn);
+		element.clickOnTheElement(driver, AddcustomerClosetBtn);
 		
 	}
 	
 	public void clickOnAddCustomerSubmitBtn() {
-		element.clickOnTheElement(driver, customerLink);
+		//wait.waitForElementToBeClickable(driver, addCustomerSubmitBtn, 20);
+		element.clickOnTheElement(driver, addCustomerSubmitBtn);
 		
 	}
 	public void clickOnCustomerEditIconBtn() {
@@ -148,6 +149,10 @@ public Boolean isCustomerNameDisplayed() {
 		return element.isDisplayedFunction(driver, customerName);
 
 }
+public void customerImplicitwait() {
+	wait.implicitWait(driver, 20);
+
+}
 public Boolean isCustomerPhoneDisplayed() {
 	
 	return element.isDisplayedFunction(driver, customerPhone);
@@ -165,6 +170,7 @@ public Boolean isCustomerDiscountDisplayed() {
 
 }
 public void enterValueForCustomerName(String value) {
+	wait.waitForElementToBeClickable(driver, customerName, 20);
 	element.clearFunction(customerName);
 	element.entreTheValue(driver, customerName, value);
 }

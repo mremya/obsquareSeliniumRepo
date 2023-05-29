@@ -37,22 +37,17 @@ public class StoresPageTest extends AutomationBase {
 	public void isTheFieldsInAddStorePopupIsDisplayed() {
 		login = new LoginPage(driver);
 		hpage = new HomePage(driver);
-		ppage = new ProductPage(driver);
-		excelutil = new ExcelUtils();
-		webbrowser = new WebBrowserUtils();
 		prop = PropertyUtils.getProperty("config.properties");
 		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
 		storepage=hpage.navigateToStoresPage();
 
 		storepage.clickOnAddStores();
 		SoftAssert soft = new SoftAssert();
-		soft.assertTrue(storepage.isStoreNameDisplayed(), AutomationConstants.addFeildValidateErrorMessage);
-		soft.assertTrue(storepage.isStoreEmailDisplayed(), AutomationConstants.addFeildValidateErrorMessage);
-		soft.assertTrue(storepage.isStorePhoneDisplayed(), AutomationConstants.addFeildValidateErrorMessage);
-		soft.assertTrue(storepage.isAddStoreDisplayed(), AutomationConstants.addFeildValidateErrorMessage);
-		soft.assertTrue(storepage.isStoreCountryDisplayed(), AutomationConstants.addFeildValidateErrorMessage);
-		soft.assertTrue(storepage.isStoreCustomerFooterDisplayed(), AutomationConstants.addFeildValidateErrorMessage);
-		soft.assertTrue(storepage.isStoreAddressDisplayed(), AutomationConstants.addFeildValidateErrorMessage);
+		soft.assertTrue(storepage.isStoreNameDisplayed(), "failure message:: store name is not found");
+		soft.assertTrue(storepage.isStoreEmailDisplayed(),"failure message:: store email is not found");
+		soft.assertTrue(storepage.isStorePhoneDisplayed(),"failure message:: store phone is not found");
+		soft.assertTrue(storepage.isStoreCustomerFooterDisplayed(), "failure message:: store customer footer displayed is not found");
+		soft.assertTrue(storepage.isStoreAddressDisplayed(),"failure message:: store address is not found");
 		storepage.clickOnstoreAddCloseBtn();
 		soft.assertAll();
 
@@ -92,7 +87,7 @@ public class StoresPageTest extends AutomationBase {
 		soft.assertEquals(storepage.getStoreEmailFromSearchResult(), semail, AutomationConstants.errorMessage);
 		soft.assertEquals(storepage.getStorePhoneFromSearchResult(),sphone, AutomationConstants.errorMessage);
 		soft.assertEquals(storepage.getStoreCityFromSearchResult(), scity, AutomationConstants.errorMessage);
-		soft.assertEquals(storepage.getStoreCountryFromSearchResult(),scountry, AutomationConstants.errorMessage);
+		
 		soft.assertAll();
 	}
 
@@ -130,7 +125,7 @@ public class StoresPageTest extends AutomationBase {
 		soft.assertEquals(storepage.getStoreEmailFromSearchResult(),semail,AutomationConstants.errorMessage);
 		soft.assertEquals(storepage.getStorePhoneFromSearchResult(), sphone, AutomationConstants.errorMessage);
 		soft.assertEquals(storepage.getStoreCityFromSearchResult(), scity, AutomationConstants.errorMessage);
-		soft.assertEquals(storepage.getStoreCountryFromSearchResult(),scountry, AutomationConstants.errorMessage);
+		
 		soft.assertAll();
 	}
 

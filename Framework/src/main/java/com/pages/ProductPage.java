@@ -20,8 +20,8 @@ public class ProductPage {
 	@FindBy( xpath ="(//select[@class='form-control'])[2]")
 	WebElement productType;
 	
-	@FindBy(xpath = "//button[@type='button']")
-	WebElement stockCloseButton;
+	@FindBy(xpath = "(//button[@class='btn btn-add hiddenpr'])[1]")
+	WebElement stockSubmitButton;
 	
 	@FindBy( xpath ="(//button[@class='btn btn-default'])[2]")
 	WebElement addProductCloseBtn;
@@ -122,9 +122,12 @@ public class ProductPage {
 
 }
 	
-public void clickOnStockCloseButton() {
-		 element.clickOnTheElement(driver, stockCloseButton);
-		 System.out.println();
+public void clickOnStocksubmitButton() {
+	wait.waitForElementToBeClickable(driver, stockSubmitButton, 20);
+	
+		 element.clickOnTheElement(driver, stockSubmitButton);
+		 
+		
 	 }
 	
 	public void clickOnAddProduct() {
@@ -208,6 +211,7 @@ public Boolean isProductDescriptionDisplayed() {
 }
 
 public Boolean isproductCodeDisplayed() {
+	wait.waitForElementToBeClickable(driver, productCode, 20);
 	
 	return element.isDisplayedFunction(driver, productCode);
 
@@ -221,6 +225,7 @@ public void selectValueForProductType(String value) {
 	dropdownsel.selectByValue(driver,productType , value);
 }
 public void enterValueForProductCode(String code) {
+	wait.waitForElementToBeClickable(driver, productCode, 20);
 	element.clearFunction(productCode);
 	element.entreTheValue(driver, productCode, code);
 }
@@ -277,7 +282,7 @@ public void clickOnAddProductSubmit() {
 }
 	
 public void clickOnAddProductClose() {
-	//wait.waitForElementToBeClickable(driver, addProductCloseBtn, 20);
+	wait.waitForElementToBeClickable(driver, addProductCloseBtn, 20);
 	 element.clickOnTheElement(driver, addProductCloseBtn);
 }
 
@@ -316,12 +321,10 @@ public String getProductPriceFromSearchResult() {
 	
 }
 public void searchByProductCode(String productcode) {
+	wait.waitForElementToBeClickable(driver, searchbtn, 20);
 	element.clearFunction(searchbtn);
 	element.clickOnTheElement(driver, searchbtn);
-	
-	wait.waitForElementToBeClickable(driver, searchbtn, 20);
-		
-		element.entreTheValue(driver, searchbtn, productcode);
+	element.entreTheValue(driver, searchbtn, productcode);
 }
 	
 public void clickOnEditProduct() {
