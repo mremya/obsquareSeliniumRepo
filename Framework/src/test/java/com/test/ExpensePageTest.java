@@ -34,8 +34,9 @@ public class ExpensePageTest extends AutomationBase {
 	@Test(priority = 1, enabled = true)
 	public void validateTheElementInAddExpensePopup() {
 		login = new LoginPage(driver);
+		webbrowser = new WebBrowserUtils();
 		prop = PropertyUtils.getProperty("config.properties");
-		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
+		homepg=login.login(prop.getProperty("username"), prop.getProperty("password"));
 		expensep = homepg.navigateToExpensePage();
 		
 		expensep.clickOnAddExpense();

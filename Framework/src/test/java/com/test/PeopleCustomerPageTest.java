@@ -34,7 +34,7 @@ public class PeopleCustomerPageTest extends AutomationBase {
 	Properties prop;
 
 
-	//@Test(priority = 1, enabled = true, groups = { "sanity" })
+	@Test(priority = 1, enabled = true, groups = { "sanity" })
 	public void validateTheElementInAddCustomerPopup() {
 		login = new LoginPage(driver);
 		webbrowser = new WebBrowserUtils();
@@ -42,8 +42,6 @@ public class PeopleCustomerPageTest extends AutomationBase {
 		prop = PropertyUtils.getProperty("config.properties");
 		homepg=login.login(prop.getProperty("username"), prop.getProperty("password"));
 		customer= homepg.navigateToCustomersInPeopleLink();
-		
-		//customer.clickOnCustomerLink();
 		customer.clickOnAddCustomerBtn();
 		customer.customerImplicitwait();
 		SoftAssert soft = new SoftAssert();
@@ -56,7 +54,7 @@ public class PeopleCustomerPageTest extends AutomationBase {
 
 	}
 
-	//@Test(priority = 2, enabled = true, groups = { "smoke", "sanity" })
+	@Test(priority = 2, enabled = true, groups = { "smoke", "sanity" })
 	public void validateAddCustomerPopUpfields() {
 		login = new LoginPage(driver);
 		webbrowser = new WebBrowserUtils();
@@ -145,7 +143,7 @@ public class PeopleCustomerPageTest extends AutomationBase {
 		customer.enterValueForCustomerEmail(cemail);
 		customer.enterValueForCustomerPhone(cphone);
 		customer.clickOnCustomerEditSubmit();
-		customer.searchByCustomerName("Anish");
+		customer.searchByCustomerName(cname);
 		SoftAssert soft = new SoftAssert();
 		soft.assertEquals(customer.getcustomerNameFromSearchResult(),cname, AutomationConstants.errorMessage);
 		soft.assertEquals(customer.getCustomerEmailFromSearchResult(),cemail,

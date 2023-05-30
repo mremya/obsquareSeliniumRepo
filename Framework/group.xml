@@ -10,9 +10,9 @@
             </run>
         </groups>
     <classes>
-      <class name="com.test.PeopleSupplierPageTest"/>
+      
       <class name="com.test.PeopleWaiterPageTest"/>
-      <class name="com.test.PeopleCoustomerPageTest"/>
+      <class name="com.test.PeopleCustomerPageTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

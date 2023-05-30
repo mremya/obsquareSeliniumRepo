@@ -23,8 +23,16 @@ public class HomePage {
 	@FindBy(xpath = "(//span[@class='menu-text'])[4]")
 	WebElement peopleLink;
 	
+	@FindBy(xpath = "(//span[@class='menu-text'])[5]")
+	WebElement waiterLink;
+	
+	
 	@FindBy(xpath="(//span[@class='menu-text'])[6]")
 	WebElement  customerLink;
+	
+	@FindBy(xpath="(//span[@class='menu-text'])[7]")
+	WebElement  supplierLink;
+	
 
 	@FindBy(xpath = "(//span[@class='menu-text'])[8]")
 	WebElement salesLink;
@@ -141,6 +149,18 @@ public class HomePage {
 		element.clickOnTheElement(driver, peopleLink);
 		element.clickOnTheElement(driver, customerLink);
 		return new PeopleCustomerPage(driver);
+	}
+	
+	public PeopleSupplierPage navigateToSuplierInPeopleLink() {
+		element.clickOnTheElement(driver, peopleLink);
+		element.clickOnTheElement(driver, supplierLink);
+		return new PeopleSupplierPage(driver);
+	}
+
+	public PeopleWaiterPage navigateToWaiterInPeopleLink() {
+		element.clickOnTheElement(driver, peopleLink);
+		element.clickOnTheElement(driver, waiterLink);
+		return new PeopleWaiterPage(driver);
 	}
 
 }

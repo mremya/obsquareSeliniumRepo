@@ -42,10 +42,10 @@ public class PeopleSupplierPageTest extends AutomationBase {
 		excelutil = new ExcelUtils();
 		webbrowser = new WebBrowserUtils();
 		prop = PropertyUtils.getProperty("config.properties");
-		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
-		waiter= homepg.navigateToPeoplePage();
+		homepg=login.login(prop.getProperty("username"), prop.getProperty("password"));
+		supplier= homepg.navigateToSuplierInPeopleLink();
 		
-		supplier.clickOnSuplierLink();
+		
 		supplier.clickOnAddSupplierBtn();
 		
 		SoftAssert soft = new SoftAssert();
@@ -65,8 +65,8 @@ public class PeopleSupplierPageTest extends AutomationBase {
 		excelutil = new ExcelUtils();
 		webbrowser = new WebBrowserUtils();
 		prop = PropertyUtils.getProperty("config.properties");
-		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
-		waiter= homepg.navigateToPeoplePage();
+		homepg=login.login(prop.getProperty("username"), prop.getProperty("password"));
+		supplier= homepg.navigateToSuplierInPeopleLink();
 		
 		String sname = excelutil.readStringData("PeopleSupplier",13, 2);
 		String sphone = excelutil.readStringData("PeopleSupplier",14, 2);
@@ -79,7 +79,7 @@ public class PeopleSupplierPageTest extends AutomationBase {
 		String rsemail = excelutil.readStringData("PeopleSupplier",3,2);
 		String rsnote = excelutil.readStringData("PeopleSupplier",4,2);
 		
-		supplier.clickOnSuplierLink();
+		
 		supplier.clickOnAddSupplierBtn();
 		supplier.enterValueForSupplierName(sname);
 		supplier.enterValueForSupplierEmail(semail);
@@ -103,8 +103,8 @@ public class PeopleSupplierPageTest extends AutomationBase {
 		excelutil = new ExcelUtils();
 		webbrowser = new WebBrowserUtils();
 		prop = PropertyUtils.getProperty("config.properties");
-		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
-		waiter= homepg.navigateToPeoplePage();
+		homepg=login.login(prop.getProperty("username"), prop.getProperty("password"));
+		supplier= homepg.navigateToSuplierInPeopleLink();
 		
 		String sname = excelutil.readStringData("PeopleSupplier",1, 2);
 		String sphone = excelutil.readStringData("PeopleSupplier",2, 2);
@@ -112,7 +112,7 @@ public class PeopleSupplierPageTest extends AutomationBase {
 		String snote = excelutil.readStringData("PeopleSupplier",4,2);
 		
 		
-		supplier.clickOnSuplierLink();
+		
 		supplier.clickOnAddSupplierBtn();
 		supplier.enterValueForSupplierName(sname);
 		supplier.enterValueForSupplierEmail(semail);
@@ -135,8 +135,8 @@ public class PeopleSupplierPageTest extends AutomationBase {
 		excelutil = new ExcelUtils();
 		webbrowser = new WebBrowserUtils();
 		prop = PropertyUtils.getProperty("config.properties");
-		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
-		waiter= homepg.navigateToPeoplePage();
+		homepg=login.login(prop.getProperty("username"), prop.getProperty("password"));
+		supplier= homepg.navigateToSuplierInPeopleLink();
 		
 		String sname = excelutil.readStringData("PeopleSupplier",1, 2);
 		String sphone = excelutil.readStringData("PeopleSupplier",2, 2);
@@ -148,7 +148,7 @@ public class PeopleSupplierPageTest extends AutomationBase {
 		String esemail = excelutil.readStringData("PeopleSupplier",8,2);
 		
 		
-		supplier.clickOnSuplierLink();
+		
 		supplier.searchBySupplierName(sname);
 		supplier.clickOnSupplierEditIconBtn();
 		supplier.enterValueForSupplierName(esname);
@@ -173,8 +173,8 @@ public class PeopleSupplierPageTest extends AutomationBase {
 		excelutil = new ExcelUtils();
 		webbrowser = new WebBrowserUtils();
 		prop = PropertyUtils.getProperty("config.properties");
-		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
-		waiter= homepg.navigateToPeoplePage();
+		homepg=login.login(prop.getProperty("username"), prop.getProperty("password"));
+		supplier= homepg.navigateToSuplierInPeopleLink();
 		
 		String sname = excelutil.readStringData("PeopleSupplier",10, 2);
 		supplier.clickOnSuplierLink();

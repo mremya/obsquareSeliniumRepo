@@ -13,11 +13,10 @@
 <!-- <class name="com.test.HomePageTest"/>-->
 <!--<class name="com.test.ProductPageTest"/> -->
  <!-- <class name="com.test.StoresPageTest"/> -->  
- <!-- <class name="com.test.PeopleWaiterPageTest"/> -->
- <class name="com.test.PeopleCustomerPageTest"/> 
- <!-- <class name="com.test.PeopleSupplierPageTest"/> -->
- <!--<class name ="com.test.ExpensePageTest"/>-->
- 
+  <class name="com.test.PeopleWaiterPageTest"/> 
+<!-- <class name="com.test.PeopleCustomerPageTest"/> -->
+<!--  <class name="com.test.PeopleSupplierPageTest"/> -->
+ <!--<class name ="com.test.ExpensePageTest"/> -->
   
   </classes>
   </test> <!-- Test -->
