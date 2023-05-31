@@ -18,95 +18,95 @@ public class ProductPage {
      WaitUtils wait=new WaitUtils();
 	
 	@FindBy( xpath ="(//select[@class='form-control'])[2]")
-	WebElement productType;
+	private WebElement productType;
 	
 	@FindBy(xpath = "(//button[@class='btn btn-add hiddenpr'])[1]")
-	WebElement stockSubmitButton;
+	private WebElement stockSubmitButton;
 	
 	@FindBy( xpath ="(//button[@class='btn btn-default'])[2]")
-	WebElement addProductCloseBtn;
+	private WebElement addProductCloseBtn;
 	
 	@FindBy(xpath="//input[@id='ProductCode']")
-	WebElement  productCode;
+	private WebElement  productCode;
 	
 	@FindBy(xpath="//input[@id='ProductName']")
-	WebElement productName;
+	private WebElement productName;
 	
 	@FindBy(xpath="//select[@id='Category']")
-	WebElement productCategory;
+	private WebElement productCategory;
 	
 	@FindBy(xpath="//select[@id='Supplier']")
-	WebElement productSupplier;
+	private WebElement productSupplier;
 	
 	@FindBy(xpath="//input[@id='PurchasePrice']")
-	WebElement productPurchasePrice;
+	private WebElement productPurchasePrice;
 	
 	@FindBy(xpath="//input[@id='Tax']")
-	WebElement productTax;
+	private WebElement productTax;
 	
 	@FindBy(xpath="//select[@id='taxType']")
-	WebElement productTaxMethod;
+	private WebElement productTaxMethod;
 	
 	@FindBy(xpath="//input[@id='Price']")
-	WebElement productPrice	;
+	private WebElement productPrice	;
 	
 	@FindBy(xpath="//input[@id='Unit']")
-	WebElement productUnit	;
+	private WebElement productUnit	;
 	
 	@FindBy(xpath="//input[@id='AlertQt']")
-	WebElement productAlertQuantity;
+	private WebElement productAlertQuantity;
 	
 	@FindBy(xpath="//textarea[@id='ProductOptions']")
-	WebElement productOptions;
+	private WebElement productOptions;
 	
 	@FindBy(xpath="//div[@class='note-editable panel-body']")
-	WebElement productDescription;
+	private WebElement productDescription;
 	
 	@FindBy(xpath="//button[@class='btn btn-add btn-lg']")
-	WebElement addProduct;
+	private WebElement addProduct;
 	
 	@FindBy(xpath="(//button[@class='btn btn-add'])[1]")
-	WebElement addProduct_submit;
+	private WebElement addProduct_submit;
 	
 	@FindBy(xpath="(//table[@id='Table']//tr//td)[1]")
-	WebElement productcode_searchresult;
+	private WebElement productcode_searchresult;
 	
 	@FindBy(xpath="(//table[@id='Table']//tr//td)[2]")
-	WebElement productname_searchresult;
+	private WebElement productname_searchresult;
 	
 	@FindBy(xpath="(//table[@id='Table']//tr//td)[3]")
-	WebElement productcategory_searchresult;
+	private WebElement productcategory_searchresult;
 	
 	@FindBy(xpath="(//table[@id='Table']//tr//td)[4]")
-	WebElement productdescription_searchresult;
+	private WebElement productdescription_searchresult;
 	
 	@FindBy(xpath="(//table[@id='Table']//tr//td)[5]")
-	WebElement producttax_searchresult;
+	private WebElement producttax_searchresult;
 	
 	@FindBy(xpath="(//table[@id='Table']//tr//td)[6]")
-	WebElement productprice_searchresult;
+	private WebElement productprice_searchresult;
 	
 	
 	@FindBy(xpath="//input[@type='search']")
-	WebElement searchbtn;
+	private WebElement searchbtn;
 	
 	@FindBy(xpath="(//a[@class='btn btn-default'])[3]")
-	WebElement editicon;
+	private WebElement editicon;
 	
 	@FindBy(xpath="(//a[@class='btn btn-default'])[1]")
-	WebElement deleteicon;
+	private WebElement deleteicon;
 	
 	@FindBy(xpath="//button[@type='submit']")
-	WebElement editiconSubmit;
+	private WebElement editiconSubmit;
 	
 	@FindBy(xpath="(//span[@class='menu-text'])[3]")
-	WebElement storesLink;
+	private WebElement storesLink;
 	
 	@FindBy(xpath="//a[@class='btn btn-danger']")
-	WebElement conformDeleteMsg;
+	private WebElement conformDeleteMsg;
 	
 	@FindBy(xpath="(//table[@id='Table']//tr//td)[1]")
-	WebElement delete_searchresult;
+	private WebElement delete_searchresult;
 	
 	public ProductPage(WebDriver driver) {
 		this.driver = driver;

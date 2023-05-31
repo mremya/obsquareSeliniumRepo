@@ -68,9 +68,7 @@ public class ProductPageTest extends AutomationBase {
 	public void validatenTheValueInAddProductPopUpfields() {
 		excelutil = new ExcelUtils();
 		login = new LoginPage(driver);
-		hpage = new HomePage(driver);
-		ppage = new ProductPage(driver);
-		prop = new Properties();
+			prop = new Properties();
 		webbrowser = new WebBrowserUtils();
 		prop = PropertyUtils.getProperty("config.properties");
 		login.performlogin(prop.getProperty("username"), prop.getProperty("password"));
@@ -105,8 +103,7 @@ public class ProductPageTest extends AutomationBase {
 	public void validateValueEntredInAddProductPopUpFieldIsSaved()  {
 		excelutil = new ExcelUtils();
 		login = new LoginPage(driver);
-		hpage = new HomePage(driver);
-		ppage = new ProductPage(driver);
+
 		prop = new Properties();
 		webbrowser = new WebBrowserUtils();
 		prop = PropertyUtils.getProperty("config.properties");
@@ -162,8 +159,7 @@ public class ProductPageTest extends AutomationBase {
 		
 		excelutil = new ExcelUtils();
 		login = new LoginPage(driver);
-		hpage = new HomePage(driver);
-		ppage = new ProductPage(driver);
+		
 		prop = new Properties();
 		webbrowser = new WebBrowserUtils();
 		prop = PropertyUtils.getProperty("config.properties");

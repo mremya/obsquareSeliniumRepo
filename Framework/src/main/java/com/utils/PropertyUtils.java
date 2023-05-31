@@ -37,10 +37,7 @@ public class PropertyUtils {
 				e.printStackTrace();
 			}
 		}
-		
 	
-		
-		
 		return prop;
 	}
 

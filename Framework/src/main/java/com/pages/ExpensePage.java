@@ -19,69 +19,69 @@ public class ExpensePage {
 	WebActionUtils element = new WebActionUtils();
 	 GenericUtils  dropdownsel=new GenericUtils();
 	 
-	 WebDriverWait expwait= new WebDriverWait(driver, Duration.ofSeconds(20));  //explicit wait declaration
+	 
 	
 	@FindBy(xpath="//button[@class='btn btn-add btn-lg']")
-	WebElement addExpense;
+	 private WebElement addExpense;
 	
 	@FindBy(xpath="//input[@id='Date']")
-	WebElement eDate;
+	private WebElement eDate;
 	
 	@FindBy(xpath="//input[@id='Reference']")
-	WebElement eReference;
+	private WebElement eReference;
 	
 	@FindBy(xpath="//select[@id='Category']")
-	WebElement eCategory;
+	private WebElement eCategory;
 	
 	@FindBy(xpath="//select[@id='store_id']")
-	WebElement eStore;
+	private WebElement eStore;
 	
 	@FindBy(xpath="//input[@id='Amount']")
-	WebElement eAmount;
+	private WebElement eAmount;
 	
 	
 	@FindBy(xpath="//button[@class='btn btn-add']")
-	WebElement addExpense_submit;
+	private WebElement addExpense_submit;
 	
 	@FindBy(xpath="//input[@type='search']")
-	WebElement searchbtn;
+	private WebElement searchbtn;
 	
 	
 	@FindBy(xpath="(//table[@id='Table']//tr//td)[1]")
-	WebElement expenseDate_searchresult;
+	private WebElement expenseDate_searchresult;
 	
 	@FindBy(xpath="(//table[@id='Table']//tr//td)[2]")
-	WebElement expenseReference_searchresult;
+	private WebElement expenseReference_searchresult;
 	
 	@FindBy(xpath="(//table[@id='Table']//tr//td)[3]")
-	WebElement expenseAmount_searchresult;
+	private WebElement expenseAmount_searchresult;
 	
 	@FindBy(xpath="(//table[@id='Table']//tr//td)[4]")
-	WebElement expenseCategory_searchresult;
+	private WebElement expenseCategory_searchresult;
 	
 	@FindBy(xpath="(//table[@id='Table']//tr//td)[5]")
-	WebElement expenseStore_searchresult;
+	private WebElement expenseStore_searchresult;
 	
 	@FindBy(xpath = "(//a[@class='btn btn-default'])[1]")
-	WebElement expenseDeleteBtn;
+	private WebElement expenseDeleteBtn;
 	
 	@FindBy(xpath = "(//a[@class='btn btn-default'])[2]")
-	WebElement expenseEditBtn;
+	private WebElement expenseEditBtn;
 	
 	@FindBy(xpath = "(//button[@class='confirm']")
-	WebElement expenseDeleteConformMsg;
+	private WebElement expenseDeleteConformMsg;
 	
 	@FindBy(xpath = "(//table[@id='Table']//tr//td)[1]")
-	WebElement expenseDelete_searchResult;
+	private WebElement expenseDelete_searchResult;
 	
 	@FindBy(xpath = "(//button[@class='confirm']")
-	WebElement okConformationForDelete;
+	private WebElement okConformationForDelete;
 	
 	@FindBy(xpath = "//button[@class='btn btn-add']")
-	WebElement editSubmitBtn;
+	private WebElement editSubmitBtn;
 	
 	@FindBy(xpath = "//button[@class='btn btn-default']")
-	WebElement addExpenseCloseBtn;
+	private WebElement addExpenseCloseBtn;
 	
 	public  ExpensePage(WebDriver driver) {
 		this.driver = driver;

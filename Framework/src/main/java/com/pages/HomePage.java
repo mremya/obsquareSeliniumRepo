@@ -12,48 +12,48 @@ public class HomePage {
 	WebActionUtils element = new WebActionUtils();
 	
 	@FindBy(xpath = "(//span[@class='menu-text'])[1]")
-	WebElement posLink;
+	private WebElement posLink;
 
 	@FindBy(xpath = "(//span[@class='menu-text'])[2]")
-	WebElement productLink;
+	private WebElement productLink;
 
 	@FindBy(xpath = "(//span[@class='menu-text'])[3]")
-	WebElement storesLink;
+	private WebElement storesLink;
 
 	@FindBy(xpath = "(//span[@class='menu-text'])[4]")
-	WebElement peopleLink;
+	private WebElement peopleLink;
 	
 	@FindBy(xpath = "(//span[@class='menu-text'])[5]")
-	WebElement waiterLink;
+	private WebElement waiterLink;
 	
 	
 	@FindBy(xpath="(//span[@class='menu-text'])[6]")
-	WebElement  customerLink;
+	private WebElement  customerLink;
 	
 	@FindBy(xpath="(//span[@class='menu-text'])[7]")
-	WebElement  supplierLink;
+	private WebElement  supplierLink;
 	
 
 	@FindBy(xpath = "(//span[@class='menu-text'])[8]")
-	WebElement salesLink;
+	private WebElement salesLink;
 
 	@FindBy(xpath = "(//span[@class='menu-text'])[9]")
-	WebElement expenseLink;
+	private WebElement expenseLink;
 
 	@FindBy(xpath = "(//span[@class='menu-text'])[10]")
-	WebElement categoryLink;
+	private WebElement categoryLink;
 
 	@FindBy(xpath = "(//span[@class='menu-text'])[14]")
-	WebElement reportLink;
+	private WebElement reportLink;
 
 	@FindBy(xpath = "(//span[@class='menu-text'])[13]")
-	WebElement settingLink;
+	private WebElement settingLink;
 
 	@FindBy(xpath = "//li[@class='dropdown language']")
-	WebElement languageLink;
+	private WebElement languageLink;
 
 	@FindBy(xpath = "//i[@class='fa fa-sign-out fa-lg']")
-	WebElement logOut;
+	private WebElement logOut;
 
 	public HomePage(WebDriver driver) {
 		this.driver = driver;

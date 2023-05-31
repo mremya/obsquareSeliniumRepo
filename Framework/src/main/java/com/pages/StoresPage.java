@@ -18,68 +18,68 @@ public class StoresPage {
 	WaitUtils wait=new WaitUtils();
 
 	@FindBy(xpath = "//input[@id='StoreName']")
-	WebElement storeName;
+	private WebElement storeName;
 
 	@FindBy(xpath = "//input[@id='email']")
-	WebElement storeEmail;
+	private WebElement storeEmail;
 
 	@FindBy(xpath = "//input[@id='StorePhone']")
-	WebElement storePhone;
+	private WebElement storePhone;
 
 	@FindBy(xpath = "(//input[@id='Country']")
-	WebElement storeCountry;
+	private WebElement storeCountry;
 
 	@FindBy(xpath = "//input[@id='City']")
-	WebElement storeCity;
+	private WebElement storeCity;
 
 	@FindBy(xpath = "//input[@id='Adresse']")
-	WebElement storeAddress;
+	private WebElement storeAddress;
 
 	@FindBy(xpath = "//input[@id='CustomeFooter']")
-	WebElement storeCustomerFooter;
+	private WebElement storeCustomerFooter;
 
 	@FindBy(xpath = "//button[@class='btn btn-add']")
-	WebElement storeAdd_SubmitBtn;
+	private WebElement storeAdd_SubmitBtn;
 
 	@FindBy(xpath = "//button[@class='btn btn-add btn-lg']")
-	WebElement storeAddBtn;
+	private WebElement storeAddBtn;
 	
 	@FindBy(xpath = "//button[@class='btn btn-default']")
-	WebElement storeAddCloseBtn;
+	private WebElement storeAddCloseBtn;
 	
 	
 	@FindBy(xpath = "//input[@class='form-control input-sm']")
-	WebElement storeSearchbtn;
+	private WebElement storeSearchbtn;
 
 	@FindBy(xpath = "(//table[@id='Table']//tr//td)[1]")
-	WebElement storeName_searchresult;
+	private WebElement storeName_searchresult;
 
 	@FindBy(xpath = "(//table[@id='Table']//tr//td)[2]")
-	WebElement storeEmail_searchresult;
+	private WebElement storeEmail_searchresult;
 
 	@FindBy(xpath = "(//table[@id='Table']//tr//td)[3]")
-	WebElement storePhone_searchresult;
+	private WebElement storePhone_searchresult;
 
 	@FindBy(xpath = "(//table[@id='Table']//tr//td)[4]")
-	WebElement storeCountry_searchresult;
+	private WebElement storeCountry_searchresult;
 
 	@FindBy(xpath = "(//table[@id='Table']//tr//td)[5]")
-	WebElement storeCity_searchresult;
+	private WebElement storeCity_searchresult;
 
 	@FindBy(xpath = "(//a[@class='btn btn-default'])[2]")
-	WebElement storeEditBtn;
+	private WebElement storeEditBtn;
 
 	@FindBy(xpath = "(//table[@id='Table']//tr//td)[1]")
-	WebElement storedelete_searchResult;
+	private WebElement storedelete_searchResult;
 
 	@FindBy(xpath = "(//a[@class='btn btn-default'])[1]")
-	WebElement storeDeleteBtn;
+	private WebElement storeDeleteBtn;
 
 	@FindBy(xpath = "//button[@class='btn btn-green col-md-6 flat-box-btn waves-effect waves-button']")
-	WebElement storeEditSubmitBtn;
+	private WebElement storeEditSubmitBtn;
 	
 	@FindBy(xpath="(//span[@class='menu-text'])[4]")
-	WebElement peopleLink;
+	private WebElement peopleLink;
 
 	public StoresPage(WebDriver driver) {
 		this.driver = driver;

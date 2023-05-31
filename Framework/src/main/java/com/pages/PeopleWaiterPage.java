@@ -15,62 +15,62 @@ public class PeopleWaiterPage {
     GenericUtils  dropdownsel=new GenericUtils();
 	
 	@FindBy(xpath="(//span[@class='menu-text'])[5]")
-	WebElement waiterLink;
+	private WebElement waiterLink;
 	
 	@FindBy(xpath="//button[@class='btn btn-add btn-lg']")
-	WebElement  addWaiterBtn;
+	 private WebElement  addWaiterBtn;
 	
 	@FindBy(xpath="//input[@id='WaiterName']")
-	WebElement  waiterName;
+	private WebElement  waiterName;
 	
 	@FindBy(xpath="//input[@id='WaiterPhone']")
-	WebElement  waiterPhone;
+	private WebElement  waiterPhone;
 	
 	@FindBy(xpath="//input[@id='WaiterEmail']")
-	WebElement  waiterEmail;
+	private WebElement  waiterEmail;
      
 	@FindBy(xpath="//select[@id='WaiterStore']")
-	WebElement  waiterStore;
+	private WebElement  waiterStore;
 	
 	@FindBy(xpath="//button[@class='btn btn-add']")
-	WebElement  addWaiterSubmitBtn;
+	private WebElement  addWaiterSubmitBtn;
 	
 	@FindBy(xpath="//button[@class='btn btn-add']")
-	WebElement  addWaiterCloseBtn;
+	private WebElement  addWaiterCloseBtn;
 	
 	
 	@FindBy(xpath="//input[@type='search']")
-	WebElement  waiterSearchBtn;
+	private WebElement  waiterSearchBtn;
 	
 	@FindBy(xpath="(//table[@id='Table']//tr//td)[1]")
-	WebElement  waiterName_SearchResult;
+	private WebElement  waiterName_SearchResult;
 	
 	@FindBy(xpath="(//table[@id='Table']//tr//td)[3]")
-	WebElement  waiterEmail_SearchResult;
+	private WebElement  waiterEmail_SearchResult;
 	
 	@FindBy(xpath="(//table[@id='Table']//tr//td)[2]")
-	WebElement  waiterPhone_SearchResult;
+	 private WebElement  waiterPhone_SearchResult;
 	
 	@FindBy(xpath="(//table[@id='Table']//tr//td)[4]")
-	WebElement  waiterStore_SearchResult;
+	private WebElement  waiterStore_SearchResult;
 	
 	@FindBy(xpath="(//a[@class='btn btn-default'])[2]")
-	WebElement  editicon;
+	private WebElement  editicon;
 	
 	@FindBy(xpath="//button[@class='btn btn-add']")
-	WebElement  editiconSubmit;
+	private WebElement  editiconSubmit;
 	
 	@FindBy(xpath="(//a[@class='btn btn-default'])[1]")
-	WebElement  deleteIcon;
+	private WebElement  deleteIcon;
 	
 	@FindBy(xpath="(//a[@class='btn btn-danger']")
-	WebElement  conformDeleteMsg;
+	private WebElement  conformDeleteMsg;
 	
 	@FindBy(xpath="(//table[@id='Table']//tr//td)[1]")
-	WebElement  delete_searchresult;
+	private WebElement  delete_searchresult;
 	
 	@FindBy(xpath="(//span[@class='menu-text'])[9]")
-	WebElement expenseLink;
+	 private WebElement expenseLink;
 	
 	public PeopleWaiterPage(WebDriver driver) {
 		this.driver = driver;

@@ -13,56 +13,56 @@ public class PeopleSupplierPage {
 	WebActionUtils element = new WebActionUtils();
 	
 	@FindBy(xpath="(//span[@class='menu-text'])[7]")
-	WebElement supplierLink;
+	private WebElement supplierLink;
 	
 	@FindBy(xpath="//button[@class='btn btn-add btn-lg']")
-	WebElement addSupplierBtn;
+	private WebElement addSupplierBtn;
 	
 	@FindBy(xpath="//input[@id='SupplierName']")
-	WebElement supplierName;
+	private WebElement supplierName;
 	
 	@FindBy(xpath="//input[@id='SupplierPhone']")
-	WebElement supplierPhone;
+	private WebElement supplierPhone;
 	
 	@FindBy(xpath="//input[@id='SupplierEmail']")
-	WebElement supplierEmail;
+	private WebElement supplierEmail;
 	
 	@FindBy(xpath="//div[@class='note-editable panel-body']")
-	WebElement supplierNote;
+	private WebElement supplierNote;
 	
 	@FindBy(xpath="//button[@class='btn btn-add']")
-	WebElement supplierAddSubmitBtn;
+	private WebElement supplierAddSubmitBtn;
 	
 	@FindBy(xpath="//button[@class='btn btn-default']")
-	WebElement supplierAddSubmitCloseBtn;
+	private WebElement supplierAddSubmitCloseBtn;
 	
 	@FindBy(xpath="(//table[@id='Table']//tr//td)[1]")
-	WebElement supplierName_searchResult;
+	private WebElement supplierName_searchResult;
 	
 	@FindBy(xpath="(//table[@id='Table']//tr//td)[2]")
-	WebElement supplierPhone_searchResult;
+	private WebElement supplierPhone_searchResult;
 	
 	@FindBy(xpath="(//table[@id='Table']//tr//td)[3]")
-	WebElement supplierEmail_searchResult;
+	private WebElement supplierEmail_searchResult;
 	
 	@FindBy(xpath="//input[@type='search']")
-	WebElement  supplierSearch;
+	private WebElement  supplierSearch;
 	
 	@FindBy(xpath="(//a[@class='btn btn-default'])[2]")
-	WebElement  supplierEditBtn
-;	
+	private WebElement  supplierEditBtn;
+	
 	@FindBy(xpath="(//a[@class='btn btn-default'])[1]")
-	WebElement  supplierDeleteBtn;
+	private WebElement  supplierDeleteBtn;
 	
 
 	@FindBy(xpath = "//button[@class='btn btn-add']")
-	WebElement supplierEditSubmitBtn;
+	private WebElement supplierEditSubmitBtn;
 	
 	@FindBy(xpath="(//a[@class='btn btn-danger']")
-	WebElement  conformDeleteMsg;
+	private WebElement  conformDeleteMsg;
 	
 	@FindBy(xpath="(//table[@id='Table']//tr//td)[1]")
-	WebElement delete_searchresult;
+	private WebElement delete_searchresult;
 	
 	public PeopleSupplierPage(WebDriver driver) {
 		this.driver = driver;

@@ -17,16 +17,16 @@ public class LoginPage {
 		WaitUtils waitobj=new WaitUtils();
 		
 		@FindBy(xpath="//input[@name='username']")
-		WebElement username;
+		private WebElement username;
 		
 	    @FindBy(xpath="//input[@name='password']")
-		WebElement password;
+		private WebElement password;
 	    
 	    @FindBy(xpath="//input[@type='submit']")
-	    WebElement loginSubmit;
+	    private WebElement loginSubmit;
 	    
 	    @FindBy(xpath="//h1[@class='text-center choose_store']")
-	    WebElement loginHomePage;
+	    private WebElement loginHomePage;
 	    
 	  
 	    
