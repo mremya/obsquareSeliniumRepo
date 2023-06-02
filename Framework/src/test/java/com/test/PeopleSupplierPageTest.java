@@ -50,8 +50,6 @@ public class PeopleSupplierPageTest extends AutomationBase {
 		soft.assertTrue(supplier.isSupplierEmailDisplayed(), AutomationConstants.addDisplayedErrorMsg);
 		soft.assertTrue(supplier.isSupplierNoteDisplayed(), AutomationConstants.addDisplayedErrorMsg);
 		supplier.clickOnSupplierAddCloseBtn();
-		System.out.println("test jenkins");
-		
 		soft.assertAll();
 
 	}
