@@ -23,7 +23,7 @@ import com.utils.WebActionUtils;
 import com.utils.WebBrowserUtils;
 
 public class ExpensePageTest extends AutomationBase {
-	WebDriver driver;
+	
 	WebBrowserUtils webbrowser;
 	LoginPage login;
 	HomePage homepg;
@@ -53,7 +53,7 @@ public class ExpensePageTest extends AutomationBase {
 
 	}
 
-	//@Test(priority = 2, enabled = true)
+	@Test(priority = 2, enabled = true)
 	public void validatenAddExpensePopUpfields() {
 		ExcelUtils excelutil = new ExcelUtils();
 		login = new LoginPage(driver);
@@ -78,12 +78,13 @@ public class ExpensePageTest extends AutomationBase {
 				AutomationConstants.addFeildValidateErrorMessage);
 		soft.assertEquals(expensep.getExpensAmountFromSearchResult(),eamt,
 				AutomationConstants.addFeildValidateErrorMessage);
-		soft.assertAll();
+		
 		expensep.clickOnaddExpenseCloseBtn();
+		soft.assertAll();
 
 	}
 
-	//@Test(priority = 3, enabled = true, dataProviderClass = ExpenseDataSupplier.class)
+	@Test(priority = 3, enabled = true, dataProviderClass = ExpenseDataSupplier.class)
 	public void validateEnteredValueInAddExpensePopUpIsSaved(String date, String reference, String category, String store,
 			String amount) {
 		login = new LoginPage(driver);
@@ -110,7 +111,7 @@ public class ExpensePageTest extends AutomationBase {
 		soft.assertAll();
 	}
 
-	//@Test(priority = 4, enabled = true)
+	@Test(priority = 4, enabled = true)
 	public void modifyTheExistingRecordOfExpense() {
 		ExcelUtils excelutil = new ExcelUtils();
 		login = new LoginPage(driver);
@@ -139,7 +140,7 @@ public class ExpensePageTest extends AutomationBase {
 		soft.assertAll();
 	}
 
-	//@Test(priority = 5, enabled = true)
+	@Test(priority = 5, enabled = true)
 	public void validateDeleteFunctiongOfExistingRecord(){
 		ExcelUtils excelutil = new ExcelUtils();
 		login = new LoginPage(driver);

@@ -2,11 +2,8 @@ package com.test;
 
 import static org.testng.Assert.assertEquals;
 
-import java.time.Duration;
 import java.util.Properties;
 
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -14,7 +11,6 @@ import com.base.AutomationBase;
 import com.constants.AutomationConstants;
 import com.pages.HomePage;
 import com.pages.LoginPage;
-import com.pages.PeopleCustomerPage;
 import com.pages.PeopleSupplierPage;
 import com.pages.PeopleWaiterPage;
 import com.pages.ProductPage;
@@ -25,7 +21,7 @@ import com.utils.WebBrowserUtils;
 
 public class PeopleSupplierPageTest extends AutomationBase {
 
-	WebDriver driver;
+	
 	WebBrowserUtils webbrowser;
 	LoginPage login;
 	ExcelUtils excelutil;
@@ -54,6 +50,8 @@ public class PeopleSupplierPageTest extends AutomationBase {
 		soft.assertTrue(supplier.isSupplierEmailDisplayed(), AutomationConstants.addDisplayedErrorMsg);
 		soft.assertTrue(supplier.isSupplierNoteDisplayed(), AutomationConstants.addDisplayedErrorMsg);
 		supplier.clickOnSupplierAddCloseBtn();
+		System.out.println("test jenkins");
+		
 		soft.assertAll();
 
 	}

@@ -33,7 +33,7 @@ public class ProductPageTest extends AutomationBase {
 
 	
 
-	@Test(priority = 1, enabled = true)
+	//@Test(priority = 1, enabled = true)
 	public void validateTheElementInAddProductPopup() throws Exception {
 		excelutil = new ExcelUtils();
 		login = new LoginPage(driver);

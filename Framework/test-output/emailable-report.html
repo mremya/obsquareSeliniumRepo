@@ -9,25 +9,37 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">ChromeTest</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">34,272</td><td></td><td></td></tr>
+<tr><td><a href="#t0">ChromeTest</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">5</td><td class="num">81,583</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">ChromeTest &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">com.test.PeopleCustomerPageTest</td><td><a href="#m0">modifyTheExistingRecordOfStores</a></td><td rowspan="1">1685401647416</td><td rowspan="1">8103</td></tr><tr class="failedeven"><td><a href="#m1">validateValueEntredInAddWaiterPopUpIsSaved</a></td><td rowspan="1">1685401637478</td><td rowspan="1">7396</td></tr><tr><th colspan="4">ChromeTest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.test.PeopleCustomerPageTest</td><td><a href="#m2">validateDeleteFunctiongOfExistingRecord</a></td><td rowspan="1">1685401658281</td><td rowspan="1">6978</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">ChromeTest &#8212; failed</th></tr><tr class="failedeven"><td rowspan="5">com.test.ExpensePageTest</td><td><a href="#m0">modifyTheExistingRecordOfExpense</a></td><td rowspan="1">1685683594240</td><td rowspan="1">7723</td></tr><tr class="failedeven"><td><a href="#m1">validateDeleteFunctiongOfExistingRecord</a></td><td rowspan="1">1685683623407</td><td rowspan="1">23686</td></tr><tr class="failedeven"><td><a href="#m2">validateEnteredValueInAddExpensePopUpIsSaved</a></td><td rowspan="1">1685683589540</td><td rowspan="1">0</td></tr><tr class="failedeven"><td><a href="#m3">validateTheElementInAddExpensePopup</a></td><td rowspan="1">1685683573654</td><td rowspan="1">4242</td></tr><tr class="failedeven"><td><a href="#m4">validatenAddExpensePopUpfields</a></td><td rowspan="1">1685683583002</td><td rowspan="1">6282</td></tr></tbody>
 </table>
-<h2>ChromeTest</h2><h3 id="m0">com.test.PeopleCustomerPageTest#modifyTheExistingRecordOfStores</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
-	no matching records found expected [Ashish] but found [No matching records found],
-	no matching records found expected [pqr@gmail.com] but found [null],
-	no matching records found expected [1234] but found [null],
-	no matching records found expected [5] but found [null]
-	at com.test.PeopleCustomerPageTest.modifyTheExistingRecordOfStores(PeopleCustomerPageTest.java:155)
+<h2>ChromeTest</h2><h3 id="m0">com.test.ExpensePageTest#modifyTheExistingRecordOfExpense</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	no matching records found expected [MNC] but found [null],
+	no matching records found expected [cutlet] but found [null],
+	no matching records found expected [200] but found [null],
+	no matching records found expected [MNC] but found [null]
+	at com.test.ExpensePageTest.modifyTheExistingRecordOfExpense(ExpensePageTest.java:140)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
 ... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.test.PeopleCustomerPageTest#validateValueEntredInAddWaiterPopUpIsSaved</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
-	no matching records found expected [abc@gmail.com] but found [##abc@gmail.com],
-	no matching records found expected [1234578902] but found [12341234578902],
-	no matching records found expected [10] but found [abc]
-	at com.test.PeopleCustomerPageTest.validateValueEntredInAddWaiterPopUpIsSaved(PeopleCustomerPageTest.java:123)
+<h3 id="m1">com.test.ExpensePageTest#validateDeleteFunctiongOfExistingRecord</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Failure message:Failed to delete expected [No matching records found] but found [null]
+	at com.test.ExpensePageTest.validateDeleteFunctiongOfExistingRecord(ExpensePageTest.java:160)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.test.ExpensePageTest#validateEnteredValueInAddExpensePopUpIsSaved</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.testng.TestNGException: 
+Cannot inject @Test annotated Method [validateEnteredValueInAddExpensePopUpIsSaved] with [class java.lang.String, class java.lang.String, class java.lang.String, class java.lang.String, class java.lang.String].
+For more information on native dependency injection please refer to https://testng.org/doc/documentation-main.html#native-dependency-injection
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 26 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.test.ExpensePageTest#validateTheElementInAddExpensePopup</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	Failure message::add product attribute is not displayed expected [true] but found [false]
+	at com.test.ExpensePageTest.validateTheElementInAddExpensePopup(ExpensePageTest.java:51)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
 ... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.test.PeopleCustomerPageTest#validateDeleteFunctiongOfExistingRecord</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">com.test.ExpensePageTest#validatenAddExpensePopUpfields</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	failure message: no validation check for add Product attribute was found expected [MNC] but found [null],
+	failure message: no validation check for add Product attribute was found expected [abc] but found [null]
+	at com.test.ExpensePageTest.validatenAddExpensePopUpfields(ExpensePageTest.java:83)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
